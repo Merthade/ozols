@@ -1,0 +1,965 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ozols.Dev - Emils Ozols</title>
+    <meta name="description" content="Emils Ozols - Developer, creator of Remi & Rise. Building things that matter.">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --wb-blue: #C0C0C0;
+            --wb-white: #FFFFFF;
+            --wb-black: #000000;
+            --wb-orange: #000080;
+            --wb-light-blue: #DFDFDF;
+            --wb-dark-blue: #808080;
+            --wb-gray: #404040;
+        }
+
+        html, body {
+            height: 100%;
+            overflow: hidden;
+            font-family: 'Courier New', 'Lucida Console', monospace;
+            font-size: 20px;
+            background: var(--wb-blue);
+            color: var(--wb-black);
+            cursor: default;
+            user-select: none;
+            image-rendering: pixelated;
+        }
+
+        /* ── TOP STATUS BAR ── */
+        .topbar {
+            height: 33px;
+            background: var(--wb-dark-blue);
+            border-bottom: 3px solid var(--wb-black);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 12px;
+            font-size: 18px;
+            color: var(--wb-white);
+            position: relative;
+            z-index: 10000;
+        }
+
+        .topbar-left { display: flex; gap: 24px; }
+        .topbar-right { color: var(--wb-white); }
+
+        /* ── DESKTOP ── */
+        .desktop {
+            position: relative;
+            height: calc(100vh - 33px);
+            overflow: hidden;
+        }
+
+        /* ── DESKTOP ICONS ── */
+        .desktop-icons {
+            position: absolute;
+            top: 24px;
+            right: 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            z-index: 1;
+        }
+
+        .desktop-icon {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 3px;
+            padding: 6px 12px;
+            cursor: pointer;
+            text-align: center;
+            width: 120px;
+            border: 3px solid transparent;
+        }
+
+        .desktop-icon:hover {
+            background: var(--wb-dark-blue);
+        }
+
+        .desktop-icon.selected {
+            background: #000080;
+            color: var(--wb-white);
+        }
+
+        .desktop-icon .icon-img {
+            width: 72px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 42px;
+            line-height: 1;
+            filter: drop-shadow(2px 2px 1px rgba(0,0,0,0.5));
+        }
+
+        .desktop-icon .icon-label {
+            font-size: 16px;
+            font-weight: bold;
+            white-space: nowrap;
+            color: var(--wb-black);
+            background: rgba(192,192,192,0.85);
+            padding: 1px 4px;
+            text-shadow: 1px 1px 0 var(--wb-white);
+        }
+
+        .desktop-icon.selected .icon-label {
+            color: var(--wb-white);
+            background: #000080;
+            text-shadow: none;
+        }
+
+        /* ── DISK ICON (pixel art style) ── */
+        .disk-icon {
+            width: 72px;
+            height: 54px;
+            background: #606060;
+            border: 3px outset #A0A0A0;
+            border-radius: 3px;
+            position: relative;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+        }
+
+        .disk-icon::before {
+            content: '';
+            position: absolute;
+            top: 5px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 36px;
+            height: 24px;
+            background: var(--wb-white);
+            border: 2px solid var(--wb-black);
+        }
+
+        .disk-icon::after {
+            content: '';
+            width: 15px;
+            height: 9px;
+            background: var(--wb-black);
+            margin-bottom: 6px;
+        }
+
+        .disk-icon.blue-disk { background: #707070; }
+        .disk-icon.white-disk { background: #E0E0E0; }
+
+        /* ── WINDOW ── */
+        .wb-window {
+            position: absolute;
+            background: var(--wb-blue);
+            border: 3px outset var(--wb-light-blue);
+            box-shadow: 2px 2px 0 rgba(0,0,0,0.5);
+            min-width: 300px;
+            min-height: 150px;
+            display: flex;
+            flex-direction: column;
+            z-index: 100;
+        }
+
+        .wb-window.hidden { display: none; }
+
+        .wb-window.active {
+            z-index: 500;
+        }
+
+        /* ── TITLE BAR ── */
+        .wb-titlebar {
+            height: 33px;
+            display: flex;
+            align-items: center;
+            cursor: move;
+            flex-shrink: 0;
+            position: relative;
+            background: var(--wb-dark-blue);
+        }
+
+        .wb-titlebar-stripes {
+            position: absolute;
+            inset: 0;
+            background: repeating-linear-gradient(
+                0deg,
+                var(--wb-white) 0px,
+                var(--wb-white) 2px,
+                var(--wb-blue) 2px,
+                var(--wb-blue) 5px
+            );
+            opacity: 0.9;
+        }
+
+        .wb-window.active .wb-titlebar-stripes {
+            background: repeating-linear-gradient(
+                0deg,
+                #000080 0px,
+                #000080 2px,
+                #C0C0C0 2px,
+                #C0C0C0 5px
+            );
+            opacity: 1;
+        }
+
+        .wb-close {
+            width: 30px;
+            height: 27px;
+            background: var(--wb-dark-blue);
+            border: 3px solid var(--wb-black);
+            border-left: none;
+            cursor: pointer;
+            position: relative;
+            z-index: 2;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .wb-close::after {
+            content: '\00D7';
+            font-size: 20px;
+            font-weight: bold;
+            color: var(--wb-black);
+            line-height: 1;
+        }
+
+        .wb-close:active { background: var(--wb-orange); }
+
+        .wb-title {
+            flex: 1;
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            color: var(--wb-black);
+            position: relative;
+            z-index: 2;
+            padding: 0 6px;
+            text-shadow: none;
+            white-space: nowrap;
+        }
+
+        .wb-window.active .wb-title {
+            color: var(--wb-white);
+        }
+
+        .wb-depth {
+            width: 30px;
+            height: 27px;
+            position: relative;
+            z-index: 2;
+            flex-shrink: 0;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .wb-depth-inner {
+            width: 21px;
+            height: 18px;
+            border: 3px solid var(--wb-black);
+            background: var(--wb-dark-blue);
+            position: relative;
+        }
+
+        .wb-depth-inner::after {
+            content: '';
+            position: absolute;
+            top: -8px;
+            left: -8px;
+            width: 21px;
+            height: 18px;
+            border: 3px solid var(--wb-black);
+            background: var(--wb-white);
+        }
+
+        /* ── WINDOW CONTENT ── */
+        .wb-content {
+            flex: 1;
+            overflow: auto;
+            padding: 12px;
+            border-top: 3px solid var(--wb-black);
+            background: var(--wb-blue);
+            font-size: 18px;
+            line-height: 1.6;
+            color: var(--wb-black);
+            transform-origin: top left;
+        }
+
+        .wb-content::-webkit-scrollbar { width: 24px; }
+        .wb-content::-webkit-scrollbar-track { background: var(--wb-dark-blue); border-left: 3px solid var(--wb-black); }
+        .wb-content::-webkit-scrollbar-thumb { background: var(--wb-light-blue); border: 3px solid var(--wb-black); }
+
+        /* ── RESIZE HANDLE ── */
+        .wb-resize {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 24px;
+            height: 24px;
+            cursor: nwse-resize;
+            z-index: 10;
+        }
+
+        .wb-resize::after {
+            content: '';
+            position: absolute;
+            bottom: 3px;
+            right: 3px;
+            width: 15px;
+            height: 15px;
+            border-right: 3px solid var(--wb-black);
+            border-bottom: 3px solid var(--wb-black);
+        }
+
+        /* ── WINDOW ICON GRID ── */
+        .win-icons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 18px;
+            padding: 12px;
+        }
+
+        .win-icon {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 3px;
+            padding: 6px;
+            cursor: pointer;
+            width: 108px;
+            text-align: center;
+        }
+
+        .win-icon:hover { background: var(--wb-dark-blue); }
+
+        .win-icon .icon-gfx {
+            width: 60px;
+            height: 51px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 36px;
+            filter: drop-shadow(2px 2px 1px rgba(0,0,0,0.4));
+        }
+
+        .win-icon .icon-name {
+            font-size: 15px;
+            font-weight: bold;
+            color: var(--wb-black);
+            text-shadow: 1px 1px 0 var(--wb-white);
+        }
+
+        /* ── PIXEL ART ICONS ── */
+        .px-icon {
+            width: 42px;
+            height: 42px;
+            image-rendering: pixelated;
+            position: relative;
+        }
+
+        /* About - Person bust */
+        .px-about {
+            background: #000080;
+            border: 3px outset #6666CC;
+            border-radius: 3px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .px-about::before {
+            content: '';
+            width: 12px;
+            height: 12px;
+            background: var(--wb-white);
+            border-radius: 50%;
+            position: absolute;
+            top: 6px;
+        }
+        .px-about::after {
+            content: '';
+            width: 22px;
+            height: 10px;
+            background: var(--wb-white);
+            border-radius: 10px 10px 0 0;
+            position: absolute;
+            bottom: 4px;
+        }
+
+        /* Remi - Notepad/checklist */
+        .px-remi {
+            background: var(--wb-white);
+            border: 3px outset #DDDDDD;
+            border-radius: 2px;
+            position: relative;
+            overflow: hidden;
+        }
+        .px-remi::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 10px;
+            background: #008000;
+        }
+        .px-remi::after {
+            content: '';
+            position: absolute;
+            top: 14px;
+            left: 6px;
+            width: 24px;
+            height: 3px;
+            background: #404040;
+            box-shadow:
+                0 7px 0 #404040,
+                0 14px 0 #404040;
+        }
+
+        /* Rise - Sun */
+        .px-rise {
+            background: #87CEEB;
+            border: 3px outset #ADD8E6;
+            border-radius: 2px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .px-rise::before {
+            content: '';
+            width: 18px;
+            height: 18px;
+            background: #FFD044;
+            border-radius: 50%;
+            border: 2px solid #CC9900;
+            box-shadow:
+                0 -10px 0 -4px #FFD044,
+                0 10px 0 -4px #FFD044,
+                10px 0 0 -4px #FFD044,
+                -10px 0 0 -4px #FFD044,
+                7px -7px 0 -4px #FFD044,
+                -7px 7px 0 -4px #FFD044,
+                7px 7px 0 -4px #FFD044,
+                -7px -7px 0 -4px #FFD044;
+        }
+
+        /* Social - Globe */
+        .px-social {
+            background: #000080;
+            border: 3px outset #6666CC;
+            border-radius: 2px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .px-social::before {
+            content: '';
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: #4488CC;
+            border: 2px solid var(--wb-white);
+            box-shadow: inset -3px 0 0 #2266AA, inset 3px 0 0 #2266AA;
+        }
+        .px-social::after {
+            content: '';
+            position: absolute;
+            width: 28px;
+            height: 2px;
+            background: var(--wb-white);
+            box-shadow: 0 -6px 0 var(--wb-white), 0 6px 0 var(--wb-white);
+        }
+
+        /* CLI - Monitor/terminal */
+        .px-cli {
+            background: #404040;
+            border: 3px outset #808080;
+            border-radius: 2px;
+            display: flex;
+            align-items: flex-start;
+            justify-content: flex-start;
+            padding: 5px;
+        }
+        .px-cli::before {
+            content: '';
+            width: 30px;
+            height: 22px;
+            background: var(--wb-black);
+            border: 2px inset #606060;
+        }
+        .px-cli::after {
+            content: '>_';
+            position: absolute;
+            top: 9px;
+            left: 10px;
+            font-size: 11px;
+            font-family: 'Courier New', monospace;
+            font-weight: bold;
+            color: #00CC00;
+            letter-spacing: -1px;
+        }
+
+        /* ── CONTENT STYLES ── */
+        .about-content {
+            display: flex;
+            gap: 24px;
+            align-items: flex-start;
+        }
+
+        .about-photo {
+            width: 150px;
+            height: 150px;
+            border: 3px solid #808080;
+            object-fit: cover;
+            flex-shrink: 0;
+            image-rendering: auto;
+        }
+
+        .about-text h2 {
+            color: #000080;
+            font-size: 24px;
+            margin-bottom: 6px;
+        }
+
+        .about-text p {
+            margin-bottom: 9px;
+        }
+
+        .about-text .tagline {
+            color: #000080;
+            font-style: italic;
+        }
+
+        .remi-content h2 {
+            color: #008000;
+            font-size: 22px;
+            margin-bottom: 3px;
+        }
+
+        .remi-content .subtitle {
+            color: #000080;
+            margin-bottom: 12px;
+            font-size: 16px;
+        }
+
+        .remi-content p { margin-bottom: 12px; }
+
+        .remi-content ul {
+            list-style: none;
+            margin-bottom: 15px;
+        }
+
+        .remi-content ul li::before {
+            content: '> ';
+            color: #008000;
+        }
+
+        .remi-content .remi-img {
+            width: 180px;
+            border: 3px solid #808080;
+            float: right;
+            margin: 0 0 12px 18px;
+            image-rendering: auto;
+        }
+
+        .wb-link {
+            color: #000080;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+
+        .wb-link:hover {
+            color: var(--wb-white);
+            background: #000080;
+        }
+
+        .social-item {
+            padding: 6px 0;
+            border-bottom: 1px solid #A0A0A0;
+        }
+
+        .social-item:last-child { border-bottom: none; }
+
+        .social-item .platform {
+            color: #000080;
+            font-weight: bold;
+        }
+
+        .social-item .handle {
+            color: #404040;
+        }
+
+        .social-item .desc {
+            color: #404040;
+            font-size: 16px;
+        }
+
+        /* ── BOTTOM BAR ── */
+        .bottombar {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 30px;
+            background: var(--wb-dark-blue);
+            border-top: 3px solid var(--wb-black);
+            display: flex;
+            align-items: center;
+            padding: 0 12px;
+            font-size: 15px;
+            color: var(--wb-white);
+            z-index: 10000;
+            justify-content: space-between;
+        }
+
+        /* ── BLINK CURSOR ── */
+        @keyframes blink {
+            0%, 49% { opacity: 1; }
+            50%, 100% { opacity: 0; }
+        }
+
+        .cursor-blink {
+            display: inline-block;
+            width: 12px;
+            height: 20px;
+            background: #00CC00;
+            animation: blink 1s step-end infinite;
+            vertical-align: middle;
+            margin-left: 3px;
+        }
+
+        /* ── MOBILE ── */
+        @media (max-width: 900px) {
+            .desktop-icons {
+                top: 12px;
+                right: 12px;
+                gap: 6px;
+            }
+            .desktop-icon { width: 96px; }
+            .desktop-icon .icon-img { width: 54px; height: 45px; font-size: 33px; }
+            .desktop-icon .icon-label { font-size: 13px; }
+            .wb-window { min-width: 240px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Status Bar -->
+    <div class="topbar">
+        <div class="topbar-left">
+            <span>Ozols.Dev Workbench release.</span>
+        </div>
+        <div class="topbar-right">
+            <span id="freeMemory">2048576</span> free memory
+        </div>
+    </div>
+
+    <!-- Desktop -->
+    <div class="desktop" id="desktop">
+
+        <!-- Desktop Icons (right side like Amiga) -->
+        <div class="desktop-icons">
+            <div class="desktop-icon" onclick="toggleWindow('win-workbench')" >
+                <div class="icon-img"><div class="disk-icon"></div></div>
+                <div class="icon-label">Ozols.Dev</div>
+            </div>
+            <div class="desktop-icon" onclick="toggleWindow('win-about')" >
+                <div class="icon-img"><div class="disk-icon blue-disk"></div></div>
+                <div class="icon-label">About</div>
+            </div>
+            <div class="desktop-icon" onclick="toggleWindow('win-remi')" >
+                <div class="icon-img"><div class="disk-icon white-disk"></div></div>
+                <div class="icon-label">Remi</div>
+            </div>
+            <div class="desktop-icon" onclick="toggleWindow('win-rise')" >
+                <div class="icon-img"><div class="disk-icon" style="background:#FFD044;"></div></div>
+                <div class="icon-label">Rise</div>
+            </div>
+        </div>
+
+        <!-- ═══ MAIN WORKBENCH WINDOW ═══ -->
+        <div class="wb-window active" id="win-workbench" style="left:30px;top:30px;width:750px;height:480px;">
+            <div class="wb-titlebar" onmousedown="startDrag(event, 'win-workbench')">
+                <div class="wb-titlebar-stripes"></div>
+                <div class="wb-close" onclick="closeWindow('win-workbench')"></div>
+                <div class="wb-title">Ozols.Dev</div>
+                <div class="wb-depth" onclick="sendToBack('win-workbench')"><div class="wb-depth-inner"></div></div>
+            </div>
+            <div class="wb-content">
+                <div class="win-icons">
+                    <div class="win-icon" onclick="toggleWindow('win-about')">
+                        <div class="icon-gfx"><div class="px-icon px-about"></div></div>
+                        <div class="icon-name">About</div>
+                    </div>
+                    <div class="win-icon" onclick="toggleWindow('win-remi')">
+                        <div class="icon-gfx"><div class="px-icon px-remi"></div></div>
+                        <div class="icon-name">Remi</div>
+                    </div>
+                    <div class="win-icon" onclick="toggleWindow('win-rise')">
+                        <div class="icon-gfx"><div class="px-icon px-rise"></div></div>
+                        <div class="icon-name">Rise</div>
+                    </div>
+                    <div class="win-icon" onclick="toggleWindow('win-social')">
+                        <div class="icon-gfx"><div class="px-icon px-social"></div></div>
+                        <div class="icon-name">Connect</div>
+                    </div>
+                </div>
+            </div>
+            <div class="wb-resize" onmousedown="startResize(event, 'win-workbench')"></div>
+        </div>
+
+        <!-- ═══ ABOUT WINDOW ═══ -->
+        <div class="wb-window hidden" id="win-about" style="left:90px;top:90px;width:720px;height:420px;">
+            <div class="wb-titlebar" onmousedown="startDrag(event, 'win-about')">
+                <div class="wb-titlebar-stripes"></div>
+                <div class="wb-close" onclick="closeWindow('win-about')"></div>
+                <div class="wb-title">About - Emils Ozols</div>
+                <div class="wb-depth" onclick="sendToBack('win-about')"><div class="wb-depth-inner"></div></div>
+            </div>
+            <div class="wb-content">
+                <div class="about-content">
+                    <img src="Profile.jpeg" alt="Emils Ozols" class="about-photo">
+                    <div class="about-text">
+                        <h2>Emils Ozols</h2>
+                        <p class="tagline">Developer &amp; Creator</p>
+                        <p>Making life less complicated - one commit at a time.</p>
+                        <br>
+                        <p>> A regular dude crafting digital experiences for life's little annoyances and trying to earn a living from it. Creator of Remi and Rise - apps built to help people build better habits.</p>
+                        <br>
+                        <p>Status: <span style="color:#008000;">&#9679; System Online</span></p>
+                    </div>
+                </div>
+            </div>
+            <div class="wb-resize" onmousedown="startResize(event, 'win-about')"></div>
+        </div>
+
+        <!-- ═══ REMI WINDOW ═══ -->
+        <div class="wb-window hidden" id="win-remi" style="left:150px;top:120px;width:690px;height:480px;">
+            <div class="wb-titlebar" onmousedown="startDrag(event, 'win-remi')">
+                <div class="wb-titlebar-stripes"></div>
+                <div class="wb-close" onclick="closeWindow('win-remi')"></div>
+                <div class="wb-title">Remi - Reminders & Planner</div>
+                <div class="wb-depth" onclick="sendToBack('win-remi')"><div class="wb-depth-inner"></div></div>
+            </div>
+            <div class="wb-content">
+                <div class="remi-content">
+                    <img src="Reminders.png" alt="Remi App" class="remi-img">
+                    <h2>Remi</h2>
+                    <p class="subtitle">Your simple reminder companion</p>
+                    <p>Remi is the reminder app that allow you to make flexible reminders. Simple, clean, and designed to integrate seamlessly into your daily flow.</p>
+                    <ul>
+                        <li>Flexible scheduling with multiple timeframes</li>
+                        <li>See your month & year at a glance</li>
+                        <li>Minimal, distraction-free interface</li>
+                    </ul>
+                    <p><a href="https://remireminder.app" target="_blank" rel="noopener" class="wb-link">[ Investigate Remi ]</a></p>
+                </div>
+            </div>
+            <div class="wb-resize" onmousedown="startResize(event, 'win-remi')"></div>
+        </div>
+
+        <!-- ═══ RISE WINDOW ═══ -->
+        <div class="wb-window hidden" id="win-rise" style="left:180px;top:105px;width:690px;height:480px;">
+            <div class="wb-titlebar" onmousedown="startDrag(event, 'win-rise')">
+                <div class="wb-titlebar-stripes"></div>
+                <div class="wb-close" onclick="closeWindow('win-rise')"></div>
+                <div class="wb-title">Rise - Morning Routine App</div>
+                <div class="wb-depth" onclick="sendToBack('win-rise')"><div class="wb-depth-inner"></div></div>
+            </div>
+            <div class="wb-content">
+                <div class="remi-content">
+                    <img src="Rise.png" alt="Rise App" class="remi-img" style="border-color:#808080;">
+                    <h2 style="color:#B8860B;">Rise - Morning Routine Alarm</h2>
+                    <p class="subtitle">Your morning routine reinvented</p>
+                    <p>Rise guides you through a calm, structured morning, from alarm to focus session, so you can start every day intentionally.</p>
+                    <ul>
+                        <li>System-level alarms powered by AlarmKit</li>
+                        <li>Flexible focus sessions from 5 to 120 minutes</li>
+                        <li>Streak tracking to keep you consistent</li>
+                        
+                    </ul>
+                    <p><a href="https://risemorning.app" target="_blank" rel="noopener" class="wb-link">[ Investigate Rise ]</a></p>
+                </div>
+            </div>
+            <div class="wb-resize" onmousedown="startResize(event, 'win-rise')"></div>
+        </div>
+
+        <!-- ═══ SOCIAL FEED WINDOW ═══ -->
+        <div class="wb-window hidden" id="win-social" style="left:210px;top:40px;width:630px;height:560px;">
+            <div class="wb-titlebar" onmousedown="startDrag(event, 'win-social')">
+                <div class="wb-titlebar-stripes"></div>
+                <div class="wb-close" onclick="closeWindow('win-social')"></div>
+                <div class="wb-title">Connect</div>
+                <div class="wb-depth" onclick="sendToBack('win-social')"><div class="wb-depth-inner"></div></div>
+            </div>
+            <div class="wb-content">
+                <div class="social-item">
+                    <span class="platform">LinkedIn</span> <span class="handle">emils-ozols</span><br>
+                    <span class="desc">Professional updates, and industry insights. Mostly banking related stuff</span><br>
+                    <a href="https://www.linkedin.com/in/emils-ozols/" target="_blank" rel="noopener" class="wb-link">[ View Profile ]</a>
+                </div>
+                <div class="social-item">
+                    <span class="platform">X (Twitter)</span> <span class="handle">@ozolsdev</span><br>
+                    <span class="desc">Hot takes, dev updates, and lessons learned.</span><br>
+                    <a href="https://x.com/ozolsdev" target="_blank" rel="noopener" class="wb-link">[ Follow ]</a>
+                </div>
+                <div class="social-item">
+                    <span class="platform">Threads</span> <span class="handle">@ozolsdev</span><br>
+                    <span class="desc">Same as X</span><br>
+                    <a href="https://threads.net/@ozolsdev" target="_blank" rel="noopener" class="wb-link">[ Follow ]</a>
+                </div>
+                <div class="social-item">
+                    <span class="platform">Instagram</span> <span class="handle">@ozolsdev</span><br>
+                    <span class="desc">Behind the scenes of building apps, dev setup, and life outside.</span><br>
+                    <a href="https://instagram.com/ozolsdev" target="_blank" rel="noopener" class="wb-link">[ Follow ]</a>
+                </div>
+            </div>
+            <div class="wb-resize" onmousedown="startResize(event, 'win-social')"></div>
+        </div>
+
+        <!-- Bottom Status Bar -->
+        <div class="bottombar">
+            <span>&copy; 2026 OZOLS.DEV - All systems operational</span>
+            <span>SYS.VERSION // 1.0.1</span>
+        </div>
+    </div>
+
+    <script>
+        // ── Window management ──
+        let zCounter = 500;
+        let dragState = null;
+        let resizeState = null;
+
+        function activateWindow(id) {
+            document.querySelectorAll('.wb-window').forEach(w => w.classList.remove('active'));
+            const win = document.getElementById(id);
+            win.classList.remove('hidden');
+            win.classList.add('active');
+            win.style.zIndex = ++zCounter;
+        }
+
+        function toggleWindow(id) {
+            const win = document.getElementById(id);
+            if (win.classList.contains('hidden')) {
+                activateWindow(id);
+            } else {
+                win.classList.add('hidden');
+            }
+        }
+
+        function closeWindow(id) {
+            document.getElementById(id).classList.add('hidden');
+        }
+
+        function sendToBack(id) {
+            const win = document.getElementById(id);
+            win.style.zIndex = 100;
+        }
+
+        function selectIcon(el) {
+            document.querySelectorAll('.desktop-icon').forEach(i => i.classList.remove('selected'));
+            el.classList.add('selected');
+        }
+
+        // ── Dragging ──
+        function startDrag(e, id) {
+            if (e.target.closest('.wb-close') || e.target.closest('.wb-depth')) return;
+            activateWindow(id);
+            const win = document.getElementById(id);
+            const rect = win.getBoundingClientRect();
+            dragState = {
+                id,
+                offsetX: e.clientX - rect.left,
+                offsetY: e.clientY - rect.top
+            };
+            e.preventDefault();
+        }
+
+        // ── Resizing ──
+        function startResize(e, id) {
+            activateWindow(id);
+            const win = document.getElementById(id);
+            const rect = win.getBoundingClientRect();
+            resizeState = {
+                id,
+                startX: e.clientX,
+                startY: e.clientY,
+                startW: rect.width,
+                startH: rect.height
+            };
+            e.preventDefault();
+            e.stopPropagation();
+        }
+
+        document.addEventListener('mousemove', (e) => {
+            if (dragState) {
+                const win = document.getElementById(dragState.id);
+                win.style.left = (e.clientX - dragState.offsetX) + 'px';
+                win.style.top = (e.clientY - dragState.offsetY - 33) + 'px';
+            }
+            if (resizeState) {
+                const win = document.getElementById(resizeState.id);
+                const newW = resizeState.startW + (e.clientX - resizeState.startX);
+                const newH = resizeState.startH + (e.clientY - resizeState.startY);
+                win.style.width = Math.max(300, newW) + 'px';
+                win.style.height = Math.max(150, newH) + 'px';
+            }
+        });
+
+        document.addEventListener('mouseup', () => {
+            dragState = null;
+            resizeState = null;
+        });
+
+        // Click on desktop to deselect icons
+        document.getElementById('desktop').addEventListener('click', (e) => {
+            if (e.target === document.getElementById('desktop')) {
+                document.querySelectorAll('.desktop-icon').forEach(i => i.classList.remove('selected'));
+            }
+        });
+
+        // Click on a window to bring to front
+        document.querySelectorAll('.wb-window').forEach(win => {
+            win.addEventListener('mousedown', () => {
+                activateWindow(win.id);
+            });
+        });
+
+        // ── Content scaling on resize ──
+        const baseWidths = {};
+        document.querySelectorAll('.wb-window').forEach(win => {
+            baseWidths[win.id] = parseFloat(win.style.width);
+        });
+
+        const resizeObserver = new ResizeObserver(entries => {
+            for (const entry of entries) {
+                const win = entry.target;
+                const baseW = baseWidths[win.id];
+                if (!baseW) continue;
+                const currentW = entry.contentRect.width;
+                const scale = currentW / baseW;
+                const content = win.querySelector('.wb-content');
+                if (content) {
+                    content.style.zoom = scale;
+                }
+            }
+        });
+
+        document.querySelectorAll('.wb-window').forEach(win => {
+            resizeObserver.observe(win);
+        });
+
+        // Memory counter effect
+        let mem = 2048576;
+        setInterval(() => {
+            mem += Math.floor(Math.random() * 200 - 100);
+            document.getElementById('freeMemory').textContent = mem;
+        }, 2000);
+    </script>
+</body>
+</html>
