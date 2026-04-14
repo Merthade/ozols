@@ -11,7 +11,7 @@
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
-    <link rel="stylesheet" href="styles.css?v=2">
+    <link rel="stylesheet" href="styles.css?v=16">
 </head>
 <body>
     <div class="phone-frame">
@@ -78,12 +78,11 @@
                     <h2 class="info-section-title">How do I earn OaKs?</h2>
                     <p class="info-paragraph">You earn coins for a wide range of banking actions:</p>
                     <ul class="info-list">
-                        <li>Daily logins and card transactions</li>
-                        <li>Saving and reaching financial goals</li>
-                        <li>Paying loans and bills on time</li>
-                        <li>Investing and using micro-investments</li>
-                        <li>Taking out insurance products</li>
-                        <li>Streaks and milestones</li>
+                        <li>Use the app and pay with your card</li>
+                        <li>Save money and reach your financial goals</li>
+                        <li>Use financing in a responsible way</li>
+                        <li>Protect your assets and loved ones with insurance</li>
+                        <li>Grow your money through investing</li>
                     </ul>
                 </div>
 
@@ -118,8 +117,8 @@
             <!-- SCREEN: Discounts -->
             <div class="screen" id="screen-discounts">
                 <div class="screen-header" style="padding: 10px 20px 0;">
-                    <span class="back-btn" onclick="navigateTo('screen-prizes')"><svg width="10" height="18" viewBox="0 0 10 18" fill="none"><path d="M9 1L1 9L9 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-                    <span class="header-title">Rewards</span>
+                    <span class="back-btn" onclick="navigateTo('screen-loyalty1')"><svg width="10" height="18" viewBox="0 0 10 18" fill="none"><path d="M9 1L1 9L9 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                    <span class="header-title">Discounts</span>
                     <span></span>
                 </div>
                 <div class="discounts-content">
@@ -127,22 +126,19 @@
                         <span class="points-number">1 540 OaKs</span>
                     </div>
 
-                    <h1 class="screen-title">Discounts</h1>
-                    <p class="screen-subtitle">Save on Swedbank products and services</p>
-
                     <div class="sb-perk-grid">
                         <div class="achievement-card" onclick="redeemDiscount(this, event)">
                             <span class="sb-perk-tag tone-butter">Card</span>
                             <h4 class="achievement-title">Golden Credit Card</h4>
                             <p class="achievement-text">Free annual fee on your premium credit card for 12 months</p>
-                            <div class="discount-cost">500 OaKs</div>
+                            <div class="discount-cost">1000 OaKs</div>
                         </div>
 
                         <div class="achievement-card" onclick="redeemDiscount(this, event)">
                             <span class="sb-perk-tag tone-mint">Card</span>
                             <h4 class="achievement-title">Free Card Delivery</h4>
                             <p class="achievement-text">Skip the sending fee on your next debit or credit card</p>
-                            <div class="discount-cost">30 OaKs</div>
+                            <div class="discount-cost">300 OaKs</div>
                         </div>
 
                         <div class="achievement-card" onclick="redeemDiscount(this, event)">
@@ -154,23 +150,23 @@
 
                         <div class="achievement-card" onclick="redeemDiscount(this, event)">
                             <span class="sb-perk-tag tone-peach">Loan</span>
-                            <h4 class="achievement-title">Home Loan Waiver</h4>
-                            <p class="achievement-text">No appraisal fee on your next mortgage application</p>
-                            <div class="discount-cost">400 OaKs</div>
+                            <h4 class="achievement-title">Home Loan Fee Waiver</h4>
+                            <p class="achievement-text">Agreement signing fee fully covered on your next mortgage application</p>
+                            <div class="discount-cost">2000 OaKs</div>
                         </div>
 
                         <div class="achievement-card" onclick="redeemDiscount(this, event)">
-                            <span class="sb-perk-tag tone-lilac">Invest</span>
-                            <h4 class="achievement-title">Investment Account</h4>
-                            <p class="achievement-text">3 months free management on a new investment account</p>
-                            <div class="discount-cost">150 OaKs</div>
+                            <span class="sb-perk-tag tone-lilac">Insurance</span>
+                            <h4 class="achievement-title">Home Insurance &ndash;25%</h4>
+                            <p class="achievement-text">25% off your home insurance premium for the first year</p>
+                            <div class="discount-cost">200 OaKs</div>
                         </div>
 
                         <div class="achievement-card" onclick="redeemDiscount(this, event)">
-                            <span class="sb-perk-tag tone-sky">Savings</span>
-                            <h4 class="achievement-title">Savings Boost</h4>
-                            <p class="achievement-text">+0.25% bonus interest on your savings for 6 months</p>
-                            <div class="discount-cost">250 OaKs</div>
+                            <span class="sb-perk-tag tone-sky">Insurance</span>
+                            <h4 class="achievement-title">Casco Insurance &ndash;15%</h4>
+                            <p class="achievement-text">15% off your Casco vehicle insurance premium for the first year</p>
+                            <div class="discount-cost">200 OaKs</div>
                         </div>
                     </div>
                 </div>
@@ -179,87 +175,109 @@
             <!-- SCREEN: Partner Offers -->
             <div class="screen" id="screen-partner-offers">
                 <div class="screen-header" style="padding: 10px 20px 0;">
-                    <span class="back-btn" onclick="navigateTo('screen-prizes')"><svg width="10" height="18" viewBox="0 0 10 18" fill="none"><path d="M9 1L1 9L9 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-                    <span class="header-title">Rewards</span>
+                    <span class="back-btn" onclick="navigateTo('screen-loyalty1')"><svg width="10" height="18" viewBox="0 0 10 18" fill="none"><path d="M9 1L1 9L9 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                    <span class="header-title">Partner Offers</span>
                     <span></span>
                 </div>
                 <div class="discounts-content">
                     <div class="points-display">
                         <span class="points-number">1 540 OaKs</span>
                     </div>
-                    <h1 class="screen-title">Partner Offers</h1>
-                    <p class="screen-subtitle">Redeem your OaKs for exclusive partner offers</p>
 
                     <div class="discount-grid">
                         <div class="discount-card" onclick="redeemDiscount(this, event)">
-                            <div class="discount-badge">-15%</div>
-                            <div class="discount-card-body">
-                                <h3 class="discount-merchant">Rimi</h3>
-                                <p class="discount-desc">15% off your next grocery purchase over 30 EUR</p>
-                                <div class="discount-cost">50 OaKs</div>
+                            <div class="discount-image-wrap">
+                                <img src="assets/rewardMiele.png" alt="" class="discount-img">
+                                <div class="discount-badge">-15%</div>
                             </div>
-                        </div>
-
-                        <div class="discount-card" onclick="redeemDiscount(this, event)">
-                            <div class="discount-badge">-20%</div>
                             <div class="discount-card-body">
-                                <h3 class="discount-merchant">Circle K</h3>
-                                <p class="discount-desc">20% off fuel on your next fill-up</p>
-                                <div class="discount-cost">80 OaKs</div>
-                            </div>
-                        </div>
-
-                        <div class="discount-card" onclick="redeemDiscount(this, event)">
-                            <div class="discount-badge">-25%</div>
-                            <div class="discount-card-body">
-                                <h3 class="discount-merchant">Wolt</h3>
-                                <p class="discount-desc">25% off your next 3 food delivery orders</p>
-                                <div class="discount-cost">120 OaKs</div>
-                            </div>
-                        </div>
-
-                        <div class="discount-card" onclick="redeemDiscount(this, event)">
-                            <div class="discount-badge">-30%</div>
-                            <div class="discount-card-body">
-                                <h3 class="discount-merchant">Bolt</h3>
-                                <p class="discount-desc">30% off 5 rides in the Bolt app</p>
-                                <div class="discount-cost">150 OaKs</div>
-                            </div>
-                        </div>
-
-                        <div class="discount-card" onclick="redeemDiscount(this, event)">
-                            <div class="discount-badge">-10%</div>
-                            <div class="discount-card-body">
-                                <h3 class="discount-merchant">Sportland</h3>
-                                <p class="discount-desc">10% off full-price items in store or online</p>
-                                <div class="discount-cost">40 OaKs</div>
-                            </div>
-                        </div>
-
-                        <div class="discount-card" onclick="redeemDiscount(this, event)">
-                            <div class="discount-badge">-50%</div>
-                            <div class="discount-card-body">
-                                <h3 class="discount-merchant">Apollo</h3>
-                                <p class="discount-desc">50% off one book or board game purchase</p>
+                                <h3 class="discount-merchant">Miele</h3>
+                                <p class="discount-desc">15% off beauty supplies</p>
                                 <div class="discount-cost">60 OaKs</div>
                             </div>
                         </div>
 
                         <div class="discount-card" onclick="redeemDiscount(this, event)">
-                            <div class="discount-badge">-15%</div>
+                            <div class="discount-image-wrap">
+                                <img src="assets/rewardAHBodyTherapy.png" alt="" class="discount-img">
+                                <div class="discount-badge">-25%</div>
+                            </div>
                             <div class="discount-card-body">
-                                <h3 class="discount-merchant">Drogas</h3>
-                                <p class="discount-desc">15% off health &amp; beauty products</p>
-                                <div class="discount-cost">45 OaKs</div>
+                                <h3 class="discount-merchant">AH Body Therapy</h3>
+                                <p class="discount-desc">25% off anti-age skincare routine</p>
+                                <div class="discount-cost">100 OaKs</div>
                             </div>
                         </div>
 
                         <div class="discount-card" onclick="redeemDiscount(this, event)">
-                            <div class="discount-badge">FREE</div>
+                            <div class="discount-image-wrap">
+                                <img src="assets/rewardToysPlanet.jpeg" alt="" class="discount-img">
+                                <div class="discount-badge">-20%</div>
+                            </div>
                             <div class="discount-card-body">
-                                <h3 class="discount-merchant">Lido</h3>
-                                <p class="discount-desc">Free dessert with any main course</p>
-                                <div class="discount-cost">30 OaKs</div>
+                                <h3 class="discount-merchant">Toys Planet</h3>
+                                <p class="discount-desc">20% off games for children</p>
+                                <div class="discount-cost">70 OaKs</div>
+                            </div>
+                        </div>
+
+                        <div class="discount-card" onclick="redeemDiscount(this, event)">
+                            <div class="discount-image-wrap">
+                                <img src="assets/rewardKidZone.png" alt="" class="discount-img">
+                                <div class="discount-badge">-20%</div>
+                            </div>
+                            <div class="discount-card-body">
+                                <h3 class="discount-merchant">Kidzone</h3>
+                                <p class="discount-desc">20% off modern kids apparel and shoes</p>
+                                <div class="discount-cost">70 OaKs</div>
+                            </div>
+                        </div>
+
+                        <div class="discount-card" onclick="redeemDiscount(this, event)">
+                            <div class="discount-image-wrap">
+                                <img src="assets/rewardApollo.jpg" alt="" class="discount-img">
+                                <div class="discount-badge">-50%</div>
+                            </div>
+                            <div class="discount-card-body">
+                                <h3 class="discount-merchant">Apollo Cinema</h3>
+                                <p class="discount-desc">50% off ticket price</p>
+                                <div class="discount-cost">80 OaKs</div>
+                            </div>
+                        </div>
+
+                        <div class="discount-card" onclick="redeemDiscount(this, event)">
+                            <div class="discount-image-wrap">
+                                <img src="assets/rewardNike.jpg" alt="" class="discount-img">
+                                <div class="discount-badge">-20%</div>
+                            </div>
+                            <div class="discount-card-body">
+                                <h3 class="discount-merchant">Nike</h3>
+                                <p class="discount-desc">20% off a single pair of shoes</p>
+                                <div class="discount-cost">90 OaKs</div>
+                            </div>
+                        </div>
+
+                        <div class="discount-card" onclick="redeemDiscount(this, event)">
+                            <div class="discount-image-wrap">
+                                <img src="assets/rewardZalando.jpg" alt="" class="discount-img">
+                                <div class="discount-badge">-15%</div>
+                            </div>
+                            <div class="discount-card-body">
+                                <h3 class="discount-merchant">Zalando</h3>
+                                <p class="discount-desc">15% off your next purchase</p>
+                                <div class="discount-cost">50 OaKs</div>
+                            </div>
+                        </div>
+
+                        <div class="discount-card" onclick="redeemDiscount(this, event)">
+                            <div class="discount-image-wrap">
+                                <img src="assets/rewardSportland.jpg" alt="" class="discount-img">
+                                <div class="discount-badge">-20%</div>
+                            </div>
+                            <div class="discount-card-body">
+                                <h3 class="discount-merchant">Sportland</h3>
+                                <p class="discount-desc">20% off sport apparel and accessories</p>
+                                <div class="discount-cost">80 OaKs</div>
                             </div>
                         </div>
                     </div>
@@ -269,44 +287,46 @@
             <!-- SCREEN: Experience -->
             <div class="screen" id="screen-experience">
                 <div class="screen-header" style="padding: 10px 20px 0;">
-                    <span class="back-btn" onclick="navigateTo('screen-prizes')"><svg width="10" height="18" viewBox="0 0 10 18" fill="none"><path d="M9 1L1 9L9 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-                    <span class="header-title">Rewards</span>
+                    <span class="back-btn" onclick="navigateTo('screen-loyalty1')"><svg width="10" height="18" viewBox="0 0 10 18" fill="none"><path d="M9 1L1 9L9 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                    <span class="header-title">Experience</span>
                     <span></span>
                 </div>
                 <div class="discounts-content">
                     <div class="points-display">
                         <span class="points-number">1 540 OaKs</span>
                     </div>
-                    <h1 class="screen-title">Experience</h1>
-                    <p class="screen-subtitle">Step inside Swedbank and shape what comes next</p>
 
                     <div class="care-options">
-                        <div class="care-card" onclick="redeemDiscount(this, event)">
-                            <div class="care-icon-wrap tone-lilac">
-                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#6E4E8E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M9 18h6"/>
-                                    <path d="M10 21h4"/>
-                                    <path d="M12 3a6 6 0 0 0-4 10.5c.7.7 1 1.5 1 2.5v1h6v-1c0-1 .3-1.8 1-2.5A6 6 0 0 0 12 3z"/>
-                                </svg>
+                        <div class="care-card care-card-photo" onclick="redeemDiscount(this, event)">
+                            <div class="care-icon-photo">
+                                <img src="assets/rewardConference.jpg" alt="" class="care-icon-img">
+                            </div>
+                            <div class="care-body">
+                                <h3 class="care-title">Investment Conference invite</h3>
+                                <p class="care-desc">Full-day invite to our annual investment conference with leading industry experts and exclusive networking.</p>
+                                <div class="discount-cost">1000 OaKs</div>
+                            </div>
+                        </div>
+
+                        <div class="care-card care-card-photo threshold-card" data-threshold="Silver" onclick="applyThresholdReward(this, event)">
+                            <div class="care-icon-photo">
+                                <img src="assets/rewardTester.jpg" alt="" class="care-icon-img">
                             </div>
                             <div class="care-body">
                                 <h3 class="care-title">Early access tester</h3>
                                 <p class="care-desc">Get notified first and try new Swedbank products and features before anyone else. Your feedback shapes what we build.</p>
-                                <div class="discount-cost">500 OaKs</div>
+                                <div class="threshold-status"></div>
                             </div>
                         </div>
 
-                        <div class="care-card" onclick="redeemDiscount(this, event)">
-                            <div class="care-icon-wrap tone-butter">
-                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#B08928" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/>
-                                    <circle cx="12" cy="13" r="4"/>
-                                </svg>
+                        <div class="care-card care-card-photo threshold-card" data-threshold="Gold" onclick="applyThresholdReward(this, event)">
+                            <div class="care-icon-photo">
+                                <img src="assets/rewardFace.png" alt="" class="care-icon-img">
                             </div>
                             <div class="care-body">
                                 <h3 class="care-title">Face of the bank</h3>
-                                <p class="care-desc">Star in Swedbank video ads, blog features, and posters. Get recognition and a personal thank-you from our team.</p>
-                                <div class="discount-cost">4000 OaKs</div>
+                                <p class="care-desc">Star in Swedbank video ads, blog features, and posters. Get public recognition, a personal thank-you from our team, and earn up to 4000 extra OaKs depending on the campaign.</p>
+                                <div class="threshold-status"></div>
                             </div>
                         </div>
                     </div>
@@ -316,16 +336,14 @@
             <!-- SCREEN: Care -->
             <div class="screen" id="screen-care">
                 <div class="screen-header" style="padding: 10px 20px 0;">
-                    <span class="back-btn" onclick="navigateTo('screen-prizes')"><svg width="10" height="18" viewBox="0 0 10 18" fill="none"><path d="M9 1L1 9L9 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-                    <span class="header-title">Rewards</span>
+                    <span class="back-btn" onclick="navigateTo('screen-loyalty1')"><svg width="10" height="18" viewBox="0 0 10 18" fill="none"><path d="M9 1L1 9L9 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                    <span class="header-title">Care</span>
                     <span></span>
                 </div>
                 <div class="discounts-content">
                     <div class="points-display">
                         <span class="points-number">1 540 OaKs</span>
                     </div>
-                    <h1 class="screen-title">Care</h1>
-                    <p class="screen-subtitle">Turn your OaKs into real-world impact</p>
 
                     <div class="care-options">
                         <div class="care-card" onclick="redeemDiscount(this, event)">
@@ -345,7 +363,7 @@
                             </div>
                         </div>
 
-                        <div class="care-card" onclick="redeemDiscount(this, event)">
+                        <div class="care-card" id="donate-card" onclick="openDonation()">
                             <div class="care-icon-wrap tone-peach">
                                 <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#C67262" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
                                     <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
@@ -353,10 +371,32 @@
                             </div>
                             <div class="care-body">
                                 <h3 class="care-title">Donate to charity</h3>
-                                <p class="care-desc">Swedbank will donate to a charity of your choice on your behalf.</p>
-                                <div class="discount-cost">1000 OaKs</div>
+                                <p class="care-desc">Donate your OaKs to a charity of your choice.</p>
+                                <p class="care-tap-hint">Tap to choose amount</p>
                             </div>
                         </div>
+                    </div>
+
+                    <!-- Donation Panel -->
+                    <div class="donate-panel" id="donate-panel">
+                        <div class="donate-amount-row">
+                            <button class="donate-circle-btn" onclick="adjustDonation(-10)">
+                                <svg width="18" height="18" viewBox="0 0 18 18"><line x1="4" y1="9" x2="14" y2="9" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
+                            </button>
+                            <div class="donate-amount" id="donate-amount">0</div>
+                            <button class="donate-circle-btn" onclick="adjustDonation(10)">
+                                <svg width="18" height="18" viewBox="0 0 18 18"><line x1="4" y1="9" x2="14" y2="9" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="9" y1="4" x2="9" y2="14" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
+                            </button>
+                        </div>
+                        <p class="donate-available">Available: <span id="donate-available">1540</span> OaKs</p>
+                        <div class="donate-quick-btns">
+                            <button onclick="adjustDonation(10)">+10</button>
+                            <button onclick="adjustDonation(50)">+50</button>
+                            <button onclick="adjustDonation(100)">+100</button>
+                            <button onclick="adjustDonation(500)">+500</button>
+                            <button onclick="setDonationAll()">All</button>
+                        </div>
+                        <button class="donate-confirm-btn" onclick="confirmDonation()">Donate OaKs</button>
                     </div>
                 </div>
             </div>
@@ -364,8 +404,8 @@
             <!-- SCREEN: Status Upgrade -->
             <div class="screen" id="screen-status">
                 <div class="screen-header" style="padding: 10px 20px 0;">
-                    <span class="back-btn" onclick="navigateTo('screen-prizes')"><svg width="10" height="18" viewBox="0 0 10 18" fill="none"><path d="M9 1L1 9L9 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-                    <span class="header-title">Rewards</span>
+                    <span class="back-btn" onclick="navigateTo('screen-loyalty1')"><svg width="10" height="18" viewBox="0 0 10 18" fill="none"><path d="M9 1L1 9L9 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                    <span class="header-title">Status Upgrade</span>
                     <span></span>
                 </div>
                 <div class="status-content">
@@ -373,52 +413,53 @@
                         <span class="points-number">1 540 OaKs</span>
                     </div>
 
-                    <h1 class="screen-title">Status Upgrade</h1>
-                    <p class="screen-subtitle">Use your OaKs to unlock a plan for free</p>
-
                     <div class="plan-list">
-                        <div class="plan-card" onclick="navigateTo('screen-plan-details')">
+                        <div class="plan-card plan-basic">
                             <div class="plan-info">
                                 <h3 class="plan-name">Basic plan 1 month</h3>
                                 <p class="plan-cost">100 OaKs</p>
                             </div>
                             <div class="plan-toggle" onclick="activatePlan(this.parentElement, event)"><div class="toggle"></div></div>
                         </div>
-                        <div class="plan-card" onclick="navigateTo('screen-plan-details')">
+                        <div class="plan-card plan-basic">
                             <div class="plan-info">
                                 <h3 class="plan-name">Basic plan 12 months</h3>
                                 <p class="plan-cost">1000 OaKs</p>
                             </div>
                             <div class="plan-toggle" onclick="activatePlan(this.parentElement, event)"><div class="toggle"></div></div>
                         </div>
-                        <div class="plan-card" onclick="navigateTo('screen-plan-details')">
+                        <div class="plan-card plan-daily">
                             <div class="plan-info">
                                 <h3 class="plan-name">Daily plan 1 month</h3>
                                 <p class="plan-cost">200 OaKs</p>
                             </div>
                             <div class="plan-toggle" onclick="activatePlan(this.parentElement, event)"><div class="toggle"></div></div>
                         </div>
-                        <div class="plan-card" onclick="navigateTo('screen-plan-details')">
+                        <div class="plan-card plan-daily">
                             <div class="plan-info">
                                 <h3 class="plan-name">Daily plan 12 months</h3>
                                 <p class="plan-cost">2000 OaKs</p>
                             </div>
                             <div class="plan-toggle" onclick="activatePlan(this.parentElement, event)"><div class="toggle"></div></div>
                         </div>
-                        <div class="plan-card" onclick="navigateTo('screen-plan-details')">
+                        <div class="plan-card plan-active">
                             <div class="plan-info">
                                 <h3 class="plan-name">Active plan 1 month</h3>
                                 <p class="plan-cost">300 OaKs</p>
                             </div>
                             <div class="plan-toggle" onclick="activatePlan(this.parentElement, event)"><div class="toggle"></div></div>
                         </div>
-                        <div class="plan-card" onclick="navigateTo('screen-plan-details')">
+                        <div class="plan-card plan-active">
                             <div class="plan-info">
                                 <h3 class="plan-name">Active plan 12 months</h3>
                                 <p class="plan-cost">3000 OaKs</p>
                             </div>
                             <div class="plan-toggle" onclick="activatePlan(this.parentElement, event)"><div class="toggle"></div></div>
                         </div>
+                    </div>
+
+                    <div class="plan-compare-link">
+                        <a class="link-teal" onclick="navigateTo('screen-plan-details')">Compare the plans</a>
                     </div>
 
                     <div class="vip-spacer"></div>
@@ -429,7 +470,7 @@
                         <div class="plan-card vip-card" onclick="event.stopPropagation()">
                             <div class="plan-info">
                                 <h3 class="plan-name">Become a VIP customer for a week</h3>
-                                <p class="plan-cost">1000 OaKs</p>
+                                <p class="plan-cost">4000 OaKs</p>
                             </div>
                             <div class="plan-toggle" onclick="activateVip(this.closest('.vip-card'), event)"><div class="toggle"></div></div>
                         </div>
@@ -441,13 +482,10 @@
             <div class="screen" id="screen-plan-details">
                 <div class="screen-header" style="padding: 10px 20px 0;">
                     <span class="back-btn" onclick="navigateTo('screen-status')"><svg width="10" height="18" viewBox="0 0 10 18" fill="none"><path d="M9 1L1 9L9 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-                    <span class="header-title">Status Upgrade</span>
+                    <span class="header-title">Service Plans</span>
                     <span></span>
                 </div>
                 <div class="plan-details-content">
-
-                    <h1 class="screen-title">Service Plans</h1>
-                    <p class="screen-subtitle">Card, payments, accounts and insurance &mdash; one plan, one monthly fee</p>
 
                     <!-- Comparison Cards -->
                     <div class="plan-comparison">
@@ -553,7 +591,7 @@
                     </div>
                     <h1 class="intro-title">Introducing our new loyalty program - OaKs</h1>
                     <p class="intro-text">Would you like to get more value from the way you use our banking services?</p>
-                    <p class="intro-text">With our new OaKs rewards program, you can earn OaKs coins for your everyday banking activities &mdash; such as making payments on time or using our products and services. You can then spend your OaKs coins on extra benefits, discounts, and gift cards.</p>
+                    <p class="intro-text">With our new OaKs rewards program, you can earn OaKs coins for your everyday banking activities &mdash; such as making payments on time or using our products and services. You can then spend your OaKs coins on partner discounts, exclusive experiences, status upgrades, or donate them to a charity of your choice.</p>
                 </div>
                 <div class="intro-buttons">
                     <button class="btn-primary" onclick="dismissIntro()">Start Using</button>
@@ -632,14 +670,15 @@
                         <span class="points-number">1 540 OaKs</span>
                     </div>
                     <div class="points-links">
-                        <a class="link-teal" onclick="showIntroPopup()">Find out more</a>
-                        <span class="link-separator"> / </span>
-                        <a class="link-teal" onclick="navigateTo('screen-prizes')">Rewards</a>
+                        <a class="link-teal" onclick="showIntroPopup()">Read more</a>
                     </div>
 
                     <div class="level-section">
                         <div class="level-header">
-                            <span class="level-label">Your level:</span>
+                            <span class="level-label">Your level: <span class="level-tooltip-trigger" onclick="toggleLevelTooltip(event)">?</span></span>
+                            <div class="level-tooltip" id="level-tooltip">
+                                <p>Your highest status is locked in for 12 months once reached. Your level won't decrease during this period, even if your OaKs balance changes.</p>
+                            </div>
                             <span class="level-name">Bronze</span>
                         </div>
                         <div class="level-bar">
@@ -690,25 +729,25 @@
                             <span class="sb-perk-tag tone-peach">Savings</span>
                             <h4 class="achievement-title">Your savings reached 500 EUR</h4>
                             <p class="achievement-text">Keep going! Reaching 1000 EUR will earn you 20 more OaKs</p>
-                            <a class="link-teal-sm" onclick="navigateTo('screen-offer')">Find out more</a>
+                            <a class="link-teal-sm" onclick="navigateTo('screen-offer')">Read more</a>
                         </div>
                         <div class="achievement-card">
                             <span class="sb-perk-tag tone-mint">Streak</span>
                             <h4 class="achievement-title">10 days login streak!</h4>
                             <p class="achievement-text">Nice! Try to reach 30 days streak to get 10 more OaKs.</p>
-                            <a class="link-teal-sm" onclick="navigateTo('screen-offer')">Find out more</a>
+                            <a class="link-teal-sm" onclick="navigateTo('screen-offer')">Read more</a>
                         </div>
                         <div class="achievement-card">
                             <span class="sb-perk-tag tone-lilac">Invest</span>
                             <h4 class="achievement-title">First investment unlocked</h4>
                             <p class="achievement-text">Great start! Add a regular payment to earn 25 more OaKs.</p>
-                            <a class="link-teal-sm" onclick="navigateTo('screen-offer')">Find out more</a>
+                            <a class="link-teal-sm" onclick="navigateTo('screen-offer')">Read more</a>
                         </div>
                         <div class="achievement-card">
                             <span class="sb-perk-tag tone-butter">Insure</span>
                             <h4 class="achievement-title">Home insurance active</h4>
                             <p class="achievement-text">Earn 10 OaKs every month just by staying protected.</p>
-                            <a class="link-teal-sm" onclick="navigateTo('screen-offer')">Find out more</a>
+                            <a class="link-teal-sm" onclick="navigateTo('screen-offer')">Read more</a>
                         </div>
                     </div>
 
@@ -719,6 +758,34 @@
                         <span class="pill" onclick="navigateTo('screen-investment')">Investments</span>
                         <span class="pill" onclick="navigateTo('screen-insurance')">Insurance</span>
                         <span class="pill disabled">Financing</span>
+                    </div>
+
+                    <h3 class="how-to-title">Rewards</h3>
+                    <div class="reward-categories">
+                        <div class="reward-cat-card tone-butter" onclick="navigateTo('screen-discounts')">
+                            <img src="assets/iconsDiscounts.png" class="reward-cat-img">
+                            <span class="reward-cat-label">Discounts</span>
+                        </div>
+                        <div class="reward-cat-card" style="background: #EEF5F0;" onclick="navigateTo('screen-status')">
+                            <img src="assets/iconsStatusupgrade.png" class="reward-cat-img">
+                            <span class="reward-cat-label">Status upgrade</span>
+                        </div>
+                        <div class="reward-cat-card tone-peach" onclick="navigateTo('screen-experience')">
+                            <img src="assets/iconsEvents.png" class="reward-cat-img">
+                            <span class="reward-cat-label">Experience</span>
+                        </div>
+                        <div class="reward-cat-card tone-sky" onclick="navigateTo('screen-partner-offers')">
+                            <img src="assets/iconsGiftCards.png" class="reward-cat-img">
+                            <span class="reward-cat-label">Partner offers</span>
+                        </div>
+                        <div class="reward-cat-card tone-rose" onclick="navigateTo('screen-care')">
+                            <img src="assets/iconsDonations.png" class="reward-cat-img">
+                            <span class="reward-cat-label">Care</span>
+                        </div>
+                        <div class="reward-cat-card" style="background: #EDF4EE;" id="mystery-box" onclick="openMysteryBox()">
+                            <img src="assets/iconsMystery.png" class="reward-cat-img">
+                            <span class="reward-cat-label">Mystery box</span>
+                        </div>
                     </div>
 
                     <div class="transaction-section">
@@ -742,51 +809,6 @@
                 <div class="loyalty-content">
                     <div class="transaction-list" id="all-transactions">
                     </div>
-                </div>
-            </div>
-
-            <!-- SCREEN: Prize View (Rewards) -->
-            <div class="screen" id="screen-prizes">
-                <div class="screen-header">
-                    <span class="back-btn" onclick="navigateTo('screen-loyalty1')"><svg width="10" height="18" viewBox="0 0 10 18" fill="none"><path d="M9 1L1 9L9 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-                    <span class="header-title">Rewards</span>
-                    <span></span>
-                </div>
-                <div class="loyalty-content">
-                    <div class="points-display">
-                        <span class="points-number">1 540 OaKs</span>
-                    </div>
-
-                    <h1 class="screen-title">Rewards</h1>
-                    <p class="screen-subtitle">Redeem your OaKs across six reward categories</p>
-
-                    <div class="reward-categories">
-                        <div class="reward-cat-card" onclick="navigateTo('screen-discounts')">
-                            <div class="reward-cat-icon tone-butter"><img src="assets/iconsDiscounts.png" class="reward-cat-img"></div>
-                            <span class="reward-cat-label">Discounts</span>
-                        </div>
-                        <div class="reward-cat-card" onclick="navigateTo('screen-status')">
-                            <div class="reward-cat-icon tone-mint"><img src="assets/iconsStatusupgrade.png" class="reward-cat-img"></div>
-                            <span class="reward-cat-label">Status upgrade</span>
-                        </div>
-                        <div class="reward-cat-card" onclick="navigateTo('screen-experience')">
-                            <div class="reward-cat-icon tone-peach"><img src="assets/iconsEvents.png" class="reward-cat-img"></div>
-                            <span class="reward-cat-label">Experience</span>
-                        </div>
-                        <div class="reward-cat-card" onclick="navigateTo('screen-partner-offers')">
-                            <div class="reward-cat-icon tone-sky"><img src="assets/iconsGiftCards.png" class="reward-cat-img"></div>
-                            <span class="reward-cat-label">Partner offers</span>
-                        </div>
-                        <div class="reward-cat-card" onclick="navigateTo('screen-care')">
-                            <div class="reward-cat-icon tone-rose"><img src="assets/iconsDonations.png" class="reward-cat-img"></div>
-                            <span class="reward-cat-label">Care</span>
-                        </div>
-                        <div class="reward-cat-card">
-                            <div class="reward-cat-icon tone-lilac"><img src="assets/iconsMystery.png" class="reward-cat-img"></div>
-                            <span class="reward-cat-label">Mystery box</span>
-                        </div>
-                    </div>
-
                 </div>
             </div>
 
@@ -1082,6 +1104,38 @@
             </div>
         </div>
 
+        <!-- Mobile Helper FAB -->
+        <div class="mobile-helper-fab" id="mobile-helper-fab" onclick="toggleMobileHelper()" style="display:none">?</div>
+
+        <!-- Mobile Helper Overlay -->
+        <div class="mobile-helper-overlay" id="mobile-helper-overlay">
+            <div class="mobile-helper-panel">
+                <div class="mobile-helper-header">
+                    <h3>OaK Helper</h3>
+                    <div class="info-close" onclick="toggleMobileHelper()">&times;</div>
+                </div>
+                <div class="debug-value">
+                    <span id="debug-oaks-mobile">1540</span> OaKs
+                </div>
+                <div class="debug-level">
+                    Level: <span id="debug-level-mobile">Bronze</span>
+                </div>
+                <div class="debug-buttons">
+                    <button onclick="updateOaks(100, 'Bonus: +100 OaKs')">+100</button>
+                    <button onclick="updateOaks(-100, 'Adjustment: -100 OaKs')">&minus;100</button>
+                    <button onclick="updateOaks(500, 'Bonus: +500 OaKs')">+500</button>
+                    <button onclick="updateOaks(-500, 'Adjustment: -500 OaKs')">&minus;500</button>
+                    <button onclick="updateOaks(1000, 'Bonus: +1000 OaKs')">+1000</button>
+                    <button onclick="updateOaks(-1000, 'Adjustment: -1000 OaKs')">&minus;1000</button>
+                </div>
+                <div class="debug-path-buttons">
+                    <button id="debug-complete-path-mobile" class="debug-path-btn" onclick="completeRandomPathItem()" disabled>Complete random path item</button>
+                    <button id="debug-uncomplete-path-mobile" class="debug-path-btn" onclick="uncompleteRandomPathItem()" disabled>Remove random path item</button>
+                </div>
+                <button class="debug-reset" onclick="resetOaks()">Reset to 1540</button>
+            </div>
+        </div>
+
         <!-- Tooltip Overlay (covers entire phone frame) -->
         <div class="tooltip-overlay" id="tooltip-overlay" onclick="dismissTooltip()">
             <div class="tooltip-arrow"></div>
@@ -1114,6 +1168,6 @@
         <button class="debug-reset" onclick="resetOaks()">Reset to 1540</button>
     </div>
 
-    <script src="app.js?v=7"></script>
+    <script src="app.js?t=1744628700"></script>
 </body>
 </html>
