@@ -1,0 +1,1119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
+    <meta name="googlebot" content="noindex, nofollow">
+    <meta name="bingbot" content="noindex, nofollow">
+    <meta name="referrer" content="no-referrer">
+    <title>Swedbank OaKs Loyalty</title>
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <link rel="stylesheet" href="styles.css?v=2">
+</head>
+<body>
+    <div class="phone-frame">
+        <!-- Status Bar -->
+        <div class="status-bar">
+            <span class="time" id="status-time">10:21</span>
+            <div class="status-icons">
+                <span class="signal">5G</span>
+                <span class="battery">100%</span>
+            </div>
+        </div>
+
+        <!-- Screen Container -->
+        <div class="screen-container">
+
+            <!-- SCREEN: Info / Read More -->
+            <div class="screen" id="screen-info">
+                <div class="info-close-bar">
+                    <div class="info-close" onclick="dismissInfo()">&times;</div>
+                </div>
+                <div class="info-hero">
+                    <img src="assets/introLogo.png" alt="" class="info-hero-img">
+                    <h1 class="info-hero-title">The OaKs Loyalty Program</h1>
+                    <p class="info-hero-subtitle">Grow your rewards with every banking activity</p>
+                </div>
+
+                <div class="info-section">
+                    <h2 class="info-section-title">What is OaKs?</h2>
+                    <p class="info-paragraph">OaKs is our new loyalty program that rewards you for the way you already use our banking services. Every time you make a payment, save, invest, or protect what matters &mdash; you earn OaKs coins that can be redeemed for real benefits.</p>
+                </div>
+
+                <div class="info-benefits">
+                    <div class="info-benefit">
+                        <div class="info-benefit-icon tone-butter">&#10003;</div>
+                        <div class="info-benefit-text">
+                            <h3>Earn automatically</h3>
+                            <p>OaKs coins are added to your balance for everyday activities &mdash; no extra steps needed.</p>
+                        </div>
+                    </div>
+                    <div class="info-benefit">
+                        <div class="info-benefit-icon tone-mint">&#9734;</div>
+                        <div class="info-benefit-text">
+                            <h3>Level up your status</h3>
+                            <p>Progress through Base, Bronze, Silver and Gold levels. Each level unlocks new perks and exclusive rewards.</p>
+                        </div>
+                    </div>
+                    <div class="info-benefit">
+                        <div class="info-benefit-icon tone-peach">&#9829;</div>
+                        <div class="info-benefit-text">
+                            <h3>Redeem freely</h3>
+                            <p>Use your coins on discounts, gift cards, experiences, partner offers, donations, or surprise mystery boxes.</p>
+                        </div>
+                    </div>
+                    <div class="info-benefit">
+                        <div class="info-benefit-icon tone-sky">&#8593;</div>
+                        <div class="info-benefit-text">
+                            <h3>Track your progress</h3>
+                            <p>See exactly how each action contributes to your balance with a transparent transaction history.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="info-section">
+                    <h2 class="info-section-title">How do I earn OaKs?</h2>
+                    <p class="info-paragraph">You earn coins for a wide range of banking actions:</p>
+                    <ul class="info-list">
+                        <li>Daily logins and card transactions</li>
+                        <li>Saving and reaching financial goals</li>
+                        <li>Paying loans and bills on time</li>
+                        <li>Investing and using micro-investments</li>
+                        <li>Taking out insurance products</li>
+                        <li>Streaks and milestones</li>
+                    </ul>
+                </div>
+
+                <div class="info-section">
+                    <h2 class="info-section-title">Who is it for?</h2>
+                    <p class="info-paragraph">OaKs is available to all our customers, completely free of charge. The more you use our services, the more you benefit &mdash; but even small everyday actions add up.</p>
+                </div>
+
+                <div class="info-cta">
+                    <button class="btn-primary" onclick="navigateTo('screen-overview', true)">Got it, start using</button>
+                </div>
+            </div>
+
+            <!-- SCREEN: Offer Placeholder -->
+            <div class="screen" id="screen-offer">
+                <div class="info-close-bar">
+                    <div class="info-close" onclick="dismissOffer()">&times;</div>
+                </div>
+                <div class="offer-placeholder">
+                    <div class="offer-placeholder-icon">
+                        <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"/>
+                            <line x1="12" y1="16" x2="12" y2="12"/>
+                            <line x1="12" y1="8" x2="12.01" y2="8"/>
+                        </svg>
+                    </div>
+                    <h2 class="offer-placeholder-title">Offer Details</h2>
+                    <p class="offer-placeholder-text">This page would show and explain more about the offer.</p>
+                </div>
+            </div>
+
+            <!-- SCREEN: Discounts -->
+            <div class="screen" id="screen-discounts">
+                <div class="screen-header" style="padding: 10px 20px 0;">
+                    <span class="back-btn" onclick="navigateTo('screen-prizes')"><svg width="10" height="18" viewBox="0 0 10 18" fill="none"><path d="M9 1L1 9L9 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                    <span class="header-title">Rewards</span>
+                    <span></span>
+                </div>
+                <div class="discounts-content">
+                    <div class="points-display">
+                        <span class="points-number">1 540 OaKs</span>
+                    </div>
+
+                    <h1 class="screen-title">Discounts</h1>
+                    <p class="screen-subtitle">Save on Swedbank products and services</p>
+
+                    <div class="sb-perk-grid">
+                        <div class="achievement-card" onclick="redeemDiscount(this, event)">
+                            <span class="sb-perk-tag tone-butter">Card</span>
+                            <h4 class="achievement-title">Golden Credit Card</h4>
+                            <p class="achievement-text">Free annual fee on your premium credit card for 12 months</p>
+                            <div class="discount-cost">500 OaKs</div>
+                        </div>
+
+                        <div class="achievement-card" onclick="redeemDiscount(this, event)">
+                            <span class="sb-perk-tag tone-mint">Card</span>
+                            <h4 class="achievement-title">Free Card Delivery</h4>
+                            <p class="achievement-text">Skip the sending fee on your next debit or credit card</p>
+                            <div class="discount-cost">30 OaKs</div>
+                        </div>
+
+                        <div class="achievement-card" onclick="redeemDiscount(this, event)">
+                            <span class="sb-perk-tag tone-peach">Loan</span>
+                            <h4 class="achievement-title">Small Loan &ndash;50%</h4>
+                            <p class="achievement-text">Half off the registration cost on your next consumer loan</p>
+                            <div class="discount-cost">200 OaKs</div>
+                        </div>
+
+                        <div class="achievement-card" onclick="redeemDiscount(this, event)">
+                            <span class="sb-perk-tag tone-peach">Loan</span>
+                            <h4 class="achievement-title">Home Loan Waiver</h4>
+                            <p class="achievement-text">No appraisal fee on your next mortgage application</p>
+                            <div class="discount-cost">400 OaKs</div>
+                        </div>
+
+                        <div class="achievement-card" onclick="redeemDiscount(this, event)">
+                            <span class="sb-perk-tag tone-lilac">Invest</span>
+                            <h4 class="achievement-title">Investment Account</h4>
+                            <p class="achievement-text">3 months free management on a new investment account</p>
+                            <div class="discount-cost">150 OaKs</div>
+                        </div>
+
+                        <div class="achievement-card" onclick="redeemDiscount(this, event)">
+                            <span class="sb-perk-tag tone-sky">Savings</span>
+                            <h4 class="achievement-title">Savings Boost</h4>
+                            <p class="achievement-text">+0.25% bonus interest on your savings for 6 months</p>
+                            <div class="discount-cost">250 OaKs</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SCREEN: Partner Offers -->
+            <div class="screen" id="screen-partner-offers">
+                <div class="screen-header" style="padding: 10px 20px 0;">
+                    <span class="back-btn" onclick="navigateTo('screen-prizes')"><svg width="10" height="18" viewBox="0 0 10 18" fill="none"><path d="M9 1L1 9L9 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                    <span class="header-title">Rewards</span>
+                    <span></span>
+                </div>
+                <div class="discounts-content">
+                    <div class="points-display">
+                        <span class="points-number">1 540 OaKs</span>
+                    </div>
+                    <h1 class="screen-title">Partner Offers</h1>
+                    <p class="screen-subtitle">Redeem your OaKs for exclusive partner offers</p>
+
+                    <div class="discount-grid">
+                        <div class="discount-card" onclick="redeemDiscount(this, event)">
+                            <div class="discount-badge">-15%</div>
+                            <div class="discount-card-body">
+                                <h3 class="discount-merchant">Rimi</h3>
+                                <p class="discount-desc">15% off your next grocery purchase over 30 EUR</p>
+                                <div class="discount-cost">50 OaKs</div>
+                            </div>
+                        </div>
+
+                        <div class="discount-card" onclick="redeemDiscount(this, event)">
+                            <div class="discount-badge">-20%</div>
+                            <div class="discount-card-body">
+                                <h3 class="discount-merchant">Circle K</h3>
+                                <p class="discount-desc">20% off fuel on your next fill-up</p>
+                                <div class="discount-cost">80 OaKs</div>
+                            </div>
+                        </div>
+
+                        <div class="discount-card" onclick="redeemDiscount(this, event)">
+                            <div class="discount-badge">-25%</div>
+                            <div class="discount-card-body">
+                                <h3 class="discount-merchant">Wolt</h3>
+                                <p class="discount-desc">25% off your next 3 food delivery orders</p>
+                                <div class="discount-cost">120 OaKs</div>
+                            </div>
+                        </div>
+
+                        <div class="discount-card" onclick="redeemDiscount(this, event)">
+                            <div class="discount-badge">-30%</div>
+                            <div class="discount-card-body">
+                                <h3 class="discount-merchant">Bolt</h3>
+                                <p class="discount-desc">30% off 5 rides in the Bolt app</p>
+                                <div class="discount-cost">150 OaKs</div>
+                            </div>
+                        </div>
+
+                        <div class="discount-card" onclick="redeemDiscount(this, event)">
+                            <div class="discount-badge">-10%</div>
+                            <div class="discount-card-body">
+                                <h3 class="discount-merchant">Sportland</h3>
+                                <p class="discount-desc">10% off full-price items in store or online</p>
+                                <div class="discount-cost">40 OaKs</div>
+                            </div>
+                        </div>
+
+                        <div class="discount-card" onclick="redeemDiscount(this, event)">
+                            <div class="discount-badge">-50%</div>
+                            <div class="discount-card-body">
+                                <h3 class="discount-merchant">Apollo</h3>
+                                <p class="discount-desc">50% off one book or board game purchase</p>
+                                <div class="discount-cost">60 OaKs</div>
+                            </div>
+                        </div>
+
+                        <div class="discount-card" onclick="redeemDiscount(this, event)">
+                            <div class="discount-badge">-15%</div>
+                            <div class="discount-card-body">
+                                <h3 class="discount-merchant">Drogas</h3>
+                                <p class="discount-desc">15% off health &amp; beauty products</p>
+                                <div class="discount-cost">45 OaKs</div>
+                            </div>
+                        </div>
+
+                        <div class="discount-card" onclick="redeemDiscount(this, event)">
+                            <div class="discount-badge">FREE</div>
+                            <div class="discount-card-body">
+                                <h3 class="discount-merchant">Lido</h3>
+                                <p class="discount-desc">Free dessert with any main course</p>
+                                <div class="discount-cost">30 OaKs</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SCREEN: Experience -->
+            <div class="screen" id="screen-experience">
+                <div class="screen-header" style="padding: 10px 20px 0;">
+                    <span class="back-btn" onclick="navigateTo('screen-prizes')"><svg width="10" height="18" viewBox="0 0 10 18" fill="none"><path d="M9 1L1 9L9 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                    <span class="header-title">Rewards</span>
+                    <span></span>
+                </div>
+                <div class="discounts-content">
+                    <div class="points-display">
+                        <span class="points-number">1 540 OaKs</span>
+                    </div>
+                    <h1 class="screen-title">Experience</h1>
+                    <p class="screen-subtitle">Step inside Swedbank and shape what comes next</p>
+
+                    <div class="care-options">
+                        <div class="care-card" onclick="redeemDiscount(this, event)">
+                            <div class="care-icon-wrap tone-lilac">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#6E4E8E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M9 18h6"/>
+                                    <path d="M10 21h4"/>
+                                    <path d="M12 3a6 6 0 0 0-4 10.5c.7.7 1 1.5 1 2.5v1h6v-1c0-1 .3-1.8 1-2.5A6 6 0 0 0 12 3z"/>
+                                </svg>
+                            </div>
+                            <div class="care-body">
+                                <h3 class="care-title">Early access tester</h3>
+                                <p class="care-desc">Get notified first and try new Swedbank products and features before anyone else. Your feedback shapes what we build.</p>
+                                <div class="discount-cost">500 OaKs</div>
+                            </div>
+                        </div>
+
+                        <div class="care-card" onclick="redeemDiscount(this, event)">
+                            <div class="care-icon-wrap tone-butter">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#B08928" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/>
+                                    <circle cx="12" cy="13" r="4"/>
+                                </svg>
+                            </div>
+                            <div class="care-body">
+                                <h3 class="care-title">Face of the bank</h3>
+                                <p class="care-desc">Star in Swedbank video ads, blog features, and posters. Get recognition and a personal thank-you from our team.</p>
+                                <div class="discount-cost">4000 OaKs</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SCREEN: Care -->
+            <div class="screen" id="screen-care">
+                <div class="screen-header" style="padding: 10px 20px 0;">
+                    <span class="back-btn" onclick="navigateTo('screen-prizes')"><svg width="10" height="18" viewBox="0 0 10 18" fill="none"><path d="M9 1L1 9L9 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                    <span class="header-title">Rewards</span>
+                    <span></span>
+                </div>
+                <div class="discounts-content">
+                    <div class="points-display">
+                        <span class="points-number">1 540 OaKs</span>
+                    </div>
+                    <h1 class="screen-title">Care</h1>
+                    <p class="screen-subtitle">Turn your OaKs into real-world impact</p>
+
+                    <div class="care-options">
+                        <div class="care-card" onclick="redeemDiscount(this, event)">
+                            <div class="care-icon-wrap tone-mint">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#2E7D4F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M12 22V12"/>
+                                    <path d="M12 12c0-3 2-5 5-5 0 3-2 5-5 5z"/>
+                                    <path d="M12 12c0-3-2-5-5-5 0 3 2 5 5 5z"/>
+                                    <path d="M12 8c0-2.5 1.5-4 4-4 0 2.5-1.5 4-4 4z"/>
+                                    <path d="M12 8c0-2.5-1.5-4-4-4 0 2.5 1.5 4 4 4z"/>
+                                </svg>
+                            </div>
+                            <div class="care-body">
+                                <h3 class="care-title">Plant a tree</h3>
+                                <p class="care-desc">Swedbank will plant a tree on your behalf through our reforestation partners in the Baltics.</p>
+                                <div class="discount-cost">1000 OaKs</div>
+                            </div>
+                        </div>
+
+                        <div class="care-card" onclick="redeemDiscount(this, event)">
+                            <div class="care-icon-wrap tone-peach">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#C67262" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                                </svg>
+                            </div>
+                            <div class="care-body">
+                                <h3 class="care-title">Donate to charity</h3>
+                                <p class="care-desc">Swedbank will donate to a charity of your choice on your behalf.</p>
+                                <div class="discount-cost">1000 OaKs</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SCREEN: Status Upgrade -->
+            <div class="screen" id="screen-status">
+                <div class="screen-header" style="padding: 10px 20px 0;">
+                    <span class="back-btn" onclick="navigateTo('screen-prizes')"><svg width="10" height="18" viewBox="0 0 10 18" fill="none"><path d="M9 1L1 9L9 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                    <span class="header-title">Rewards</span>
+                    <span></span>
+                </div>
+                <div class="status-content">
+                    <div class="points-display">
+                        <span class="points-number">1 540 OaKs</span>
+                    </div>
+
+                    <h1 class="screen-title">Status Upgrade</h1>
+                    <p class="screen-subtitle">Use your OaKs to unlock a plan for free</p>
+
+                    <div class="plan-list">
+                        <div class="plan-card" onclick="navigateTo('screen-plan-details')">
+                            <div class="plan-info">
+                                <h3 class="plan-name">Basic plan 1 month</h3>
+                                <p class="plan-cost">100 OaKs</p>
+                            </div>
+                            <div class="plan-toggle" onclick="activatePlan(this.parentElement, event)"><div class="toggle"></div></div>
+                        </div>
+                        <div class="plan-card" onclick="navigateTo('screen-plan-details')">
+                            <div class="plan-info">
+                                <h3 class="plan-name">Basic plan 12 months</h3>
+                                <p class="plan-cost">1000 OaKs</p>
+                            </div>
+                            <div class="plan-toggle" onclick="activatePlan(this.parentElement, event)"><div class="toggle"></div></div>
+                        </div>
+                        <div class="plan-card" onclick="navigateTo('screen-plan-details')">
+                            <div class="plan-info">
+                                <h3 class="plan-name">Daily plan 1 month</h3>
+                                <p class="plan-cost">200 OaKs</p>
+                            </div>
+                            <div class="plan-toggle" onclick="activatePlan(this.parentElement, event)"><div class="toggle"></div></div>
+                        </div>
+                        <div class="plan-card" onclick="navigateTo('screen-plan-details')">
+                            <div class="plan-info">
+                                <h3 class="plan-name">Daily plan 12 months</h3>
+                                <p class="plan-cost">2000 OaKs</p>
+                            </div>
+                            <div class="plan-toggle" onclick="activatePlan(this.parentElement, event)"><div class="toggle"></div></div>
+                        </div>
+                        <div class="plan-card" onclick="navigateTo('screen-plan-details')">
+                            <div class="plan-info">
+                                <h3 class="plan-name">Active plan 1 month</h3>
+                                <p class="plan-cost">300 OaKs</p>
+                            </div>
+                            <div class="plan-toggle" onclick="activatePlan(this.parentElement, event)"><div class="toggle"></div></div>
+                        </div>
+                        <div class="plan-card" onclick="navigateTo('screen-plan-details')">
+                            <div class="plan-info">
+                                <h3 class="plan-name">Active plan 12 months</h3>
+                                <p class="plan-cost">3000 OaKs</p>
+                            </div>
+                            <div class="plan-toggle" onclick="activatePlan(this.parentElement, event)"><div class="toggle"></div></div>
+                        </div>
+                    </div>
+
+                    <div class="vip-spacer"></div>
+
+                    <div class="vip-section">
+                        <h3 class="vip-title">Exclusive Reward</h3>
+                        <p class="vip-desc">Experience Swedbank Private Banking for a week. Get a dedicated personal banker, priority customer service, personalised financial advice, and access to exclusive investment opportunities &mdash; the same premium service trusted by our most valued clients for over 26 years.</p>
+                        <div class="plan-card vip-card" onclick="event.stopPropagation()">
+                            <div class="plan-info">
+                                <h3 class="plan-name">Become a VIP customer for a week</h3>
+                                <p class="plan-cost">1000 OaKs</p>
+                            </div>
+                            <div class="plan-toggle" onclick="activateVip(this.closest('.vip-card'), event)"><div class="toggle"></div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SCREEN: Plan Details -->
+            <div class="screen" id="screen-plan-details">
+                <div class="screen-header" style="padding: 10px 20px 0;">
+                    <span class="back-btn" onclick="navigateTo('screen-status')"><svg width="10" height="18" viewBox="0 0 10 18" fill="none"><path d="M9 1L1 9L9 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                    <span class="header-title">Status Upgrade</span>
+                    <span></span>
+                </div>
+                <div class="plan-details-content">
+
+                    <h1 class="screen-title">Service Plans</h1>
+                    <p class="screen-subtitle">Card, payments, accounts and insurance &mdash; one plan, one monthly fee</p>
+
+                    <!-- Comparison Cards -->
+                    <div class="plan-comparison">
+                        <!-- Basic -->
+                        <div class="plan-col">
+                            <div class="plan-col-header plan-col-basic">
+                                <h2>Basic</h2>
+                                <div class="plan-col-price">
+                                    <span class="plan-price-amount">1.70</span>
+                                    <span class="plan-price-unit">EUR/month</span>
+                                </div>
+                                <p class="plan-col-youth">Free for youth under 26</p>
+                            </div>
+                            <div class="plan-col-body">
+                                <div class="plan-feature-group">
+                                    <h4>Card</h4>
+                                    <div class="plan-feature"><span class="pf-check">&#10003;</span> Debit card included</div>
+                                </div>
+                                <div class="plan-feature-group">
+                                    <h4>Payments</h4>
+                                    <div class="plan-feature"><span class="pf-check">&#10003;</span> 10 free payments via app &amp; online bank</div>
+                                    <div class="plan-feature muted"><span class="pf-x">&#10005;</span> Unlimited domestic &amp; EU payments</div>
+                                </div>
+                                <div class="plan-feature-group">
+                                    <h4>Insurance</h4>
+                                    <div class="plan-feature muted"><span class="pf-x">&#10005;</span> Purchase protection</div>
+                                    <div class="plan-feature muted"><span class="pf-x">&#10005;</span> Event ticket insurance</div>
+                                    <div class="plan-feature muted"><span class="pf-x">&#10005;</span> Online shopping protection</div>
+                                    <div class="plan-feature muted"><span class="pf-x">&#10005;</span> Travel insurance</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Everyday -->
+                        <div class="plan-col plan-col-popular">
+                            <div class="plan-popular-badge">Most popular</div>
+                            <div class="plan-col-header plan-col-everyday">
+                                <h2>Everyday</h2>
+                                <div class="plan-col-price">
+                                    <span class="plan-price-amount">3.50</span>
+                                    <span class="plan-price-unit">EUR/month</span>
+                                </div>
+                                <p class="plan-col-youth">2.00 EUR for youth under 26</p>
+                            </div>
+                            <div class="plan-col-body">
+                                <div class="plan-feature-group">
+                                    <h4>Card</h4>
+                                    <div class="plan-feature"><span class="pf-check">&#10003;</span> Debit card included</div>
+                                </div>
+                                <div class="plan-feature-group">
+                                    <h4>Payments</h4>
+                                    <div class="plan-feature"><span class="pf-check">&#10003;</span> 10 free payments via app &amp; online bank</div>
+                                    <div class="plan-feature"><span class="pf-check">&#10003;</span> Unlimited domestic &amp; EU payments</div>
+                                </div>
+                                <div class="plan-feature-group">
+                                    <h4>Insurance</h4>
+                                    <div class="plan-feature"><span class="pf-check">&#10003;</span> Purchase protection</div>
+                                    <div class="plan-feature"><span class="pf-check">&#10003;</span> Event ticket insurance</div>
+                                    <div class="plan-feature"><span class="pf-check">&#10003;</span> Online shopping protection</div>
+                                    <div class="plan-feature muted"><span class="pf-x">&#10005;</span> Travel insurance</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Active -->
+                        <div class="plan-col">
+                            <div class="plan-col-header plan-col-active">
+                                <h2>Active</h2>
+                                <div class="plan-col-price">
+                                    <span class="plan-price-amount">5.50</span>
+                                    <span class="plan-price-unit">EUR/month</span>
+                                </div>
+                                <p class="plan-col-youth">4.00 EUR for youth under 26</p>
+                            </div>
+                            <div class="plan-col-body">
+                                <div class="plan-feature-group">
+                                    <h4>Card</h4>
+                                    <div class="plan-feature"><span class="pf-check">&#10003;</span> Debit card included</div>
+                                </div>
+                                <div class="plan-feature-group">
+                                    <h4>Payments</h4>
+                                    <div class="plan-feature"><span class="pf-check">&#10003;</span> 10 free payments via app &amp; online bank</div>
+                                    <div class="plan-feature"><span class="pf-check">&#10003;</span> Unlimited domestic &amp; EU payments</div>
+                                </div>
+                                <div class="plan-feature-group">
+                                    <h4>Insurance</h4>
+                                    <div class="plan-feature"><span class="pf-check">&#10003;</span> Purchase protection</div>
+                                    <div class="plan-feature"><span class="pf-check">&#10003;</span> Event ticket insurance</div>
+                                    <div class="plan-feature"><span class="pf-check">&#10003;</span> Online shopping protection</div>
+                                    <div class="plan-feature"><span class="pf-check">&#10003;</span> Travel insurance</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SCREEN: Introduction -->
+            <div class="screen active" id="screen-intro">
+                <div class="intro-content">
+                    <div class="intro-illustration">
+                        <img src="assets/introLogo.png" alt="OaKs Loyalty" class="intro-logo">
+                    </div>
+                    <h1 class="intro-title">Introducing our new loyalty program - OaKs</h1>
+                    <p class="intro-text">Would you like to get more value from the way you use our banking services?</p>
+                    <p class="intro-text">With our new OaKs rewards program, you can earn OaKs coins for your everyday banking activities &mdash; such as making payments on time or using our products and services. You can then spend your OaKs coins on extra benefits, discounts, and gift cards.</p>
+                </div>
+                <div class="intro-buttons">
+                    <button class="btn-primary" onclick="dismissIntro()">Start Using</button>
+                    <button class="btn-secondary" onclick="navigateTo('screen-info')">Read More</button>
+                </div>
+            </div>
+
+            <!-- SCREEN: Overview -->
+            <div class="screen" id="screen-overview">
+                <div class="overview-header">
+                    <div class="oaks-badge" onclick="dismissTooltip(); navigateTo('screen-loyalty1')">
+                        <img src="assets/OaksLogo.png" alt="OaKs" class="oaks-logo-img">
+                        <span class="oaks-count">1540</span>
+                    </div>
+                    <div class="header-right">
+                        <div class="avatar">YOU</div>
+                    </div>
+                </div>
+                <h2 class="overview-title">Overview</h2>
+                <div class="accounts-list">
+                    <div class="account-row">
+                        <span class="account-iban">LV01HABA012345678910</span>
+                        <span class="account-balance">1000 EUR</span>
+                    </div>
+                    <div class="account-row">
+                        <span class="account-iban">LV02HABA012345678911</span>
+                        <span class="account-balance">500 EUR</span>
+                    </div>
+                    <div class="account-row">
+                        <span class="account-iban">LV03HABA012345678913</span>
+                        <span class="account-balance">20 EUR</span>
+                    </div>
+                    <div class="account-row account-name">
+                        <span class="account-iban">Rainy Day Fund</span>
+                        <span></span>
+                    </div>
+                </div>
+                <div class="expenses-section">
+                    <div class="expenses-header">
+                        <span class="expenses-label">Expenses</span>
+                        <span class="detailed-view">Detailed view</span>
+                    </div>
+                    <div class="expenses-row">
+                        <div>
+                            <div class="expenses-sublabel">This month &nbsp;&nbsp;&nbsp; Spent on</div>
+                            <div class="expenses-amount">1 000 EUR</div>
+                        </div>
+                        <div class="expense-categories">
+                            <div class="expense-cat" style="background: #EEC241; width: 38%"><span>38%</span></div>
+                            <div class="expense-cat" style="background: #6E5856; width: 28%"><span>28%</span></div>
+                            <div class="expense-cat" style="background: #EB9D9A; width: 21%"><span>21%</span></div>
+                            <div class="expense-cat" style="background: #E35E24; width: 13%"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="promo-card">
+                    <h3 class="promo-title">New! Daily Plan</h3>
+                    <p class="promo-text">All for daily needs for a single monthly fee &ndash; insurance for purchases, tickets, shipments + debit card, current accounts and payments.</p>
+                    <div class="promo-buttons">
+                        <button class="btn-text-muted">Not interested</button>
+                        <button class="btn-small-primary">Learn more</button>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- SCREEN: Loyalty Section 1/2 -->
+            <div class="screen" id="screen-loyalty1">
+                <div class="screen-header">
+                    <span class="back-btn" onclick="navigateTo('screen-overview')"><svg width="10" height="18" viewBox="0 0 10 18" fill="none"><path d="M9 1L1 9L9 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                    <span class="header-title">Loyalty Program</span>
+                    <span></span>
+                </div>
+                <div class="loyalty-content">
+                    <div class="points-display">
+                        <span class="points-number">1 540 OaKs</span>
+                    </div>
+                    <div class="points-links">
+                        <a class="link-teal" onclick="showIntroPopup()">Find out more</a>
+                        <span class="link-separator"> / </span>
+                        <a class="link-teal" onclick="navigateTo('screen-prizes')">Rewards</a>
+                    </div>
+
+                    <div class="level-section">
+                        <div class="level-header">
+                            <span class="level-label">Your level:</span>
+                            <span class="level-name">Bronze</span>
+                        </div>
+                        <div class="level-bar">
+                            <div class="level-fill level-fill-gold" style="width: 40%"></div>
+                            <div class="level-fill level-fill-silver" style="width: 40%"></div>
+                            <div class="level-fill level-fill-bronze" style="width: 40%"></div>
+                            <div class="level-fill level-fill-base" style="width: 25%"></div>
+                            <div class="level-divider" style="left: 25%"></div>
+                            <div class="level-divider" style="left: 50%"></div>
+                            <div class="level-divider" style="left: 75%"></div>
+                            <div class="level-bar-labels">
+                                <span>Base</span>
+                                <span class="active">Bronze</span>
+                                <span>Silver</span>
+                                <span>Gold</span>
+                            </div>
+                        </div>
+                        <div class="level-thresholds">
+                            <span></span>
+                            <span>1000+</span>
+                            <span>2000+</span>
+                            <span>4000+</span>
+                        </div>
+                    </div>
+
+                    <p class="rank-text" id="rank-text">You are 101st in your age group</p>
+
+                    <div class="leaderboard">
+                        <div class="leaderboard-row" id="leader-jack">
+                            <span class="rank" id="jack-rank">1</span>
+                            <span class="leader-name">Jack</span>
+                            <span class="leader-points">4900 OaKs</span>
+                        </div>
+                        <div class="leaderboard-row" id="leader-jill">
+                            <span class="rank" id="jill-rank">2</span>
+                            <span class="leader-name">Jill</span>
+                            <span class="leader-points">4600 OaKs</span>
+                        </div>
+                        <div class="leaderboard-row you" id="leader-you">
+                            <span class="rank your-rank" id="your-rank">101</span>
+                            <span class="leader-name">You</span>
+                            <span class="leader-points">1540 OaKs</span>
+                        </div>
+                    </div>
+
+                    <div class="achievement-cards">
+                        <div class="achievement-card">
+                            <span class="sb-perk-tag tone-peach">Savings</span>
+                            <h4 class="achievement-title">Your savings reached 500 EUR</h4>
+                            <p class="achievement-text">Keep going! Reaching 1000 EUR will earn you 20 more OaKs</p>
+                            <a class="link-teal-sm" onclick="navigateTo('screen-offer')">Find out more</a>
+                        </div>
+                        <div class="achievement-card">
+                            <span class="sb-perk-tag tone-mint">Streak</span>
+                            <h4 class="achievement-title">10 days login streak!</h4>
+                            <p class="achievement-text">Nice! Try to reach 30 days streak to get 10 more OaKs.</p>
+                            <a class="link-teal-sm" onclick="navigateTo('screen-offer')">Find out more</a>
+                        </div>
+                        <div class="achievement-card">
+                            <span class="sb-perk-tag tone-lilac">Invest</span>
+                            <h4 class="achievement-title">First investment unlocked</h4>
+                            <p class="achievement-text">Great start! Add a regular payment to earn 25 more OaKs.</p>
+                            <a class="link-teal-sm" onclick="navigateTo('screen-offer')">Find out more</a>
+                        </div>
+                        <div class="achievement-card">
+                            <span class="sb-perk-tag tone-butter">Insure</span>
+                            <h4 class="achievement-title">Home insurance active</h4>
+                            <p class="achievement-text">Earn 10 OaKs every month just by staying protected.</p>
+                            <a class="link-teal-sm" onclick="navigateTo('screen-offer')">Find out more</a>
+                        </div>
+                    </div>
+
+                    <h3 class="how-to-title">How to get more points?</h3>
+                    <div class="category-pills-full">
+                        <span class="pill disabled">Daily</span>
+                        <span class="pill disabled">Savings</span>
+                        <span class="pill" onclick="navigateTo('screen-investment')">Investments</span>
+                        <span class="pill" onclick="navigateTo('screen-insurance')">Insurance</span>
+                        <span class="pill disabled">Financing</span>
+                    </div>
+
+                    <div class="transaction-section">
+                        <div class="transaction-header">
+                            <h3 class="transaction-title">Transaction History</h3>
+                            <span class="view-all" onclick="navigateTo('screen-transactions')">View All</span>
+                        </div>
+                        <div class="transaction-list" id="recent-transactions">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SCREEN: Transaction History -->
+            <div class="screen" id="screen-transactions">
+                <div class="screen-header">
+                    <span class="back-btn" onclick="navigateTo('screen-loyalty1')"><svg width="10" height="18" viewBox="0 0 10 18" fill="none"><path d="M9 1L1 9L9 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                    <span class="header-title">Transaction History</span>
+                    <span></span>
+                </div>
+                <div class="loyalty-content">
+                    <div class="transaction-list" id="all-transactions">
+                    </div>
+                </div>
+            </div>
+
+            <!-- SCREEN: Prize View (Rewards) -->
+            <div class="screen" id="screen-prizes">
+                <div class="screen-header">
+                    <span class="back-btn" onclick="navigateTo('screen-loyalty1')"><svg width="10" height="18" viewBox="0 0 10 18" fill="none"><path d="M9 1L1 9L9 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                    <span class="header-title">Rewards</span>
+                    <span></span>
+                </div>
+                <div class="loyalty-content">
+                    <div class="points-display">
+                        <span class="points-number">1 540 OaKs</span>
+                    </div>
+
+                    <h1 class="screen-title">Rewards</h1>
+                    <p class="screen-subtitle">Redeem your OaKs across six reward categories</p>
+
+                    <div class="reward-categories">
+                        <div class="reward-cat-card" onclick="navigateTo('screen-discounts')">
+                            <div class="reward-cat-icon tone-butter"><img src="assets/iconsDiscounts.png" class="reward-cat-img"></div>
+                            <span class="reward-cat-label">Discounts</span>
+                        </div>
+                        <div class="reward-cat-card" onclick="navigateTo('screen-status')">
+                            <div class="reward-cat-icon tone-mint"><img src="assets/iconsStatusupgrade.png" class="reward-cat-img"></div>
+                            <span class="reward-cat-label">Status upgrade</span>
+                        </div>
+                        <div class="reward-cat-card" onclick="navigateTo('screen-experience')">
+                            <div class="reward-cat-icon tone-peach"><img src="assets/iconsEvents.png" class="reward-cat-img"></div>
+                            <span class="reward-cat-label">Experience</span>
+                        </div>
+                        <div class="reward-cat-card" onclick="navigateTo('screen-partner-offers')">
+                            <div class="reward-cat-icon tone-sky"><img src="assets/iconsGiftCards.png" class="reward-cat-img"></div>
+                            <span class="reward-cat-label">Partner offers</span>
+                        </div>
+                        <div class="reward-cat-card" onclick="navigateTo('screen-care')">
+                            <div class="reward-cat-icon tone-rose"><img src="assets/iconsDonations.png" class="reward-cat-img"></div>
+                            <span class="reward-cat-label">Care</span>
+                        </div>
+                        <div class="reward-cat-card">
+                            <div class="reward-cat-icon tone-lilac"><img src="assets/iconsMystery.png" class="reward-cat-img"></div>
+                            <span class="reward-cat-label">Mystery box</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- SCREEN: Insurance Path -->
+            <div class="screen" id="screen-insurance">
+                <div class="screen-header">
+                    <span class="back-btn" onclick="navigateTo('screen-loyalty1')"><svg width="10" height="18" viewBox="0 0 10 18" fill="none"><path d="M9 1L1 9L9 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <div class="path-content">
+                    <h1 class="path-title">Insurance Path</h1>
+                    <div class="path-progress-section">
+                        <div class="path-progress-group">
+                            <p class="path-progress-label"><span class="path-regular-earned">0</span> / <span class="path-regular-total">0</span> Regular Unlocked</p>
+                            <div class="path-progress-bar">
+                                <div class="path-progress-fill path-regular-fill" style="width: 0%"></div>
+                            </div>
+                        </div>
+                        <div class="path-progress-group">
+                            <p class="path-progress-label"><span class="path-monthly-earned">0</span> / <span class="path-monthly-total">0</span> Monthly Unlocked</p>
+                            <div class="path-progress-bar">
+                                <div class="path-progress-fill path-monthly-fill" style="width: 0%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="path-items">
+                        <div class="path-item completed">
+                            <div class="path-item-info">
+                                <span class="path-item-name">Applied for Home Insurance</span>
+                                <span class="path-item-points">200 OaKs</span>
+                            </div>
+                            <span class="path-check done">&#10003;</span>
+                        </div>
+                        <div class="path-item completed">
+                            <div class="path-item-info">
+                                <span class="path-item-name">Home Insurance payment on time</span>
+                                <span class="path-item-points">10 OaKs/Month</span>
+                            </div>
+                            <span class="path-check done">&#10003;</span>
+                        </div>
+                        <div class="path-item completed">
+                            <div class="path-item-info">
+                                <span class="path-item-name">Applied for MTPL</span>
+                                <span class="path-item-points">200 OaKs</span>
+                            </div>
+                            <span class="path-check done">&#10003;</span>
+                        </div>
+                        <div class="path-item">
+                            <div class="path-item-info">
+                                <span class="path-item-name">MTPL payment on time</span>
+                                <span class="path-item-points">10 OaKs/Month</span>
+                            </div>
+                            <span class="path-check">&#10005;</span>
+                        </div>
+                        <div class="path-item completed">
+                            <div class="path-item-info">
+                                <span class="path-item-name">Applied for Casco</span>
+                                <span class="path-item-points">500 OaKs</span>
+                            </div>
+                            <span class="path-check done">&#10003;</span>
+                        </div>
+                        <div class="path-item completed">
+                            <div class="path-item-info">
+                                <span class="path-item-name">Casco payment on time</span>
+                                <span class="path-item-points">10 OaKs/Month</span>
+                            </div>
+                            <span class="path-check done">&#10003;</span>
+                        </div>
+                        <div class="path-item">
+                            <div class="path-item-info">
+                                <span class="path-item-name">Applied for Life Insurance</span>
+                                <span class="path-item-points">500 OaKs</span>
+                            </div>
+                            <span class="path-check">&#10005;</span>
+                        </div>
+                        <div class="path-item">
+                            <div class="path-item-info">
+                                <span class="path-item-name">Life Insurance payment on time</span>
+                                <span class="path-item-points">10 OaKs/Month</span>
+                            </div>
+                            <span class="path-check">&#10005;</span>
+                        </div>
+                        <div class="path-item">
+                            <div class="path-item-info">
+                                <span class="path-item-name">Applied for Credit Card Liability</span>
+                                <span class="path-item-points">200 OaKs</span>
+                            </div>
+                            <span class="path-check">&#10005;</span>
+                        </div>
+                        <div class="path-item">
+                            <div class="path-item-info">
+                                <span class="path-item-name">Credit Card Liability on time</span>
+                                <span class="path-item-points">10 OaKs/Month</span>
+                            </div>
+                            <span class="path-check">&#10005;</span>
+                        </div>
+                        <div class="path-item">
+                            <div class="path-item-info">
+                                <span class="path-item-name">Applied for LPPI</span>
+                                <span class="path-item-points">200 OaKs</span>
+                            </div>
+                            <span class="path-check">&#10005;</span>
+                        </div>
+                        <div class="path-item">
+                            <div class="path-item-info">
+                                <span class="path-item-name">Applied for Travel insurance</span>
+                                <span class="path-item-points">200 OaKs</span>
+                            </div>
+                            <span class="path-check">&#10005;</span>
+                        </div>
+                        <div class="path-item">
+                            <div class="path-item-info">
+                                <span class="path-item-name">Travel insurance payment on time</span>
+                                <span class="path-item-points">10 OaKs/Month</span>
+                            </div>
+                            <span class="path-check">&#10005;</span>
+                        </div>
+                        <div class="path-item completed">
+                            <div class="path-item-info">
+                                <span class="path-item-name">No claims this month</span>
+                                <span class="path-item-points">10 OaKs/Month</span>
+                            </div>
+                            <span class="path-check done">&#10003;</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SCREEN: Investment Path -->
+            <div class="screen" id="screen-investment">
+                <div class="screen-header">
+                    <span class="back-btn" onclick="navigateTo('screen-loyalty1')"><svg width="10" height="18" viewBox="0 0 10 18" fill="none"><path d="M9 1L1 9L9 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <div class="path-content">
+                    <h1 class="path-title">Investment Path</h1>
+                    <div class="path-progress-section">
+                        <div class="path-progress-group">
+                            <p class="path-progress-label"><span class="path-regular-earned">0</span> / <span class="path-regular-total">0</span> Regular Unlocked</p>
+                            <div class="path-progress-bar">
+                                <div class="path-progress-fill path-regular-fill" style="width: 0%"></div>
+                            </div>
+                        </div>
+                        <div class="path-progress-group">
+                            <p class="path-progress-label"><span class="path-monthly-earned">0</span> / <span class="path-monthly-total">0</span> Monthly Unlocked</p>
+                            <div class="path-progress-bar">
+                                <div class="path-progress-fill path-monthly-fill" style="width: 0%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="path-items">
+                        <div class="path-item">
+                            <div class="path-item-info">
+                                <span class="path-item-name">Activated term deposit</span>
+                                <span class="path-item-points">100 OaKs</span>
+                            </div>
+                            <span class="path-check">&#10005;</span>
+                        </div>
+                        <div class="path-item completed">
+                            <div class="path-item-info">
+                                <span class="path-item-name">Activated Easy Saver</span>
+                                <span class="path-item-points">100 OaKs</span>
+                            </div>
+                            <span class="path-check done">&#10003;</span>
+                        </div>
+                        <div class="path-item completed">
+                            <div class="path-item-info">
+                                <span class="path-item-name">Activated Round-up</span>
+                                <span class="path-item-points">50 OaKs</span>
+                            </div>
+                            <span class="path-check done">&#10003;</span>
+                        </div>
+                        <div class="path-item">
+                            <div class="path-item-info">
+                                <span class="path-item-name">Added Regular payment</span>
+                                <span class="path-item-points">25 OaKs</span>
+                            </div>
+                            <span class="path-check">&#10005;</span>
+                        </div>
+                        <div class="path-item completed">
+                            <div class="path-item-info">
+                                <span class="path-item-name">Reached goal</span>
+                                <span class="path-item-points">10 OaKs</span>
+                            </div>
+                            <span class="path-check done">&#10003;</span>
+                        </div>
+                        <div class="path-item completed">
+                            <div class="path-item-info">
+                                <span class="path-item-name">Reached 500 EUR</span>
+                                <span class="path-item-points">10 OaKs</span>
+                            </div>
+                            <span class="path-check done">&#10003;</span>
+                        </div>
+                        <div class="path-item completed">
+                            <div class="path-item-info">
+                                <span class="path-item-name">Reached 1000 EUR</span>
+                                <span class="path-item-points">20 OaKs</span>
+                            </div>
+                            <span class="path-check done">&#10003;</span>
+                        </div>
+                        <div class="path-item">
+                            <div class="path-item-info">
+                                <span class="path-item-name">Reached 5000 EUR</span>
+                                <span class="path-item-points">50 OaKs</span>
+                            </div>
+                            <span class="path-check">&#10005;</span>
+                        </div>
+                        <div class="path-item completed">
+                            <div class="path-item-info">
+                                <span class="path-item-name">Opened Investment account</span>
+                                <span class="path-item-points">100 OaKs</span>
+                            </div>
+                            <span class="path-check done">&#10003;</span>
+                        </div>
+                        <div class="path-item">
+                            <div class="path-item-info">
+                                <span class="path-item-name">Activated Micro investments</span>
+                                <span class="path-item-points">200 OaKs</span>
+                            </div>
+                            <span class="path-check">&#10005;</span>
+                        </div>
+                        <div class="path-item">
+                            <div class="path-item-info">
+                                <span class="path-item-name">Invested in Stocks</span>
+                                <span class="path-item-points">200 OaKs</span>
+                            </div>
+                            <span class="path-check">&#10005;</span>
+                        </div>
+                        <div class="path-item">
+                            <div class="path-item-info">
+                                <span class="path-item-name">Invested in Bonds</span>
+                                <span class="path-item-points">200 OaKs</span>
+                            </div>
+                            <span class="path-check">&#10005;</span>
+                        </div>
+                        <div class="path-item">
+                            <div class="path-item-info">
+                                <span class="path-item-name">Invested in ETFs</span>
+                                <span class="path-item-points">200 OaKs</span>
+                            </div>
+                            <span class="path-check">&#10005;</span>
+                        </div>
+                        <div class="path-item completed">
+                            <div class="path-item-info">
+                                <span class="path-item-name">Invested in Funds</span>
+                                <span class="path-item-points">200 OaKs</span>
+                            </div>
+                            <span class="path-check done">&#10003;</span>
+                        </div>
+                        <div class="path-item">
+                            <div class="path-item-info">
+                                <span class="path-item-name">Added regular investment payment</span>
+                                <span class="path-item-points">100 OaKs</span>
+                            </div>
+                            <span class="path-check">&#10005;</span>
+                        </div>
+                        <div class="path-item completed">
+                            <div class="path-item-info">
+                                <span class="path-item-name">Successful regular investment</span>
+                                <span class="path-item-points">20 OaKs/Month</span>
+                            </div>
+                            <span class="path-check done">&#10003;</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Bottom Tab Bar -->
+        <div class="tab-bar" id="tab-bar">
+            <div class="tab active" onclick="navigateTo('screen-overview')">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+                <span>Overview</span>
+            </div>
+            <div class="tab">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M6.99 11L3 15l3.99 4v-3H14v-2H6.99v-3zM21 9l-3.99-4v3H10v2h7.01v3L21 9z"/></svg>
+                <span>Transfers</span>
+            </div>
+            <div class="tab">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.11 0-1.99.89-1.99 2L2 18c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V6c0-1.11-.89-2-2-2zm0 14H4v-6h16v6zm0-10H4V6h16v2z"/></svg>
+                <span>Cards</span>
+            </div>
+            <div class="tab">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M4 8h4V4H4v4zm6 12h4v-4h-4v4zm-6 0h4v-4H4v4zm0-6h4v-4H4v4zm6 0h4v-4h-4v4zm6-10v4h4V4h-4zm-6 4h4V4h-4v4zm6 6h4v-4h-4v4zm0 6h4v-4h-4v4z"/></svg>
+                <span>Services</span>
+            </div>
+            <div class="tab">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M20 0H4v2h16V0zM4 24h16v-2H4v2zM20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm-8 2.75c1.24 0 2.25 1.01 2.25 2.25s-1.01 2.25-2.25 2.25S9.75 10.24 9.75 9s1.01-2.25 2.25-2.25zM17 17H7v-1.5c0-1.67 3.33-2.5 5-2.5s5 .83 5 2.5V17z"/></svg>
+                <span>Contacts</span>
+            </div>
+        </div>
+
+        <!-- Tooltip Overlay (covers entire phone frame) -->
+        <div class="tooltip-overlay" id="tooltip-overlay" onclick="dismissTooltip()">
+            <div class="tooltip-arrow"></div>
+            <h1 class="tooltip-text">You can view your current OaKs here</h1>
+            <p class="tooltip-dismiss">Tap anywhere to dismiss</p>
+        </div>
+    </div>
+
+    <!-- OaK Helper Panel -->
+    <div class="debug-panel">
+        <h3>OaK Helper</h3>
+        <div class="debug-value">
+            <span id="debug-oaks">1540</span> OaKs
+        </div>
+        <div class="debug-level">
+            Level: <span id="debug-level">Bronze</span>
+        </div>
+        <div class="debug-buttons">
+            <button onclick="updateOaks(100, 'Bonus: +100 OaKs')">+100</button>
+            <button onclick="updateOaks(-100, 'Adjustment: -100 OaKs')">&minus;100</button>
+            <button onclick="updateOaks(500, 'Bonus: +500 OaKs')">+500</button>
+            <button onclick="updateOaks(-500, 'Adjustment: -500 OaKs')">&minus;500</button>
+            <button onclick="updateOaks(1000, 'Bonus: +1000 OaKs')">+1000</button>
+            <button onclick="updateOaks(-1000, 'Adjustment: -1000 OaKs')">&minus;1000</button>
+        </div>
+        <div class="debug-path-buttons">
+            <button id="debug-complete-path" class="debug-path-btn" onclick="completeRandomPathItem()" disabled>Complete random path item</button>
+            <button id="debug-uncomplete-path" class="debug-path-btn" onclick="uncompleteRandomPathItem()" disabled>Remove random path item</button>
+        </div>
+        <button class="debug-reset" onclick="resetOaks()">Reset to 1540</button>
+    </div>
+
+    <script src="app.js?v=7"></script>
+</body>
+</html>
