@@ -448,6 +448,33 @@
                 -7px -7px 0 -4px #FFD044;
         }
 
+        /* Loyalty - OaKs coin */
+        .px-loyalty {
+            background: #FB4F00;
+            border: 3px outset #FB7538;
+            border-radius: 2px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .px-loyalty::before {
+            content: '';
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #FFD044;
+            border: 2px solid #CC9900;
+        }
+        .px-loyalty::after {
+            content: 'O';
+            position: absolute;
+            font-family: 'Courier New', monospace;
+            font-weight: 900;
+            font-size: 14px;
+            color: #8B3A00;
+            line-height: 1;
+        }
+
         /* Social - Globe */
         .px-social {
             background: #000080;
@@ -680,6 +707,10 @@
                 <div class="icon-img"><div class="disk-icon" style="background:#FFD044;"></div></div>
                 <div class="icon-label">Rise</div>
             </div>
+            <div class="desktop-icon" onclick="location.href='/loyalty/'" >
+                <div class="icon-img"><div class="disk-icon" style="background:#FB4F00;"></div></div>
+                <div class="icon-label">Loyalty</div>
+            </div>
         </div>
 
         <!-- ═══ MAIN WORKBENCH WINDOW ═══ -->
@@ -703,6 +734,10 @@
                     <div class="win-icon" onclick="toggleWindow('win-rise')">
                         <div class="icon-gfx"><div class="px-icon px-rise"></div></div>
                         <div class="icon-name">Rise</div>
+                    </div>
+                    <div class="win-icon" onclick="location.href='/loyalty/'">
+                        <div class="icon-gfx"><div class="px-icon px-loyalty"></div></div>
+                        <div class="icon-name">Loyalty</div>
                     </div>
                     <div class="win-icon" onclick="toggleWindow('win-social')">
                         <div class="icon-gfx"><div class="px-icon px-social"></div></div>
