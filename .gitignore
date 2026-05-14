@@ -1,0 +1,11 @@
+# OS junk
+.DS_Store
+Thumbs.db
+
+# Editor / tooling
+.obsidian/
+.vscode/
+.idea/
+
+# Claude local settings (Emil only)
+.claude/settings.local.json
