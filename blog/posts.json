@@ -1,0 +1,14 @@
+{
+  "generated": "2026-05-14",
+  "posts": [
+    {
+      "slug": "hello",
+      "title": "Hello",
+      "date": "2026-05-14",
+      "pillar": "life",
+      "readingTime": "1 min",
+      "excerpt": "A short hello. Indie iOS developer, day-job banker, dad. Two apps shipped (Remi and Rise), plus the assorted other things I dabble in.",
+      "url": "/blog/hello/"
+    }
+  ]
+}
