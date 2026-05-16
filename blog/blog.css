@@ -45,6 +45,19 @@ a:hover {
 
 ::selection { background: var(--wb-navy); color: var(--wb-white); }
 
+/* Visually-hidden but available to screen readers + search engines */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 /* ── Header ────────────────────────────────────────────────── */
 .blog-header {
   border-bottom: 3px solid var(--wb-black);
@@ -276,18 +289,6 @@ article img {
 }
 
 /* ── Listing page ──────────────────────────────────────────── */
-.blog-intro { margin: 0 0 36px; max-width: 680px; }
-.blog-intro h1 {
-  font-family: 'Courier New', 'Lucida Console', monospace;
-  font-size: 28px;
-  margin: 0 0 8px;
-  letter-spacing: -0.5px;
-}
-.blog-intro p {
-  font-size: 17px;
-  color: var(--wb-gray);
-  margin: 0;
-}
 .post-list { list-style: none; padding: 0; margin: 0; max-width: 680px; }
 .post-list-item {
   padding: 22px 0;
