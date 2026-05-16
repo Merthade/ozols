@@ -1,0 +1,14 @@
+{
+  "generated": "2026-05-16",
+  "posts": [
+    {
+      "slug": "hello-world",
+      "title": "Hello world",
+      "date": "2026-05-16",
+      "pillar": "life",
+      "readingTime": "2 min",
+      "excerpt": "Why I'm starting an indie dev blog. 2 apps, 344 downloads, $2 earned, $2k spent, and not stopping.",
+      "url": "/blog/hello-world/"
+    }
+  ]
+}

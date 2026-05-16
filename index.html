@@ -475,6 +475,37 @@
             line-height: 1;
         }
 
+        /* Blog - Page with navy header strip and text lines */
+        .px-blog {
+            background: var(--wb-white);
+            border: 3px outset #DDDDDD;
+            border-radius: 2px;
+            position: relative;
+            overflow: hidden;
+        }
+        .px-blog::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 8px;
+            background: #000080;
+        }
+        .px-blog::after {
+            content: '';
+            position: absolute;
+            top: 14px;
+            left: 7px;
+            width: 26px;
+            height: 2px;
+            background: #404040;
+            box-shadow:
+                0 5px 0 #404040,
+                0 10px 0 #404040,
+                0 15px 0 #404040;
+        }
+
         /* Social - Globe */
         .px-social {
             background: #000080;
@@ -626,6 +657,71 @@
             font-size: 16px;
         }
 
+        /* ── BLOG WINDOW ── */
+        .blog-window-header {
+            padding: 0 0 12px;
+            border-bottom: 2px solid var(--wb-black);
+            margin-bottom: 12px;
+        }
+        .blog-window-tagline {
+            font-style: italic;
+            color: #404040;
+            margin: 0 0 8px;
+            font-size: 16px;
+        }
+        .blog-window-actions {
+            margin: 0;
+            font-size: 15px;
+        }
+        .blog-window-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+        .blog-window-loading {
+            color: #404040;
+            font-style: italic;
+            padding: 12px 0;
+        }
+        .blog-window-item {
+            padding: 12px 0;
+            border-bottom: 1px solid #A0A0A0;
+        }
+        .blog-window-item:last-child {
+            border-bottom: none;
+        }
+        .blog-window-item-title {
+            font-weight: bold;
+            color: #000080;
+            cursor: pointer;
+            display: inline-block;
+            margin-bottom: 4px;
+            text-decoration: underline;
+        }
+        .blog-window-item-title:hover {
+            background: #000080;
+            color: var(--wb-white);
+        }
+        .blog-window-item-meta {
+            font-size: 14px;
+            color: #404040;
+            margin-bottom: 4px;
+        }
+        .blog-window-item-excerpt {
+            font-size: 16px;
+            color: var(--wb-black);
+        }
+        .post-window-content {
+            padding: 0 !important;
+        }
+        .post-iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            background: #FAFAF7;
+            display: block;
+        }
+
         /* ── BOTTOM BAR ── */
         .bottombar {
             position: absolute;
@@ -711,6 +807,10 @@
                 <div class="icon-img"><div class="disk-icon" style="background:#FB4F00;"></div></div>
                 <div class="icon-label">Loyalty</div>
             </div>
+            <div class="desktop-icon" onclick="toggleWindow('win-blog')" >
+                <div class="icon-img"><div class="disk-icon" style="background:#000080;"></div></div>
+                <div class="icon-label">Blog</div>
+            </div>
         </div>
 
         <!-- ═══ MAIN WORKBENCH WINDOW ═══ -->
@@ -738,6 +838,10 @@
                     <div class="win-icon" onclick="location.href='/loyalty/'">
                         <div class="icon-gfx"><div class="px-icon px-loyalty"></div></div>
                         <div class="icon-name">Loyalty</div>
+                    </div>
+                    <div class="win-icon" onclick="toggleWindow('win-blog')">
+                        <div class="icon-gfx"><div class="px-icon px-blog"></div></div>
+                        <div class="icon-name">Blog</div>
                     </div>
                     <div class="win-icon" onclick="toggleWindow('win-social')">
                         <div class="icon-gfx"><div class="px-icon px-social"></div></div>
@@ -835,7 +939,7 @@
             <div class="wb-content">
                 <div class="social-item">
                     <span class="platform">LinkedIn</span> <span class="handle">emils-ozols</span><br>
-                    <span class="desc">Professional updates, and industry insights. Mostly banking related stuff</span><br>
+                    <span class="desc">Professional updates and notes from the field.</span><br>
                     <a href="https://www.linkedin.com/in/emils-ozols/" target="_blank" rel="noopener" class="wb-link">[ View Profile ]</a>
                 </div>
                 <div class="social-item">
@@ -855,6 +959,30 @@
                 </div>
             </div>
             <div class="wb-resize" onmousedown="startResize(event, 'win-social')"></div>
+        </div>
+
+        <!-- ═══ BLOG WINDOW ═══ -->
+        <div class="wb-window hidden" id="win-blog" style="left:120px;top:80px;width:600px;height:480px;">
+            <div class="wb-titlebar" onmousedown="startDrag(event, 'win-blog')">
+                <div class="wb-titlebar-stripes"></div>
+                <div class="wb-close" onclick="closeWindow('win-blog')"></div>
+                <div class="wb-title">Blog</div>
+                <div class="wb-depth" onclick="sendToBack('win-blog')"><div class="wb-depth-inner"></div></div>
+            </div>
+            <div class="wb-content">
+                <div class="blog-window-header">
+                    <p class="blog-window-tagline">Slow channel. Posts every two weeks-ish.</p>
+                    <p class="blog-window-actions">
+                        <a href="/blog/" class="wb-link">[ Open full blog page ]</a>
+                        &nbsp;
+                        <a href="/blog/feed.xml" class="wb-link">[ RSS ]</a>
+                    </p>
+                </div>
+                <div class="blog-window-list" id="blog-window-list">
+                    <div class="blog-window-loading">Loading posts...</div>
+                </div>
+            </div>
+            <div class="wb-resize" onmousedown="startResize(event, 'win-blog')"></div>
         </div>
 
         <!-- Bottom Status Bar -->
@@ -988,6 +1116,86 @@
         document.querySelectorAll('.wb-window').forEach(win => {
             resizeObserver.observe(win);
         });
+
+        // ── Blog window ──
+        function escapeHtml(s) {
+            return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+        }
+
+        function formatDate(iso) {
+            const d = new Date(iso);
+            if (isNaN(d)) return iso;
+            return d.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
+        }
+
+        async function loadBlogPosts() {
+            const container = document.getElementById('blog-window-list');
+            if (!container) return;
+            try {
+                const res = await fetch('/blog/posts.json', { cache: 'no-cache' });
+                if (!res.ok) throw new Error('HTTP ' + res.status);
+                const data = await res.json();
+                const posts = (data.posts || []).slice().sort((a, b) => (b.date || '').localeCompare(a.date || ''));
+                if (posts.length === 0) {
+                    container.innerHTML = '<div class="blog-window-loading">No posts yet.</div>';
+                    return;
+                }
+                container.innerHTML = posts.map(p => {
+                    const title = escapeHtml(p.title);
+                    const slug = escapeHtml(p.slug);
+                    const date = formatDate(p.date);
+                    const reading = escapeHtml(p.readingTime || '');
+                    const excerpt = escapeHtml(p.excerpt || '');
+                    const url = escapeHtml(p.url);
+                    return `
+                        <div class="blog-window-item">
+                            <span class="blog-window-item-title" data-slug="${slug}" data-title="${title}">${title}</span>
+                            <div class="blog-window-item-meta">${date}${reading ? ' &middot; ' + reading : ''} &middot; <a href="${url}" class="wb-link" onclick="event.stopPropagation()">open full &rarr;</a></div>
+                            <div class="blog-window-item-excerpt">${excerpt}</div>
+                        </div>
+                    `;
+                }).join('');
+                container.querySelectorAll('.blog-window-item-title').forEach(el => {
+                    el.addEventListener('click', () => {
+                        openPostWindow(el.dataset.slug, el.dataset.title);
+                    });
+                });
+            } catch (e) {
+                container.innerHTML = '<div class="blog-window-loading">Failed to load posts. Try <a href="/blog/" class="wb-link">/blog</a>.</div>';
+            }
+        }
+
+        function openPostWindow(slug, title) {
+            const winId = 'win-post-' + slug;
+            let win = document.getElementById(winId);
+            if (!win) {
+                win = document.createElement('div');
+                win.className = 'wb-window';
+                win.id = winId;
+                const offset = document.querySelectorAll('[id^="win-post-"]').length * 24;
+                win.style.cssText = `left:${160 + offset}px;top:${60 + offset}px;width:760px;height:560px;`;
+                win.innerHTML = `
+                    <div class="wb-titlebar" onmousedown="startDrag(event, '${winId}')">
+                        <div class="wb-titlebar-stripes"></div>
+                        <div class="wb-close" onclick="closeWindow('${winId}')"></div>
+                        <div class="wb-title">Blog: ${escapeHtml(title)}</div>
+                        <div class="wb-depth" onclick="sendToBack('${winId}')"><div class="wb-depth-inner"></div></div>
+                    </div>
+                    <div class="wb-content post-window-content">
+                        <iframe src="/blog/${encodeURIComponent(slug)}/?embedded=1" class="post-iframe" title="${escapeHtml(title)}"></iframe>
+                    </div>
+                    <div class="wb-resize" onmousedown="startResize(event, '${winId}')"></div>
+                `;
+                document.getElementById('desktop').appendChild(win);
+                win.addEventListener('mousedown', () => activateWindow(winId));
+                // Intentionally NOT added to baseWidths — iframe handles its own
+                // responsive layout, so the zoom-scaling pattern is skipped.
+                resizeObserver.observe(win);
+            }
+            activateWindow(winId);
+        }
+
+        loadBlogPosts();
 
         // Memory counter effect
         let mem = 2048576;
