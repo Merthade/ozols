@@ -383,6 +383,10 @@ article img {
   text-decoration: none;
   color: var(--wb-navy);
 }
+.blog-footer a:hover {
+  background: var(--wb-navy);
+  color: var(--wb-white);
+}
 
 /* ── Embedded mode (Workbench window iframe) ───────────────── */
 [data-embedded="1"] .blog-header,
