@@ -1,14 +1,14 @@
 {
-  "generated": "2026-05-14",
+  "generated": "2026-05-16",
   "posts": [
     {
-      "slug": "hello",
-      "title": "Hello",
-      "date": "2026-05-14",
+      "slug": "hello-world",
+      "title": "Hello world",
+      "date": "2026-05-16",
       "pillar": "life",
-      "readingTime": "1 min",
-      "excerpt": "A short hello. Indie iOS developer. Two apps shipped (Remi and Rise), plus the assorted other things I dabble in.",
-      "url": "/blog/hello/"
+      "readingTime": "2 min",
+      "excerpt": "Why I'm starting an indie dev blog. 2 apps, 344 downloads, $2 earned, $2k spent, and not stopping.",
+      "url": "/blog/hello-world/"
     }
   ]
 }
