@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>Ozols.dev</title>
-  <subtitle>Indie iOS dev. Latvia. Slow channel.</subtitle>
+  <subtitle>Indie iOS dev. Slow channel.</subtitle>
   <link href="https://ozols.dev/blog/feed.xml" rel="self"/>
   <link href="https://ozols.dev/blog/"/>
   <updated>2026-05-14T00:00:00Z</updated>
@@ -21,6 +21,6 @@
     <author>
       <name>Emils Ozols</name>
     </author>
-    <summary>A short hello from Emils. Indie iOS developer, day-job banker, dad. Two apps shipped (Remi and Rise), plus the assorted other things I dabble in.</summary>
+    <summary>A short hello from Emils. Indie iOS developer. Two apps shipped (Remi and Rise), plus the assorted other things I dabble in.</summary>
   </entry>
 </feed>
