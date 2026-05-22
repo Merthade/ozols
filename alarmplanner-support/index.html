@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support — Alarm Planner</title>
+    <meta name="description" content="Support for Alarm Planner, the iOS alarm app for shift workers, travelers, and anyone planning alarms weeks or months ahead. Contact, FAQ, and troubleshooting.">
+    <link rel="canonical" href="https://ozols.dev/alarmplanner-support/">
+    <meta property="og:title" content="Support — Alarm Planner">
+    <meta property="og:description" content="Support for Alarm Planner.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ozols.dev/alarmplanner-support/">
+    <meta property="og:site_name" content="Alarm Planner">
+    <meta property="og:locale" content="en_US">
+    <meta name="theme-color" content="#7CB988">
+    <meta name="robots" content="noindex">
+    <script>
+        (function() {
+            var theme = localStorage.getItem('theme');
+            if (!theme) theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+            document.documentElement.setAttribute('data-theme', theme);
+        })();
+    </script>
+    <style>
+        :root {
+            --accent: #7CB988;
+            --accent-hover: #6BA677;
+            --text-primary: #1a1a1a;
+            --text-secondary: #555;
+            --text-tertiary: #888;
+            --bg: #F6F8F5;
+            --card-bg: #fff;
+            --card-border: rgba(0,0,0,0.06);
+        }
+
+        [data-theme="dark"] {
+            --accent: #9ED4A8;
+            --accent-hover: #8AC295;
+            --text-primary: #f0f0f0;
+            --text-secondary: #a1a1a6;
+            --text-tertiary: #8e8e93;
+            --bg: #0F1518;
+            --card-bg: #1C2226;
+            --card-border: rgba(255,255,255,0.08);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'Helvetica Neue', system-ui, sans-serif;
+            background: var(--bg);
+            color: var(--text-primary);
+            font-size: 15px;
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 640px;
+            margin: 0 auto;
+            padding: 60px 24px 80px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            margin-bottom: 40px;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover { color: var(--accent-hover); }
+
+        .back-link svg {
+            width: 16px;
+            height: 16px;
+        }
+
+        h1 {
+            font-size: 36px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            margin-bottom: 8px;
+        }
+
+        .lead {
+            font-size: 16px;
+            color: var(--text-secondary);
+            margin-bottom: 32px;
+        }
+
+        .contact-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            padding: 20px 24px;
+            margin-bottom: 48px;
+        }
+
+        .contact-card .label {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--text-tertiary);
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
+
+        .contact-card a {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        .contact-card a:hover { text-decoration: underline; }
+
+        h2 {
+            font-size: 20px;
+            font-weight: 600;
+            margin-top: 40px;
+            margin-bottom: 12px;
+        }
+
+        h3 {
+            font-size: 16px;
+            font-weight: 600;
+            margin-top: 28px;
+            margin-bottom: 6px;
+            color: var(--text-primary);
+        }
+
+        p {
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+        }
+
+        a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        a:hover { text-decoration: underline; }
+
+        ul {
+            margin: 0 0 16px 20px;
+            color: var(--text-secondary);
+        }
+
+        li { margin-bottom: 6px; }
+
+        .footer-links {
+            margin-top: 48px;
+            padding-top: 24px;
+            border-top: 1px solid var(--card-border);
+            font-size: 14px;
+            color: var(--text-tertiary);
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <a href="/" class="back-link">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+        Back to ozols.dev
+    </a>
+
+    <h1>Support</h1>
+    <p class="lead">Hit a snag with Alarm Planner? Get in touch — every email lands in a real inbox checked by a human.</p>
+
+    <div class="contact-card">
+        <div class="label">Email</div>
+        <a href="mailto:emils@ozols.dev">emils@ozols.dev</a>
+    </div>
+
+    <h2>Frequently asked</h2>
+
+    <h3>My alarm fired late or didn't fire — what happened?</h3>
+    <p>The most common cause is iOS Low Power Mode, which can delay background activity, including alarms. If you keep Low Power Mode enabled overnight, iOS may not deliver the alarm at the exact second you set. For the most reliable timing, switch Low Power Mode off before going to sleep, or set it to turn off automatically when the device is charging.</p>
+    <p>If the alarm still doesn't ring under normal power conditions, write in with the date, time, and a brief description — every report helps narrow down whether it's a device-specific quirk or something we can fix in the app.</p>
+
+    <h3>Alarms aren't ringing at all</h3>
+    <p>Alarm Planner needs permission to schedule alarms. On first launch the app asks for that permission directly — if you tapped "Don't Allow" or revoked it later, the app can't fire anything.</p>
+    <ul>
+        <li>Open the iOS Settings app</li>
+        <li>Scroll to <strong>Alarm Planner</strong> in the Apps section</li>
+        <li>Tap <strong>Alarms</strong> and turn the toggle on</li>
+    </ul>
+    <p>Then reopen Alarm Planner — the in-app banner clears once the permission flips.</p>
+
+    <h3>Can I use my own audio file as an alarm sound?</h3>
+    <p>Yes. Open <strong>Settings → Default alarm sound → Add custom sound</strong> and pick any audio file via the system file picker. Tracks longer than 30 seconds are automatically trimmed to fit iOS's alarm-tone limit. DRM-protected files (e.g. Apple Music downloads) can't be used as alarms — that's a platform restriction, not ours.</p>
+
+    <h3>Does the app sync across iPhone and iPad?</h3>
+    <p>Not yet. Alarm Planner currently stores everything locally on the device it's running on. Cross-device sync is on the roadmap for a future update.</p>
+
+    <h3>How do I delete all my alarms?</h3>
+    <p>Either swipe-delete alarms one by one from the home tab, or uninstall the app — uninstalling removes every alarm, tag, and setting from your device.</p>
+
+    <h3>I'd love feature X — can you add it?</h3>
+    <p>Probably! The app is built by one developer and shaped heavily by what people ask for. Email <a href="mailto:emils@ozols.dev">emils@ozols.dev</a> with the request — even short ones help prioritize the roadmap.</p>
+
+    <h2>Privacy &amp; data</h2>
+    <p>Alarm Planner stores all your data locally on your device. We don't have a server-side copy of your alarms. For the full data policy, see the <a href="/alarmplanner-privacy/">privacy policy</a>.</p>
+
+    <div class="footer-links">
+        <a href="/alarmplanner-privacy/">Privacy policy</a> · <a href="mailto:emils@ozols.dev">emils@ozols.dev</a>
+    </div>
+</div>
+
+</body>
+</html>
