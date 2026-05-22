@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ozols.Dev - Emils Ozols</title>
-    <meta name="description" content="Emils Ozols - Developer, creator of Remi & Rise. Building things that matter.">
+    <meta name="description" content="Emils Ozols - Indie iOS developer. Creator of Remi, Rise, and Alarm Planner. Building things that matter.">
     <link rel="canonical" href="https://ozols.dev/">
     <link rel="alternate" type="application/atom+xml" title="Ozols.dev blog" href="/blog/feed.xml">
 
     <meta property="og:type" content="website">
     <meta property="og:title" content="Ozols.dev — Emils Ozols">
-    <meta property="og:description" content="Emils Ozols, indie iOS developer. Creator of Remi & Rise. Building things that matter.">
+    <meta property="og:description" content="Emils Ozols, indie iOS developer. Creator of Remi, Rise, and Alarm Planner. Building things that matter.">
     <meta property="og:url" content="https://ozols.dev/">
     <meta property="og:site_name" content="Ozols.dev">
     <meta property="og:image" content="https://ozols.dev/Profile.jpeg">
@@ -18,7 +18,7 @@
 
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Ozols.dev — Emils Ozols">
-    <meta name="twitter:description" content="Emils Ozols, indie iOS developer. Creator of Remi & Rise. Building things that matter.">
+    <meta name="twitter:description" content="Emils Ozols, indie iOS developer. Creator of Remi, Rise, and Alarm Planner. Building things that matter.">
     <meta name="twitter:image" content="https://ozols.dev/Profile.jpeg">
 
     <script type="application/ld+json">
@@ -39,7 +39,7 @@
           "@id": "https://ozols.dev/#website",
           "url": "https://ozols.dev/",
           "name": "Ozols.dev",
-          "description": "Emils Ozols, indie iOS developer. Creator of Remi & Rise.",
+          "description": "Emils Ozols, indie iOS developer. Creator of Remi, Rise, and Alarm Planner.",
           "author": { "@id": "https://ozols.dev/#person" },
           "inLanguage": "en"
         }
@@ -489,6 +489,36 @@
                 -7px -7px 0 -4px #FFD044;
         }
 
+        /* AlarmPlanner - Clock face with hand */
+        .px-alarmplanner {
+            background: #2d5238;
+            border: 3px outset #7CB988;
+            border-radius: 2px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .px-alarmplanner::before {
+            content: '';
+            width: 26px;
+            height: 26px;
+            background: #f5f5f5;
+            border-radius: 50%;
+            border: 2px solid #1a1a1a;
+        }
+        .px-alarmplanner::after {
+            content: '';
+            position: absolute;
+            width: 2px;
+            height: 10px;
+            background: #2d8044;
+            border-radius: 1px;
+            top: 11px;
+            left: 20px;
+            transform-origin: bottom center;
+            transform: rotate(-30deg);
+        }
+
         /* Loyalty - OaKs coin */
         .px-loyalty {
             background: #FB4F00;
@@ -854,6 +884,10 @@
                 <div class="icon-img"><div class="disk-icon" style="background:#FFD044;"></div></div>
                 <div class="icon-label">Rise</div>
             </div>
+            <div class="desktop-icon" onclick="toggleWindow('win-alarmplanner')" >
+                <div class="icon-img"><div class="disk-icon" style="background:#7CB988;"></div></div>
+                <div class="icon-label">AlarmPlanner</div>
+            </div>
             <div class="desktop-icon" onclick="location.href='/loyalty/'" >
                 <div class="icon-img"><div class="disk-icon" style="background:#FB4F00;"></div></div>
                 <div class="icon-label">Loyalty</div>
@@ -885,6 +919,10 @@
                     <div class="win-icon" onclick="toggleWindow('win-rise')">
                         <div class="icon-gfx"><div class="px-icon px-rise"></div></div>
                         <div class="icon-name">Rise</div>
+                    </div>
+                    <div class="win-icon" onclick="toggleWindow('win-alarmplanner')">
+                        <div class="icon-gfx"><div class="px-icon px-alarmplanner"></div></div>
+                        <div class="icon-name">AlarmPlanner</div>
                     </div>
                     <div class="win-icon" onclick="location.href='/loyalty/'">
                         <div class="icon-gfx"><div class="px-icon px-loyalty"></div></div>
@@ -919,7 +957,7 @@
                         <p class="tagline">Developer &amp; Creator</p>
                         <p>Making life less complicated - one commit at a time.</p>
                         <br>
-                        <p>> A regular dude crafting digital experiences for life's little annoyances and trying to earn a living from it. Creator of Remi and Rise - apps built to help people build better habits.</p>
+                        <p>> A regular dude crafting digital experiences for life's little annoyances and trying to earn a living from it. Creator of Remi, Rise, and Alarm Planner - apps built to help people structure their days.</p>
                         <br>
                         <p>Status: <span style="color:#008000;">&#9679; System Online</span></p>
                     </div>
@@ -977,6 +1015,37 @@
                 </div>
             </div>
             <div class="wb-resize" onmousedown="startResize(event, 'win-rise')"></div>
+        </div>
+
+        <!-- ═══ ALARMPLANNER WINDOW ═══ -->
+        <div class="wb-window hidden" id="win-alarmplanner" style="left:200px;top:90px;width:690px;height:520px;">
+            <div class="wb-titlebar" onmousedown="startDrag(event, 'win-alarmplanner')">
+                <div class="wb-titlebar-stripes"></div>
+                <div class="wb-close" onclick="closeWindow('win-alarmplanner')"></div>
+                <div class="wb-title">Alarm Planner - Schedule Alarms Ahead</div>
+                <div class="wb-depth" onclick="sendToBack('win-alarmplanner')"><div class="wb-depth-inner"></div></div>
+            </div>
+            <div class="wb-content">
+                <div class="remi-content">
+                    <img src="AlarmPlanner.png" alt="AlarmPlanner App" class="remi-img" style="border-color:#7CB988;">
+                    <h2 style="color:#2d8044;">Alarm Planner</h2>
+                    <p class="subtitle">Alarms for everything beyond tomorrow</p>
+                    <p>An iOS alarm app for shift workers, frequent travelers, and anyone who needs to plan an alarm weeks or months ahead - something the built-in Clock can't do.</p>
+                    <ul>
+                        <li>Schedule alarms for any future date, not just the next 24 hours</li>
+                        <li>Group alarms by tag (Work, Family, Travel) and toggle whole groups on and off</li>
+                        <li>Repeating patterns: daily, weekdays, weekends, custom weekly</li>
+                        <li>Calendar view, custom sounds, native iOS 26 Liquid Glass design</li>
+                        <li>Localized in English and German</li>
+                    </ul>
+                    <p>
+                        <a href="/alarmplanner-support/" class="wb-link">[ Support ]</a>
+                        &nbsp;
+                        <a href="/alarmplanner-privacy/" class="wb-link">[ Privacy ]</a>
+                    </p>
+                </div>
+            </div>
+            <div class="wb-resize" onmousedown="startResize(event, 'win-alarmplanner')"></div>
         </div>
 
         <!-- ═══ SOCIAL FEED WINDOW ═══ -->
