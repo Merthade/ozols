@@ -72,6 +72,34 @@ function formatOaks(n) {
     return n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
 }
 
+// V1 leaderboard-driven rank text (Jack=4900, Jill=4600)
+function getV1RankText(oaks) {
+    if (oaks > 4900) return "Congrats! You're now 1st in your age group!";
+    if (oaks > 4600) return "Congrats! You're now 2nd in your age group!";
+    return 'You are 101st in your age group';
+}
+
+// V2 percentile-themed phrases, bucketed so the message changes as the balance grows
+const V2_RANK_BUCKETS = [
+    { min: 8000, text: "Top 1% in your age group. You're leading the way!" },
+    { min: 6000, text: "Top 3% in your age group. Incredible momentum!" },
+    { min: 4000, text: "Top 5% in your age group. Outstanding pace!" },
+    { min: 3000, text: "Top 10% in your age group. Fantastic progress!" },
+    { min: 2000, text: "Top 15% in your age group. Great pace!" },
+    { min: 1500, text: "Top 25% in your age group. Nice momentum!" },
+    { min: 1000, text: "Top 35% in your age group. Keep climbing!" },
+    { min: 500,  text: "Top 50% in your age group. Nice start!" },
+    { min: 200,  text: "You're warming up. Keep earning to climb your age group!" },
+    { min: 0,    text: "Welcome aboard! Start earning to climb your age group." },
+];
+
+function getV2RankText(oaks) {
+    for (const b of V2_RANK_BUCKETS) {
+        if (oaks >= b.min) return b.text;
+    }
+    return V2_RANK_BUCKETS[V2_RANK_BUCKETS.length - 1].text;
+}
+
 function render() {
     const oaks = state.oaks;
     const level = getLevel(state.highestOaks);
@@ -119,27 +147,29 @@ function render() {
     const youPoints = document.querySelector('.leaderboard-row.you .leader-points');
     if (youPoints) youPoints.textContent = `${oaks} OaKs`;
 
+    const isV2 = document.body.classList.contains('v2-mode');
+
+    // Leaderboard rows (V1 only, hidden in V2 by CSS)
     if (oaks > JACK_OAKS) {
-        // Surpassed both Jack and Jill - only You shown at rank 1
         if (jackRow) jackRow.style.display = 'none';
         if (jillRow) jillRow.style.display = 'none';
         if (yourRank) yourRank.textContent = '1';
-        if (rankText) rankText.textContent = "Congrats! You're now 1st in your age group!";
     } else if (oaks > JILL_OAKS) {
-        // Surpassed Jill - Jack at 1, You at 2
         if (jackRow) jackRow.style.display = '';
         if (jillRow) jillRow.style.display = 'none';
         if (jackRank) jackRank.textContent = '1';
         if (yourRank) yourRank.textContent = '2';
-        if (rankText) rankText.textContent = "Congrats! You're now 2nd in your age group!";
     } else {
-        // Default state
         if (jackRow) jackRow.style.display = '';
         if (jillRow) jillRow.style.display = '';
         if (jackRank) jackRank.textContent = '1';
         if (jillRank) jillRank.textContent = '2';
         if (yourRank) yourRank.textContent = '101';
-        if (rankText) rankText.textContent = 'You are 101st in your age group';
+    }
+
+    // Rank text: V2 cycles percentile-based phrases that react to OaKs balance
+    if (rankText) {
+        rankText.textContent = isV2 ? getV2RankText(oaks) : getV1RankText(oaks);
     }
 
     // Debug panel display
@@ -182,7 +212,7 @@ function applyThresholdReward(card, e) {
     showNotification(0, 'Application sent: ' + title);
 }
 
-function updateOaks(delta, reason) {
+function updateOaks(delta, reason, opts) {
     const prevLevel = getLevel(state.highestOaks);
     state.oaks = Math.max(0, state.oaks + delta);
     if (state.oaks > state.highestOaks) {
@@ -194,6 +224,7 @@ function updateOaks(delta, reason) {
         addTransaction(reason, delta);
         showNotification(delta, reason);
     }
+    if (opts && opts.suppressLevelUp) return;
     // Check for level up
     const levels = ['Base', 'Bronze', 'Silver', 'Gold'];
     if (levels.indexOf(newLevel) > levels.indexOf(prevLevel)) {
@@ -349,7 +380,7 @@ function spawnConfetti(container) {
 let currentScreen = 'screen-intro';
 let introReturnScreen = null; // Where to go when dismissing intro popup
 let offerReturnScreen = null; // Where to go when dismissing offer popup
-const screensWithoutTabs = ['screen-intro', 'screen-info', 'screen-offer', 'screen-discounts', 'screen-partner-offers', 'screen-care', 'screen-experience', 'screen-status', 'screen-plan-details'];
+const screensWithoutTabs = ['screen-intro', 'screen-info', 'screen-offer', 'screen-discounts', 'screen-partner-offers', 'screen-care', 'screen-experience', 'screen-status', 'screen-plan-details', 'screen-relationship'];
 const screensWithoutFab = ['screen-intro', 'screen-info'];
 
 function navigateTo(screenId, showTooltip) {
@@ -358,6 +389,11 @@ function navigateTo(screenId, showTooltip) {
     // Remember where we came from when opening the offer screen
     if (screenId === 'screen-offer') {
         offerReturnScreen = currentScreen;
+    }
+
+    // Cycle the relationship persona on entry (first entry keeps index 0)
+    if (screenId === 'screen-relationship') {
+        onEnterRelationship();
     }
 
     const current = document.getElementById(currentScreen);
@@ -487,6 +523,200 @@ document.addEventListener('click', (e) => {
         e.target.classList.toggle('active');
     }
 });
+
+// ============================================
+// RANDOM SURPRISE
+// ============================================
+const SF_CAKE = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21V11a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v10"/><path d="M3 21h18"/><path d="M4 14h16"/><path d="M12 4v3"/><path d="M8 4v3"/><path d="M16 4v3"/></svg>';
+const SF_STAR = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15 8.5 22 9.3 17 14 18.5 21 12 17.5 5.5 21 7 14 2 9.3 9 8.5 12 2"/></svg>';
+const SF_MEDAL = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="15" r="6"/><path d="M9 9 6 2h12l-3 7"/><path d="M12 12v6"/><path d="M9 15h6"/></svg>';
+
+const SURPRISES = [
+    { icon: SF_CAKE,  title: 'Happy birthday!',         body: 'A little gift from us',       delta: 1000, color: '#FB7538', reason: 'Birthday bonus' },
+    { icon: SF_STAR,  title: '1 year with Swedbank!',   body: 'Thanks for sticking with us', delta: 200,  color: '#4CAF50', reason: '1 year anniversary' },
+    { icon: SF_MEDAL, title: '3 years with Swedbank!',  body: 'Three years and counting',    delta: 500,  color: '#AC7E5F', reason: '3 year anniversary' },
+    { icon: SF_MEDAL, title: '5 years with Swedbank!',  body: 'Half a decade together',      delta: 1000, color: '#A0A0A0', reason: '5 year anniversary' },
+    { icon: SF_MEDAL, title: '10 years with Swedbank!', body: 'A decade of loyalty',         delta: 2000, color: '#E8C840', reason: '10 year anniversary' },
+];
+
+function triggerRandomSurprise() {
+    const s = SURPRISES[Math.floor(Math.random() * SURPRISES.length)];
+    const prevLevel = getLevel(state.highestOaks);
+    updateOaks(s.delta, s.reason, { suppressLevelUp: true });
+    const newLevel = getLevel(state.highestOaks);
+    const levels = ['Base', 'Bronze', 'Silver', 'Gold'];
+    const leveledUp = levels.indexOf(newLevel) > levels.indexOf(prevLevel);
+    showSurprise(s, leveledUp ? () => showLevelUp(newLevel) : null);
+}
+
+function showSurprise(s, onDismiss) {
+    const phoneFrame = document.querySelector('.phone-frame');
+    if (!phoneFrame) return;
+
+    const overlay = document.createElement('div');
+    overlay.className = 'levelup-overlay';
+    overlay.innerHTML = `
+        <div class="levelup-content">
+            <div class="levelup-badge surprise-badge" style="background: ${s.color};">${s.icon}</div>
+            <h2 class="levelup-title">${s.title}</h2>
+            <p class="levelup-text">${s.body}. <strong>+${s.delta} OaKs</strong></p>
+        </div>
+    `;
+    phoneFrame.appendChild(overlay);
+    spawnConfetti(phoneFrame);
+
+    requestAnimationFrame(() => overlay.classList.add('visible'));
+
+    let dismissed = false;
+    const dismiss = () => {
+        if (dismissed) return;
+        dismissed = true;
+        overlay.classList.remove('visible');
+        setTimeout(() => {
+            overlay.remove();
+            if (onDismiss) setTimeout(onDismiss, 200);
+        }, 400);
+    };
+    overlay.addEventListener('click', dismiss);
+    setTimeout(dismiss, 4000);
+}
+
+// ============================================
+// RELATIONSHIP SCREEN — persona cycling
+// ============================================
+const SVG_ICONS = {
+    trophy:    '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9h12v2a6 6 0 0 1-12 0V9z"/><path d="M6 9V5h12v4"/><path d="M6 7H3a2 2 0 0 0 2 2h1"/><path d="M18 7h3a2 2 0 0 1-2 2h-1"/><path d="M10 17h4l-1 4h-2l-1-4z"/></svg>',
+    cake:      '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21V11a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v10"/><path d="M3 21h18"/><path d="M4 14h16"/><path d="M12 4v3"/><path d="M8 4v3"/><path d="M16 4v3"/></svg>',
+    phone:     '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="2" width="10" height="20" rx="2"/><line x1="11" y1="18" x2="13" y2="18"/></svg>',
+    briefcase: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2"/><line x1="3" y1="13" x2="21" y2="13"/></svg>',
+    chartUp:   '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 17 9 11 13 15 21 7"/><polyline points="15 7 21 7 21 13"/></svg>',
+    repeat:    '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg>',
+    banknote:  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="2.5"/><path d="M6 12h.01"/><path d="M18 12h.01"/></svg>',
+    gift:      '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 12 20 22 4 22 4 12"/><rect x="2" y="7" width="20" height="5"/><line x1="12" y1="22" x2="12" y2="7"/><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/></svg>',
+    card:      '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/><line x1="6" y1="15" x2="10" y2="15"/></svg>',
+    doc:       '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="8" y1="13" x2="16" y2="13"/><line x1="8" y1="17" x2="14" y2="17"/></svg>',
+    check:     '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>',
+    house:     '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9.5L12 3l9 6.5V20a1 1 0 0 1-1 1h-5v-7h-6v7H4a1 1 0 0 1-1-1V9.5z"/></svg>',
+};
+
+const RELATIONSHIP_PERSONAS = [
+    // Persona 1: established mid-tier customer (~5 years)
+    {
+        title: "Your year with Swedbank",
+        subtitle: "A look at the last 12 months together",
+        upcomingMilestone: "Your 5-year anniversary is 38 days away.",
+        tiles: [
+            { span: 5, tone: 'tone-butter', icon: 'trophy',    label: '5th anniversary with us',    value: '+1000 OaKs' },
+            { span: 7, tone: 'tone-peach',  icon: 'cake',      label: 'Your birthday on May 5',     value: '+1000 OaKs' },
+            { span: 7, tone: 'tone-mint',   icon: 'phone',     label: 'Used the Swedbank app 123 days', value: '+123 OaKs' },
+            { span: 5, tone: 'tone-lilac',  icon: 'chartUp',   label: 'Invested in funds',          value: '+200 OaKs' },
+            { span: 4, tone: 'tone-sky',    icon: 'briefcase', label: 'Opened investment account',  value: '+100 OaKs' },
+            { span: 4, tone: 'tone-rose',   icon: 'repeat',    label: '7 regular investments',      value: '+140 OaKs' },
+            { span: 4, tone: 'tone-mint',   icon: 'banknote',  label: '500 EUR in savings',         value: '+10 OaKs' },
+        ],
+        summary: [
+            "What a great journey we've had together this year.",
+            "You've grown your savings, started investing, and built habits that pay off. Every step adds up to a stronger financial future.",
+            "Thank you for choosing Swedbank. Here's to many more years ahead!",
+        ],
+    },
+    // Persona 2: brand new customer (weeks/months in)
+    {
+        title: "Your first months with Swedbank",
+        subtitle: "Welcome aboard! Here's how it's going",
+        upcomingMilestone: "Your first 100 days with us coming up next week.",
+        tiles: [
+            { span: 5, tone: 'tone-mint',   icon: 'gift',     label: 'Welcome to Swedbank',     value: '+50 OaKs' },
+            { span: 7, tone: 'tone-butter', icon: 'banknote', label: 'Received your 4th salary', value: '+40 OaKs' },
+            { span: 7, tone: 'tone-sky',    icon: 'phone',    label: 'Used the app 28 days',     value: '+28 OaKs' },
+            { span: 5, tone: 'tone-peach',  icon: 'card',     label: 'Activated debit card',     value: '+30 OaKs' },
+            { span: 4, tone: 'tone-lilac',  icon: 'doc',      label: 'Enabled 2nd e-invoice',    value: '+20 OaKs' },
+            { span: 4, tone: 'tone-rose',   icon: 'check',    label: 'First card transaction',   value: '+10 OaKs' },
+            { span: 4, tone: 'tone-mint',   icon: 'trophy',   label: 'Set first savings goal',   value: '+15 OaKs' },
+        ],
+        summary: [
+            "Welcome to Swedbank! You're just getting started, and we love seeing it.",
+            "Card activated, salary coming in, first goal set. Small steps, but they all count.",
+            "We're here whenever you're ready for the next one.",
+        ],
+    },
+    // Persona 3: long-term established customer (20+ years)
+    {
+        title: "Two decades with Swedbank",
+        subtitle: "Your year, after 20+ years together",
+        upcomingMilestone: "Your 23rd year with Swedbank begins this June.",
+        tiles: [
+            { span: 5, tone: 'tone-butter', icon: 'trophy',   label: '22nd anniversary with us',  value: '+2000 OaKs' },
+            { span: 7, tone: 'tone-peach',  icon: 'cake',     label: 'Your birthday on May 5',    value: '+1000 OaKs' },
+            { span: 7, tone: 'tone-mint',   icon: 'house',    label: '2nd mortgage approved',     value: '+500 OaKs' },
+            { span: 5, tone: 'tone-sky',    icon: 'card',     label: 'Premium card active',       value: '+200 OaKs' },
+            { span: 4, tone: 'tone-lilac',  icon: 'phone',    label: 'Used the app 287 days',     value: '+287 OaKs' },
+            { span: 4, tone: 'tone-rose',   icon: 'banknote', label: '50,000 EUR in savings',     value: '+200 OaKs' },
+            { span: 4, tone: 'tone-mint',   icon: 'repeat',   label: '24 regular investments',    value: '+480 OaKs' },
+        ],
+        summary: [
+            "Two decades together. That's a real partnership.",
+            "This year you signed your second mortgage, kept growing your savings, and stayed active in the app. Steady and strong.",
+            "Thank you for trusting us with the long road. Here's to the next chapter.",
+        ],
+    },
+];
+
+let relationshipPersonaIndex = 0;
+let relationshipPersonaShown = false;
+
+function renderRelationship() {
+    const p = RELATIONSHIP_PERSONAS[relationshipPersonaIndex];
+    if (!p) return;
+    const titleEl    = document.getElementById('relationship-title');
+    const subtitleEl = document.getElementById('relationship-subtitle');
+    const gridEl     = document.getElementById('relationship-grid');
+    const summaryEl  = document.getElementById('relationship-summary');
+    const upcomingEl = document.getElementById('upcoming-milestone');
+    if (titleEl)    titleEl.textContent    = p.title;
+    if (subtitleEl) subtitleEl.textContent = p.subtitle;
+    if (upcomingEl) upcomingEl.textContent = p.upcomingMilestone;
+    if (gridEl) {
+        gridEl.innerHTML = p.tiles.map(t => `
+            <div class="relationship-tile tile-${t.span} ${t.tone}">
+                <div class="tile-icon">${SVG_ICONS[t.icon] || ''}</div>
+                <div class="tile-label">${t.label}</div>
+                <div class="tile-value">${t.value}</div>
+            </div>`).join('');
+    }
+    if (summaryEl) {
+        summaryEl.innerHTML = p.summary.map(s => `<p>${s}</p>`).join('');
+    }
+}
+
+// Called when navigating INTO screen-relationship. First entry shows index 0,
+// subsequent entries advance to the next persona.
+function onEnterRelationship() {
+    if (relationshipPersonaShown) {
+        relationshipPersonaIndex = (relationshipPersonaIndex + 1) % RELATIONSHIP_PERSONAS.length;
+    }
+    relationshipPersonaShown = true;
+    renderRelationship();
+}
+
+// Called from OaK Helper "Cycle the year" button. Always advances.
+function cycleRelationshipPersona() {
+    relationshipPersonaIndex = (relationshipPersonaIndex + 1) % RELATIONSHIP_PERSONAS.length;
+    relationshipPersonaShown = true;
+    renderRelationship();
+}
+
+// ============================================
+// V1 / V2 VERSION TOGGLE
+// ============================================
+function setVersion(v) {
+    const isV2 = v === 'v2';
+    document.body.classList.toggle('v2-mode', isV2);
+    document.querySelectorAll('.version-seg').forEach(b => {
+        b.classList.toggle('active', b.dataset.version === v);
+    });
+    render();
+}
 
 // Activate VIP (independent toggle, costs 1000 OaKs)
 // Parse OaKs cost from a text string like "100 OaKs" or "1000 OaKs"
@@ -960,6 +1190,7 @@ document.addEventListener('DOMContentLoaded', () => {
     renderTransactions();
     renderPathProgress('screen-insurance');
     renderPathProgress('screen-investment');
+    renderRelationship();
     updatePathHelperButtons();
     initSimulatorInteraction();
     updateClock();
