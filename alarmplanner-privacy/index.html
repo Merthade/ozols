@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy — Alarm Planner</title>
+    <meta name="description" content="Privacy policy for Alarm Planner, the iOS alarm app for shift workers, travelers, and anyone planning alarms weeks or months ahead. Learn how your data is stored, used, and protected.">
+    <link rel="canonical" href="https://ozols.dev/alarmplanner-privacy/">
+    <meta property="og:title" content="Privacy Policy — Alarm Planner">
+    <meta property="og:description" content="Privacy policy for Alarm Planner.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ozols.dev/alarmplanner-privacy/">
+    <meta property="og:site_name" content="Alarm Planner">
+    <meta property="og:locale" content="en_US">
+    <meta name="theme-color" content="#7CB988">
+    <meta name="robots" content="noindex">
+    <script>
+        (function() {
+            var theme = localStorage.getItem('theme');
+            if (!theme) theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+            document.documentElement.setAttribute('data-theme', theme);
+        })();
+    </script>
+    <style>
+        :root {
+            --accent: #7CB988;
+            --accent-hover: #6BA677;
+            --text-primary: #1a1a1a;
+            --text-secondary: #555;
+            --text-tertiary: #888;
+            --bg: #F6F8F5;
+            --card-bg: #fff;
+            --card-border: rgba(0,0,0,0.06);
+        }
+
+        [data-theme="dark"] {
+            --accent: #9ED4A8;
+            --accent-hover: #8AC295;
+            --text-primary: #f0f0f0;
+            --text-secondary: #a1a1a6;
+            --text-tertiary: #8e8e93;
+            --bg: #0F1518;
+            --card-bg: #1C2226;
+            --card-border: rgba(255,255,255,0.08);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'Helvetica Neue', system-ui, sans-serif;
+            background: var(--bg);
+            color: var(--text-primary);
+            font-size: 15px;
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 640px;
+            margin: 0 auto;
+            padding: 60px 24px 80px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            margin-bottom: 40px;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover { color: var(--accent-hover); }
+
+        .back-link svg {
+            width: 16px;
+            height: 16px;
+        }
+
+        h1 {
+            font-size: 36px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            margin-bottom: 8px;
+        }
+
+        .updated {
+            font-size: 14px;
+            color: var(--text-tertiary);
+            margin-bottom: 48px;
+        }
+
+        h2 {
+            font-size: 20px;
+            font-weight: 600;
+            margin-top: 40px;
+            margin-bottom: 12px;
+        }
+
+        p {
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+        }
+
+        a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        a:hover { text-decoration: underline; }
+
+        ul {
+            margin: 0 0 16px 20px;
+            color: var(--text-secondary);
+        }
+
+        li { margin-bottom: 6px; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <a href="/" class="back-link">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+        Back to ozols.dev
+    </a>
+
+    <h1>Privacy Policy</h1>
+    <p class="updated">Last updated: May 22, 2026</p>
+
+    <h2>Data Storage</h2>
+    <p>Alarm Planner stores your alarms, tags, sounds, and settings locally on your device using SwiftData. Nothing about your alarms leaves your device. There is no account, no login, and no cloud sync. We do not have access to your alarm data.</p>
+
+    <h2>Analytics</h2>
+    <p>We use <strong>PostHog</strong> (hosted in the EU) to collect anonymous usage analytics. This helps us understand how people use the app so we can make it better.</p>
+    <p>What we collect:</p>
+    <ul>
+        <li>Aggregated counts of interactions (alarms created, edited, deleted)</li>
+        <li>Which onboarding steps were viewed and which options were picked</li>
+        <li>Generic device context (debug vs release build, app version)</li>
+    </ul>
+    <p>What we do <strong>not</strong> collect:</p>
+    <ul>
+        <li>Your name, email, or any personal identifiers</li>
+        <li>The titles, notes, or contents of your alarms</li>
+        <li>Your location, contacts, or device identifiers</li>
+        <li>Any data linked back to you as an individual</li>
+    </ul>
+    <p>Analytics can be disabled at any time in Settings → Help out → Share analytics.</p>
+
+    <h2>Notifications &amp; Alarms</h2>
+    <p>Alarms are scheduled and delivered entirely on your device using Apple's AlarmKit framework. No alarm data is sent to external servers. Alarm Planner does not use push notifications and does not require a server-side component to function.</p>
+
+    <h2>Third-Party Sharing</h2>
+    <p>We do not sell, share, or transfer your personal data to third parties. The only third-party service used is PostHog, for the anonymous analytics described above. PostHog data is stored on EU servers and never linked to you as an individual.</p>
+
+    <h2>Your Rights</h2>
+    <p>Because all your alarm data stays on your device, you control it directly:</p>
+    <ul>
+        <li><strong>Access &amp; export</strong>: your alarms are visible in the app at all times. There is no separate copy held elsewhere.</li>
+        <li><strong>Deletion</strong>: uninstalling the app removes all alarm data from your device.</li>
+        <li><strong>Opt out of analytics</strong>: toggle "Share analytics" off under Settings → Help out.</li>
+    </ul>
+    <p>If you are an EU/EEA resident, the GDPR grants you additional rights regarding any data we process. Contact us using the email below to exercise them.</p>
+
+    <h2>Children's Privacy</h2>
+    <p>Alarm Planner does not knowingly collect personal information from children under 13. The app does not require an account or any personal information to function.</p>
+
+    <h2>Changes to This Policy</h2>
+    <p>If this policy changes in any meaningful way, we will update the "Last updated" date above and surface the change in the app on the next launch.</p>
+
+    <h2>Contact</h2>
+    <p>If you have questions about this privacy policy, reach out at <a href="mailto:info@ozols.dev">info@ozols.dev</a>.</p>
+</div>
+
+</body>
+</html>
