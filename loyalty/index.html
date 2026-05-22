@@ -11,7 +11,7 @@
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
-    <link rel="stylesheet" href="styles.css?v=16">
+    <link rel="stylesheet" href="styles.css?v=26">
 </head>
 <body>
     <div class="phone-frame">
@@ -672,6 +672,7 @@
                     <div class="points-links">
                         <a class="link-teal" onclick="showIntroPopup()">Read more</a>
                     </div>
+                    <p class="upcoming-milestone v2-only" id="upcoming-milestone">Your 5-year anniversary is 38 days away.</p>
 
                     <div class="level-section">
                         <div class="level-header">
@@ -706,7 +707,19 @@
 
                     <p class="rank-text" id="rank-text">You are 101st in your age group</p>
 
-                    <div class="leaderboard">
+                    <a class="relationship-link v2-only" onclick="navigateTo('screen-relationship')">
+                        <span class="relationship-link-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                            </svg>
+                        </span>
+                        <span class="relationship-link-label">Our relationship in last 12 months</span>
+                        <span class="relationship-link-arrow">
+                            <svg width="8" height="14" viewBox="0 0 8 14" fill="none"><path d="M1 1L7 7L1 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </span>
+                    </a>
+
+                    <div class="leaderboard v1-only">
                         <div class="leaderboard-row" id="leader-jack">
                             <span class="rank" id="jack-rank">1</span>
                             <span class="leader-name">Jack</span>
@@ -722,42 +735,6 @@
                             <span class="leader-name">You</span>
                             <span class="leader-points">1540 OaKs</span>
                         </div>
-                    </div>
-
-                    <div class="achievement-cards">
-                        <div class="achievement-card">
-                            <span class="sb-perk-tag tone-peach">Savings</span>
-                            <h4 class="achievement-title">Your savings reached 500 EUR</h4>
-                            <p class="achievement-text">Keep going! Reaching 1000 EUR will earn you 20 more OaKs</p>
-                            <a class="link-teal-sm" onclick="navigateTo('screen-offer')">Read more</a>
-                        </div>
-                        <div class="achievement-card">
-                            <span class="sb-perk-tag tone-mint">Streak</span>
-                            <h4 class="achievement-title">10 days login streak!</h4>
-                            <p class="achievement-text">Nice! Try to reach 30 days streak to get 10 more OaKs.</p>
-                            <a class="link-teal-sm" onclick="navigateTo('screen-offer')">Read more</a>
-                        </div>
-                        <div class="achievement-card">
-                            <span class="sb-perk-tag tone-lilac">Invest</span>
-                            <h4 class="achievement-title">First investment unlocked</h4>
-                            <p class="achievement-text">Great start! Add a regular payment to earn 25 more OaKs.</p>
-                            <a class="link-teal-sm" onclick="navigateTo('screen-offer')">Read more</a>
-                        </div>
-                        <div class="achievement-card">
-                            <span class="sb-perk-tag tone-butter">Insure</span>
-                            <h4 class="achievement-title">Home insurance active</h4>
-                            <p class="achievement-text">Earn 10 OaKs every month just by staying protected.</p>
-                            <a class="link-teal-sm" onclick="navigateTo('screen-offer')">Read more</a>
-                        </div>
-                    </div>
-
-                    <h3 class="how-to-title">How to get more points?</h3>
-                    <div class="category-pills-full">
-                        <span class="pill disabled">Daily</span>
-                        <span class="pill disabled">Savings</span>
-                        <span class="pill" onclick="navigateTo('screen-investment')">Investments</span>
-                        <span class="pill" onclick="navigateTo('screen-insurance')">Insurance</span>
-                        <span class="pill disabled">Financing</span>
                     </div>
 
                     <h3 class="how-to-title">Rewards</h3>
@@ -784,7 +761,66 @@
                         </div>
                         <div class="reward-cat-card" style="background: #EDF4EE;" id="mystery-box" onclick="openMysteryBox()">
                             <img src="assets/iconsMystery.png" class="reward-cat-img">
-                            <span class="reward-cat-label">Mystery box</span>
+                            <span class="reward-cat-label v1-only">Mystery box</span>
+                            <span class="reward-cat-label v2-only">A little something</span>
+                        </div>
+                    </div>
+
+                    <h3 class="how-to-title v1-only">How to get more points?</h3>
+                    <div class="category-pills-full v1-only">
+                        <span class="pill disabled">Daily</span>
+                        <span class="pill disabled">Savings</span>
+                        <span class="pill" onclick="navigateTo('screen-investment')">Investments</span>
+                        <span class="pill" onclick="navigateTo('screen-insurance')">Insurance</span>
+                        <span class="pill disabled">Financing</span>
+                    </div>
+
+                    <div class="achievement-cards v1-only">
+                        <div class="achievement-card">
+                            <span class="sb-perk-tag tone-peach">Savings</span>
+                            <h4 class="achievement-title">Your savings reached 500 EUR</h4>
+                            <p class="achievement-text">Keep going! Reaching 1000 EUR will earn you 20 more OaKs</p>
+                            <a class="link-teal-sm" onclick="navigateTo('screen-offer')">Read more</a>
+                        </div>
+                        <div class="achievement-card">
+                            <span class="sb-perk-tag tone-mint">Streak</span>
+                            <h4 class="achievement-title">10 days login streak!</h4>
+                            <p class="achievement-text">Nice! Try to reach 30 days streak to get 10 more OaKs.</p>
+                            <a class="link-teal-sm" onclick="navigateTo('screen-offer')">Read more</a>
+                        </div>
+                        <div class="achievement-card">
+                            <span class="sb-perk-tag tone-lilac">Invest</span>
+                            <h4 class="achievement-title">First investment unlocked</h4>
+                            <p class="achievement-text">Great start! Add a regular payment to earn 25 more OaKs.</p>
+                            <a class="link-teal-sm" onclick="navigateTo('screen-offer')">Read more</a>
+                        </div>
+                        <div class="achievement-card">
+                            <span class="sb-perk-tag tone-butter">Insure</span>
+                            <h4 class="achievement-title">Home insurance active</h4>
+                            <p class="achievement-text">Earn 10 OaKs every month just by staying protected.</p>
+                            <a class="link-teal-sm" onclick="navigateTo('screen-offer')">Read more</a>
+                        </div>
+                    </div>
+                    <div class="achievement-cards v2-only">
+                        <div class="achievement-card">
+                            <span class="sb-perk-tag tone-peach">Savings</span>
+                            <h4 class="achievement-title">Your savings reached 500 EUR</h4>
+                            <p class="achievement-text">A real milestone. Five hundred euros saved is no small thing.</p>
+                        </div>
+                        <div class="achievement-card">
+                            <span class="sb-perk-tag tone-mint">Streak</span>
+                            <h4 class="achievement-title">10 days login streak</h4>
+                            <p class="achievement-text">Daily habit forming. Nice rhythm.</p>
+                        </div>
+                        <div class="achievement-card">
+                            <span class="sb-perk-tag tone-lilac">Invest</span>
+                            <h4 class="achievement-title">First investment unlocked</h4>
+                            <p class="achievement-text">First step into investing. Welcome to the journey.</p>
+                        </div>
+                        <div class="achievement-card">
+                            <span class="sb-perk-tag tone-butter">Insure</span>
+                            <h4 class="achievement-title">Home insurance active</h4>
+                            <p class="achievement-text">You're protected. That's peace of mind we're glad to provide.</p>
                         </div>
                     </div>
 
@@ -795,6 +831,32 @@
                         </div>
                         <div class="transaction-list" id="recent-transactions">
                         </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SCREEN: Our Relationship -->
+            <div class="screen" id="screen-relationship">
+                <div class="screen-header">
+                    <span class="back-btn" onclick="navigateTo('screen-loyalty1')"><svg width="10" height="18" viewBox="0 0 10 18" fill="none"><path d="M9 1L1 9L9 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                    <span class="header-title">Our Relationship</span>
+                    <span></span>
+                </div>
+                <div class="relationship-content">
+                    <h1 class="relationship-title" id="relationship-title">Your year with Swedbank</h1>
+                    <p class="relationship-subtitle" id="relationship-subtitle">A look at the last 12 months together</p>
+
+                    <div class="relationship-grid" id="relationship-grid"></div>
+
+                    <div class="relationship-summary" id="relationship-summary"></div>
+
+                    <h3 class="how-to-title">What do you want to do next?</h3>
+                    <div class="category-pills-full">
+                        <span class="pill disabled">Improve daily</span>
+                        <span class="pill disabled">Save more</span>
+                        <span class="pill" onclick="navigateTo('screen-investment')">Invest</span>
+                        <span class="pill" onclick="navigateTo('screen-insurance')">Insure</span>
+                        <span class="pill disabled">Finance</span>
                     </div>
                 </div>
             </div>
@@ -1114,6 +1176,10 @@
                     <h3>OaK Helper</h3>
                     <div class="info-close" onclick="toggleMobileHelper()">&times;</div>
                 </div>
+                <div class="version-segmented">
+                    <button class="version-seg active" data-version="v1" onclick="setVersion('v1')">V1 Current</button>
+                    <button class="version-seg" data-version="v2" onclick="setVersion('v2')">V2 Improved</button>
+                </div>
                 <div class="debug-value">
                     <span id="debug-oaks-mobile">1540</span> OaKs
                 </div>
@@ -1131,6 +1197,8 @@
                 <div class="debug-path-buttons">
                     <button id="debug-complete-path-mobile" class="debug-path-btn" onclick="completeRandomPathItem()" disabled>Complete random path item</button>
                     <button id="debug-uncomplete-path-mobile" class="debug-path-btn" onclick="uncompleteRandomPathItem()" disabled>Remove random path item</button>
+                    <button class="debug-path-btn debug-surprise-btn" onclick="triggerRandomSurprise()">Trigger random surprise</button>
+                    <button class="debug-path-btn debug-cycle-btn" onclick="cycleRelationshipPersona()">Cycle the year (persona)</button>
                 </div>
                 <button class="debug-reset" onclick="resetOaks()">Reset to 1540</button>
             </div>
@@ -1147,6 +1215,10 @@
     <!-- OaK Helper Panel -->
     <div class="debug-panel">
         <h3>OaK Helper</h3>
+        <div class="version-segmented">
+            <button class="version-seg active" data-version="v1" onclick="setVersion('v1')">V1 Current</button>
+            <button class="version-seg" data-version="v2" onclick="setVersion('v2')">V2 Improved</button>
+        </div>
         <div class="debug-value">
             <span id="debug-oaks">1540</span> OaKs
         </div>
@@ -1164,10 +1236,12 @@
         <div class="debug-path-buttons">
             <button id="debug-complete-path" class="debug-path-btn" onclick="completeRandomPathItem()" disabled>Complete random path item</button>
             <button id="debug-uncomplete-path" class="debug-path-btn" onclick="uncompleteRandomPathItem()" disabled>Remove random path item</button>
+            <button class="debug-path-btn debug-surprise-btn" onclick="triggerRandomSurprise()">Trigger random surprise</button>
+            <button class="debug-path-btn debug-cycle-btn" onclick="cycleRelationshipPersona()">Cycle the year (persona)</button>
         </div>
         <button class="debug-reset" onclick="resetOaks()">Reset to 1540</button>
     </div>
 
-    <script src="app.js?t=1744628700"></script>
+    <script src="app.js?t=1748900000"></script>
 </body>
 </html>
