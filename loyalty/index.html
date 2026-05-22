@@ -11,7 +11,7 @@
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
-    <link rel="stylesheet" href="styles.css?v=26">
+    <link rel="stylesheet" href="styles.css?v=30">
 </head>
 <body>
     <div class="phone-frame">
@@ -672,7 +672,6 @@
                     <div class="points-links">
                         <a class="link-teal" onclick="showIntroPopup()">Read more</a>
                     </div>
-                    <p class="upcoming-milestone v2-only" id="upcoming-milestone">Your 5-year anniversary is 38 days away.</p>
 
                     <div class="level-section">
                         <div class="level-header">
@@ -713,7 +712,7 @@
                                 <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
                             </svg>
                         </span>
-                        <span class="relationship-link-label">Our relationship in last 12 months</span>
+                        <span class="relationship-link-label" id="relationship-link-label">Our relationship in last 12 months</span>
                         <span class="relationship-link-arrow">
                             <svg width="8" height="14" viewBox="0 0 8 14" fill="none"><path d="M1 1L7 7L1 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
                         </span>
@@ -737,8 +736,8 @@
                         </div>
                     </div>
 
-                    <h3 class="how-to-title">Rewards</h3>
-                    <div class="reward-categories">
+                    <h3 class="how-to-title v2-only">Rewards</h3>
+                    <div class="reward-categories v2-only">
                         <div class="reward-cat-card tone-butter" onclick="navigateTo('screen-discounts')">
                             <img src="assets/iconsDiscounts.png" class="reward-cat-img">
                             <span class="reward-cat-label">Discounts</span>
@@ -759,20 +758,10 @@
                             <img src="assets/iconsDonations.png" class="reward-cat-img">
                             <span class="reward-cat-label">Care</span>
                         </div>
-                        <div class="reward-cat-card" style="background: #EDF4EE;" id="mystery-box" onclick="openMysteryBox()">
+                        <div class="reward-cat-card mystery-box-card" style="background: #EDF4EE;" onclick="openMysteryBox()">
                             <img src="assets/iconsMystery.png" class="reward-cat-img">
-                            <span class="reward-cat-label v1-only">Mystery box</span>
-                            <span class="reward-cat-label v2-only">A little something</span>
+                            <span class="reward-cat-label">Mystery box</span>
                         </div>
-                    </div>
-
-                    <h3 class="how-to-title v1-only">How to get more points?</h3>
-                    <div class="category-pills-full v1-only">
-                        <span class="pill disabled">Daily</span>
-                        <span class="pill disabled">Savings</span>
-                        <span class="pill" onclick="navigateTo('screen-investment')">Investments</span>
-                        <span class="pill" onclick="navigateTo('screen-insurance')">Insurance</span>
-                        <span class="pill disabled">Financing</span>
                     </div>
 
                     <div class="achievement-cards v1-only">
@@ -801,26 +790,68 @@
                             <a class="link-teal-sm" onclick="navigateTo('screen-offer')">Read more</a>
                         </div>
                     </div>
+
+                    <h3 class="how-to-title v1-only">How to get more points?</h3>
+                    <div class="category-pills-full v1-only">
+                        <span class="pill disabled">Daily</span>
+                        <span class="pill disabled">Savings</span>
+                        <span class="pill" onclick="navigateTo('screen-investment')">Investments</span>
+                        <span class="pill" onclick="navigateTo('screen-insurance')">Insurance</span>
+                        <span class="pill disabled">Financing</span>
+                    </div>
+
+                    <h3 class="how-to-title v1-only">Rewards</h3>
+                    <div class="reward-categories v1-only">
+                        <div class="reward-cat-card tone-butter" onclick="navigateTo('screen-discounts')">
+                            <img src="assets/iconsDiscounts.png" class="reward-cat-img">
+                            <span class="reward-cat-label">Discounts</span>
+                        </div>
+                        <div class="reward-cat-card" style="background: #EEF5F0;" onclick="navigateTo('screen-status')">
+                            <img src="assets/iconsStatusupgrade.png" class="reward-cat-img">
+                            <span class="reward-cat-label">Status upgrade</span>
+                        </div>
+                        <div class="reward-cat-card tone-peach" onclick="navigateTo('screen-experience')">
+                            <img src="assets/iconsEvents.png" class="reward-cat-img">
+                            <span class="reward-cat-label">Experience</span>
+                        </div>
+                        <div class="reward-cat-card tone-sky" onclick="navigateTo('screen-partner-offers')">
+                            <img src="assets/iconsGiftCards.png" class="reward-cat-img">
+                            <span class="reward-cat-label">Partner offers</span>
+                        </div>
+                        <div class="reward-cat-card tone-rose" onclick="navigateTo('screen-care')">
+                            <img src="assets/iconsDonations.png" class="reward-cat-img">
+                            <span class="reward-cat-label">Care</span>
+                        </div>
+                        <div class="reward-cat-card mystery-box-card" style="background: #EDF4EE;" onclick="openMysteryBox()">
+                            <img src="assets/iconsMystery.png" class="reward-cat-img">
+                            <span class="reward-cat-label">Mystery box</span>
+                        </div>
+                    </div>
+
                     <div class="achievement-cards v2-only">
                         <div class="achievement-card">
                             <span class="sb-perk-tag tone-peach">Savings</span>
                             <h4 class="achievement-title">Your savings reached 500 EUR</h4>
-                            <p class="achievement-text">A real milestone. Five hundred euros saved is no small thing.</p>
+                            <p class="achievement-text">Great, keep going! Reaching 1000 EUR will earn you 20 OaKs.</p>
+                            <a class="link-teal-sm" onclick="navigateTo('screen-offer')">Read more</a>
                         </div>
                         <div class="achievement-card">
                             <span class="sb-perk-tag tone-mint">Streak</span>
-                            <h4 class="achievement-title">10 days login streak</h4>
-                            <p class="achievement-text">Daily habit forming. Nice rhythm.</p>
+                            <h4 class="achievement-title">10 days login streak!</h4>
+                            <p class="achievement-text">Nice! Try reaching 30 days streak to get 10 more OaKs.</p>
+                            <a class="link-teal-sm" onclick="navigateTo('screen-offer')">Read more</a>
                         </div>
                         <div class="achievement-card">
                             <span class="sb-perk-tag tone-lilac">Invest</span>
-                            <h4 class="achievement-title">First investment unlocked</h4>
-                            <p class="achievement-text">First step into investing. Welcome to the journey.</p>
+                            <h4 class="achievement-title">You made your first investment</h4>
+                            <p class="achievement-text">Great start! Consider a regular investment to earn 100 more OaKs.</p>
+                            <a class="link-teal-sm" onclick="highlightPathItem('screen-investment', 'Added regular investment payment')">Read more</a>
                         </div>
                         <div class="achievement-card">
                             <span class="sb-perk-tag tone-butter">Insure</span>
-                            <h4 class="achievement-title">Home insurance active</h4>
-                            <p class="achievement-text">You're protected. That's peace of mind we're glad to provide.</p>
+                            <h4 class="achievement-title">You have active Home Insurance</h4>
+                            <p class="achievement-text">Just by staying protected you will earn 10 OaKs every month.</p>
+                            <a class="link-teal-sm" onclick="navigateTo('screen-offer')">Read more</a>
                         </div>
                     </div>
 
@@ -1024,62 +1055,6 @@
                         </div>
                     </div>
                     <div class="path-items">
-                        <div class="path-item">
-                            <div class="path-item-info">
-                                <span class="path-item-name">Activated term deposit</span>
-                                <span class="path-item-points">100 OaKs</span>
-                            </div>
-                            <span class="path-check">&#10005;</span>
-                        </div>
-                        <div class="path-item completed">
-                            <div class="path-item-info">
-                                <span class="path-item-name">Activated Easy Saver</span>
-                                <span class="path-item-points">100 OaKs</span>
-                            </div>
-                            <span class="path-check done">&#10003;</span>
-                        </div>
-                        <div class="path-item completed">
-                            <div class="path-item-info">
-                                <span class="path-item-name">Activated Round-up</span>
-                                <span class="path-item-points">50 OaKs</span>
-                            </div>
-                            <span class="path-check done">&#10003;</span>
-                        </div>
-                        <div class="path-item">
-                            <div class="path-item-info">
-                                <span class="path-item-name">Added Regular payment</span>
-                                <span class="path-item-points">25 OaKs</span>
-                            </div>
-                            <span class="path-check">&#10005;</span>
-                        </div>
-                        <div class="path-item completed">
-                            <div class="path-item-info">
-                                <span class="path-item-name">Reached goal</span>
-                                <span class="path-item-points">10 OaKs</span>
-                            </div>
-                            <span class="path-check done">&#10003;</span>
-                        </div>
-                        <div class="path-item completed">
-                            <div class="path-item-info">
-                                <span class="path-item-name">Reached 500 EUR</span>
-                                <span class="path-item-points">10 OaKs</span>
-                            </div>
-                            <span class="path-check done">&#10003;</span>
-                        </div>
-                        <div class="path-item completed">
-                            <div class="path-item-info">
-                                <span class="path-item-name">Reached 1000 EUR</span>
-                                <span class="path-item-points">20 OaKs</span>
-                            </div>
-                            <span class="path-check done">&#10003;</span>
-                        </div>
-                        <div class="path-item">
-                            <div class="path-item-info">
-                                <span class="path-item-name">Reached 5000 EUR</span>
-                                <span class="path-item-points">50 OaKs</span>
-                            </div>
-                            <span class="path-check">&#10005;</span>
-                        </div>
                         <div class="path-item completed">
                             <div class="path-item-info">
                                 <span class="path-item-name">Opened Investment account</span>
@@ -1094,12 +1069,12 @@
                             </div>
                             <span class="path-check">&#10005;</span>
                         </div>
-                        <div class="path-item">
+                        <div class="path-item completed">
                             <div class="path-item-info">
                                 <span class="path-item-name">Invested in Stocks</span>
                                 <span class="path-item-points">200 OaKs</span>
                             </div>
-                            <span class="path-check">&#10005;</span>
+                            <span class="path-check done">&#10003;</span>
                         </div>
                         <div class="path-item">
                             <div class="path-item-info">
@@ -1129,12 +1104,12 @@
                             </div>
                             <span class="path-check">&#10005;</span>
                         </div>
-                        <div class="path-item completed">
+                        <div class="path-item">
                             <div class="path-item-info">
                                 <span class="path-item-name">Successful regular investment</span>
                                 <span class="path-item-points">20 OaKs/Month</span>
                             </div>
-                            <span class="path-check done">&#10003;</span>
+                            <span class="path-check">&#10005;</span>
                         </div>
                     </div>
                 </div>
@@ -1242,6 +1217,6 @@
         <button class="debug-reset" onclick="resetOaks()">Reset to 1540</button>
     </div>
 
-    <script src="app.js?t=1748900000"></script>
+    <script src="app.js?t=1749400000"></script>
 </body>
 </html>

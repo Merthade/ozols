@@ -81,16 +81,16 @@ function getV1RankText(oaks) {
 
 // V2 percentile-themed phrases, bucketed so the message changes as the balance grows
 const V2_RANK_BUCKETS = [
-    { min: 8000, text: "Top 1% in your age group. You're leading the way!" },
-    { min: 6000, text: "Top 3% in your age group. Incredible momentum!" },
-    { min: 4000, text: "Top 5% in your age group. Outstanding pace!" },
-    { min: 3000, text: "Top 10% in your age group. Fantastic progress!" },
-    { min: 2000, text: "Top 15% in your age group. Great pace!" },
-    { min: 1500, text: "Top 25% in your age group. Nice momentum!" },
-    { min: 1000, text: "Top 35% in your age group. Keep climbing!" },
-    { min: 500,  text: "Top 50% in your age group. Nice start!" },
-    { min: 200,  text: "You're warming up. Keep earning to climb your age group!" },
-    { min: 0,    text: "Welcome aboard! Start earning to climb your age group." },
+    { min: 8000, text: "\u{1F389} Phenomenal! You're top 1% in your age group." },
+    { min: 6000, text: "\u{1F389} Incredible! You're top 3% in your age group." },
+    { min: 4000, text: "\u{1F389} Outstanding! You're top 5% in your age group." },
+    { min: 3000, text: "\u{1F389} Fantastic! You're top 10% in your age group." },
+    { min: 2000, text: "\u{1F389} Great! You're top 15% in your age group." },
+    { min: 1500, text: "\u{1F389} Nice! You're top 25% in your age group." },
+    { min: 1000, text: "\u{1F389} Solid! You're top 35% in your age group." },
+    { min: 500,  text: "\u{1F389} Nice! You're top 50% in your age group." },
+    { min: 200,  text: "\u{1F389} Welcome! Keep earning to climb your age group." },
+    { min: 0,    text: "\u{1F389} Welcome! Start earning to climb your age group." },
 ];
 
 function getV2RankText(oaks) {
@@ -603,8 +603,9 @@ const RELATIONSHIP_PERSONAS = [
     // Persona 1: established mid-tier customer (~5 years)
     {
         title: "Your year with Swedbank",
-        subtitle: "A look at the last 12 months together",
+        subtitle: "Thank you for being with us since April 2021",
         upcomingMilestone: "Your 5-year anniversary is 38 days away.",
+        linkLabel: "Our relationship in last 12 months",
         tiles: [
             { span: 5, tone: 'tone-butter', icon: 'trophy',    label: '5th anniversary with us',    value: '+1000 OaKs' },
             { span: 7, tone: 'tone-peach',  icon: 'cake',      label: 'Your birthday on May 5',     value: '+1000 OaKs' },
@@ -623,8 +624,9 @@ const RELATIONSHIP_PERSONAS = [
     // Persona 2: brand new customer (weeks/months in)
     {
         title: "Your first months with Swedbank",
-        subtitle: "Welcome aboard! Here's how it's going",
+        subtitle: "Thank you for being with us since January 2026",
         upcomingMilestone: "Your first 100 days with us coming up next week.",
+        linkLabel: "Our relationship so far",
         tiles: [
             { span: 5, tone: 'tone-mint',   icon: 'gift',     label: 'Welcome to Swedbank',     value: '+50 OaKs' },
             { span: 7, tone: 'tone-butter', icon: 'banknote', label: 'Received your 4th salary', value: '+40 OaKs' },
@@ -643,8 +645,9 @@ const RELATIONSHIP_PERSONAS = [
     // Persona 3: long-term established customer (20+ years)
     {
         title: "Two decades with Swedbank",
-        subtitle: "Your year, after 20+ years together",
+        subtitle: "Thank you for being with us since June 2004",
         upcomingMilestone: "Your 23rd year with Swedbank begins this June.",
+        linkLabel: "Our relationship in last 12 months",
         tiles: [
             { span: 5, tone: 'tone-butter', icon: 'trophy',   label: '22nd anniversary with us',  value: '+2000 OaKs' },
             { span: 7, tone: 'tone-peach',  icon: 'cake',     label: 'Your birthday on May 5',    value: '+1000 OaKs' },
@@ -673,9 +676,11 @@ function renderRelationship() {
     const gridEl     = document.getElementById('relationship-grid');
     const summaryEl  = document.getElementById('relationship-summary');
     const upcomingEl = document.getElementById('upcoming-milestone');
-    if (titleEl)    titleEl.textContent    = p.title;
-    if (subtitleEl) subtitleEl.textContent = p.subtitle;
-    if (upcomingEl) upcomingEl.textContent = p.upcomingMilestone;
+    const linkLabelEl = document.getElementById('relationship-link-label');
+    if (titleEl)     titleEl.textContent     = p.title;
+    if (subtitleEl)  subtitleEl.textContent  = p.subtitle;
+    if (upcomingEl)  upcomingEl.textContent  = p.upcomingMilestone;
+    if (linkLabelEl) linkLabelEl.textContent = p.linkLabel;
     if (gridEl) {
         gridEl.innerHTML = p.tiles.map(t => `
             <div class="relationship-tile tile-${t.span} ${t.tone}">
@@ -831,8 +836,9 @@ function confirmDonation() {
 // MYSTERY BOX
 // ============================================
 function openMysteryBox() {
-    const box = document.getElementById('mystery-box');
-    if (!box || box.classList.contains('mystery-used')) return;
+    const boxes = document.querySelectorAll('.mystery-box-card');
+    if (boxes.length === 0) return;
+    if (Array.from(boxes).some(b => b.classList.contains('mystery-used'))) return;
 
     const reward = 5;
 
@@ -863,8 +869,8 @@ function openMysteryBox() {
     overlay.addEventListener('click', dismiss);
     setTimeout(dismiss, 4000);
 
-    // Disable the box
-    box.classList.add('mystery-used');
+    // Disable all mystery box instances (V1 + V2 stay in sync across toggle)
+    boxes.forEach(b => b.classList.add('mystery-used'));
 }
 
 // Redeem a discount card
@@ -1181,6 +1187,25 @@ function renderPathProgress(screenId) {
     setText('.path-monthly-total', monTotal);
     setWidth('.path-regular-fill', regTotal ? (regEarned / regTotal) * 100 : 0);
     setWidth('.path-monthly-fill', monTotal ? (monEarned / monTotal) * 100 : 0);
+}
+
+// Navigate to a path screen and flash a specific item by name. Called from
+// achievement-card "Read more" links so the user lands on the relevant row.
+function highlightPathItem(screenId, itemName) {
+    navigateTo(screenId);
+    setTimeout(() => {
+        const screen = document.getElementById(screenId);
+        if (!screen) return;
+        const items = screen.querySelectorAll('.path-item');
+        const target = Array.from(items).find(el => {
+            const nameEl = el.querySelector('.path-item-name');
+            return nameEl && nameEl.textContent.trim() === itemName;
+        });
+        if (!target) return;
+        target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        target.classList.add('path-item-highlight');
+        setTimeout(() => target.classList.remove('path-item-highlight'), 3500);
+    }, 350);
 }
 
 document.addEventListener('DOMContentLoaded', () => {
