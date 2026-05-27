@@ -250,7 +250,7 @@
             height: 27px;
             background: var(--wb-dark-blue);
             border: 3px solid var(--wb-black);
-            border-left: none;
+            border-right: none;
             cursor: pointer;
             position: relative;
             z-index: 2;
@@ -286,37 +286,6 @@
 
         .wb-window.active .wb-title {
             color: var(--wb-white);
-        }
-
-        .wb-depth {
-            width: 30px;
-            height: 27px;
-            position: relative;
-            z-index: 2;
-            flex-shrink: 0;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .wb-depth-inner {
-            width: 21px;
-            height: 18px;
-            border: 3px solid var(--wb-black);
-            background: var(--wb-dark-blue);
-            position: relative;
-        }
-
-        .wb-depth-inner::after {
-            content: '';
-            position: absolute;
-            top: -8px;
-            left: -8px;
-            width: 21px;
-            height: 18px;
-            border: 3px solid var(--wb-black);
-            background: var(--wb-white);
         }
 
         /* ── WINDOW CONTENT ── */
@@ -545,6 +514,15 @@
             color: #8B3A00;
             line-height: 1;
         }
+
+        /* Hidden easter-egg icon — revealed by the ← → ← → ↑ ↓ key sequence */
+        .loyalty-egg { display: none !important; }
+        @keyframes loyaltyPop {
+            0%   { opacity: 0; transform: scale(0.4); }
+            60%  { opacity: 1; transform: scale(1.15); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+        .loyalty-reveal { animation: loyaltyPop 0.5s ease-out; }
 
         /* Blog - Page with navy header strip and text lines */
         .px-blog {
@@ -872,39 +850,14 @@
                 <div class="icon-img"><div class="disk-icon"></div></div>
                 <div class="icon-label">Ozols.Dev</div>
             </div>
-            <div class="desktop-icon" onclick="toggleWindow('win-about')" >
-                <div class="icon-img"><div class="disk-icon blue-disk"></div></div>
-                <div class="icon-label">About</div>
-            </div>
-            <div class="desktop-icon" onclick="toggleWindow('win-remi')" >
-                <div class="icon-img"><div class="disk-icon white-disk"></div></div>
-                <div class="icon-label">Remi</div>
-            </div>
-            <div class="desktop-icon" onclick="toggleWindow('win-rise')" >
-                <div class="icon-img"><div class="disk-icon" style="background:#FFD044;"></div></div>
-                <div class="icon-label">Rise</div>
-            </div>
-            <div class="desktop-icon" onclick="toggleWindow('win-alarmplanner')" >
-                <div class="icon-img"><div class="disk-icon" style="background:#7CB988;"></div></div>
-                <div class="icon-label">AlarmPlanner</div>
-            </div>
-            <div class="desktop-icon" onclick="location.href='/loyalty/'" >
-                <div class="icon-img"><div class="disk-icon" style="background:#FB4F00;"></div></div>
-                <div class="icon-label">Loyalty</div>
-            </div>
-            <div class="desktop-icon" onclick="toggleWindow('win-blog')" >
-                <div class="icon-img"><div class="disk-icon" style="background:#000080;"></div></div>
-                <div class="icon-label">Blog</div>
-            </div>
         </div>
 
         <!-- ═══ MAIN WORKBENCH WINDOW ═══ -->
         <div class="wb-window active" id="win-workbench" style="left:30px;top:30px;width:750px;height:480px;">
             <div class="wb-titlebar" onmousedown="startDrag(event, 'win-workbench')">
                 <div class="wb-titlebar-stripes"></div>
-                <div class="wb-close" onclick="closeWindow('win-workbench')"></div>
                 <div class="wb-title">Ozols.Dev</div>
-                <div class="wb-depth" onclick="sendToBack('win-workbench')"><div class="wb-depth-inner"></div></div>
+                <div class="wb-close" onclick="closeWindow('win-workbench')"></div>
             </div>
             <div class="wb-content">
                 <div class="win-icons">
@@ -924,7 +877,7 @@
                         <div class="icon-gfx"><div class="px-icon px-alarmplanner"></div></div>
                         <div class="icon-name">AlarmPlanner</div>
                     </div>
-                    <div class="win-icon" onclick="location.href='/loyalty/'">
+                    <div class="win-icon loyalty-egg" onclick="location.href='/loyalty/'">
                         <div class="icon-gfx"><div class="px-icon px-loyalty"></div></div>
                         <div class="icon-name">Loyalty</div>
                     </div>
@@ -945,9 +898,8 @@
         <div class="wb-window hidden" id="win-about" style="left:90px;top:90px;width:720px;height:420px;">
             <div class="wb-titlebar" onmousedown="startDrag(event, 'win-about')">
                 <div class="wb-titlebar-stripes"></div>
-                <div class="wb-close" onclick="closeWindow('win-about')"></div>
                 <div class="wb-title">About - Emils Ozols</div>
-                <div class="wb-depth" onclick="sendToBack('win-about')"><div class="wb-depth-inner"></div></div>
+                <div class="wb-close" onclick="closeWindow('win-about')"></div>
             </div>
             <div class="wb-content">
                 <div class="about-content">
@@ -970,9 +922,8 @@
         <div class="wb-window hidden" id="win-remi" style="left:150px;top:120px;width:690px;height:480px;">
             <div class="wb-titlebar" onmousedown="startDrag(event, 'win-remi')">
                 <div class="wb-titlebar-stripes"></div>
-                <div class="wb-close" onclick="closeWindow('win-remi')"></div>
                 <div class="wb-title">Remi - Reminders & Planner</div>
-                <div class="wb-depth" onclick="sendToBack('win-remi')"><div class="wb-depth-inner"></div></div>
+                <div class="wb-close" onclick="closeWindow('win-remi')"></div>
             </div>
             <div class="wb-content">
                 <div class="remi-content">
@@ -995,9 +946,8 @@
         <div class="wb-window hidden" id="win-rise" style="left:180px;top:105px;width:690px;height:480px;">
             <div class="wb-titlebar" onmousedown="startDrag(event, 'win-rise')">
                 <div class="wb-titlebar-stripes"></div>
-                <div class="wb-close" onclick="closeWindow('win-rise')"></div>
                 <div class="wb-title">Rise - Morning Routine App</div>
-                <div class="wb-depth" onclick="sendToBack('win-rise')"><div class="wb-depth-inner"></div></div>
+                <div class="wb-close" onclick="closeWindow('win-rise')"></div>
             </div>
             <div class="wb-content">
                 <div class="remi-content">
@@ -1021,9 +971,8 @@
         <div class="wb-window hidden" id="win-alarmplanner" style="left:200px;top:90px;width:690px;height:520px;">
             <div class="wb-titlebar" onmousedown="startDrag(event, 'win-alarmplanner')">
                 <div class="wb-titlebar-stripes"></div>
-                <div class="wb-close" onclick="closeWindow('win-alarmplanner')"></div>
                 <div class="wb-title">Alarm Planner - Schedule Alarms Ahead</div>
-                <div class="wb-depth" onclick="sendToBack('win-alarmplanner')"><div class="wb-depth-inner"></div></div>
+                <div class="wb-close" onclick="closeWindow('win-alarmplanner')"></div>
             </div>
             <div class="wb-content">
                 <div class="remi-content">
@@ -1052,9 +1001,8 @@
         <div class="wb-window hidden" id="win-social" style="left:210px;top:40px;width:630px;height:560px;">
             <div class="wb-titlebar" onmousedown="startDrag(event, 'win-social')">
                 <div class="wb-titlebar-stripes"></div>
-                <div class="wb-close" onclick="closeWindow('win-social')"></div>
                 <div class="wb-title">Connect</div>
-                <div class="wb-depth" onclick="sendToBack('win-social')"><div class="wb-depth-inner"></div></div>
+                <div class="wb-close" onclick="closeWindow('win-social')"></div>
             </div>
             <div class="wb-content">
                 <div class="social-item">
@@ -1085,9 +1033,8 @@
         <div class="wb-window hidden" id="win-blog" style="left:120px;top:80px;width:600px;height:480px;">
             <div class="wb-titlebar" onmousedown="startDrag(event, 'win-blog')">
                 <div class="wb-titlebar-stripes"></div>
-                <div class="wb-close" onclick="closeWindow('win-blog')"></div>
                 <div class="wb-title">Blog</div>
-                <div class="wb-depth" onclick="sendToBack('win-blog')"><div class="wb-depth-inner"></div></div>
+                <div class="wb-close" onclick="closeWindow('win-blog')"></div>
             </div>
             <div class="wb-content">
                 <div class="blog-window-header">
@@ -1139,11 +1086,6 @@
             document.getElementById(id).classList.add('hidden');
         }
 
-        function sendToBack(id) {
-            const win = document.getElementById(id);
-            win.style.zIndex = 100;
-        }
-
         function selectIcon(el) {
             document.querySelectorAll('.desktop-icon').forEach(i => i.classList.remove('selected'));
             el.classList.add('selected');
@@ -1151,7 +1093,7 @@
 
         // ── Dragging ──
         function startDrag(e, id) {
-            if (e.target.closest('.wb-close') || e.target.closest('.wb-depth')) return;
+            if (e.target.closest('.wb-close')) return;
             activateWindow(id);
             const win = document.getElementById(id);
             const rect = win.getBoundingClientRect();
@@ -1297,9 +1239,8 @@
                 win.innerHTML = `
                     <div class="wb-titlebar" onmousedown="startDrag(event, '${winId}')">
                         <div class="wb-titlebar-stripes"></div>
-                        <div class="wb-close" onclick="closeWindow('${winId}')"></div>
                         <div class="wb-title">Blog: ${escapeHtml(title)}</div>
-                        <div class="wb-depth" onclick="sendToBack('${winId}')"><div class="wb-depth-inner"></div></div>
+                        <div class="wb-close" onclick="closeWindow('${winId}')"></div>
                     </div>
                     <div class="wb-content post-window-content">
                         <iframe src="/blog/${encodeURIComponent(slug)}/?embedded=1" class="post-iframe" title="${escapeHtml(title)}"></iframe>
@@ -1323,6 +1264,27 @@
             mem += Math.floor(Math.random() * 200 - 100);
             document.getElementById('freeMemory').textContent = mem;
         }, 2000);
+
+        // ── Easter egg: reveal the hidden Loyalty icon with ← → ← → ↑ ↓ ──
+        (function () {
+            const seq = ['ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'ArrowUp', 'ArrowDown'];
+            let pos = 0;
+            document.addEventListener('keydown', (e) => {
+                if (e.key === seq[pos]) {
+                    pos++;
+                    if (pos === seq.length) {
+                        pos = 0;
+                        document.querySelectorAll('.loyalty-egg').forEach(el => {
+                            el.classList.add('loyalty-reveal');
+                            el.classList.remove('loyalty-egg');
+                        });
+                    }
+                } else {
+                    // Wrong key — restart, but let it count if it's the first key of the sequence
+                    pos = (e.key === seq[0]) ? 1 : 0;
+                }
+            });
+        })();
     </script>
 </body>
 </html>
