@@ -612,7 +612,7 @@ const RELATIONSHIP_PERSONAS = [
             { span: 7, tone: 'tone-mint',   icon: 'phone',     label: 'Used the Swedbank app 123 days', value: '+123 OaKs' },
             { span: 5, tone: 'tone-lilac',  icon: 'chartUp',   label: 'Invested in funds',          value: '+200 OaKs' },
             { span: 4, tone: 'tone-sky',    icon: 'briefcase', label: 'Opened investment account',  value: '+100 OaKs' },
-            { span: 4, tone: 'tone-rose',   icon: 'repeat',    label: '7 regular investments',      value: '+140 OaKs' },
+            { span: 4, tone: 'tone-rose',   icon: 'chartUp',   label: 'Invested in stocks',         value: '+200 OaKs' },
             { span: 4, tone: 'tone-mint',   icon: 'banknote',  label: '500 EUR in savings',         value: '+10 OaKs' },
         ],
         summary: [
@@ -694,13 +694,10 @@ function renderRelationship() {
     }
 }
 
-// Called when navigating INTO screen-relationship. First entry shows index 0,
-// subsequent entries advance to the next persona.
+// Called when navigating INTO screen-relationship. Renders the current persona
+// without advancing — the persona only changes via the OaK Helper
+// "Cycle the year (persona)" button.
 function onEnterRelationship() {
-    if (relationshipPersonaShown) {
-        relationshipPersonaIndex = (relationshipPersonaIndex + 1) % RELATIONSHIP_PERSONAS.length;
-    }
-    relationshipPersonaShown = true;
     renderRelationship();
 }
 

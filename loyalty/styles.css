@@ -2811,6 +2811,35 @@ img.push-notif-icon {
 
 /* Responsive */
 /* Mobile Helper (hidden by default) */
+/* Desktop-only QR badge — scan to open the prototype on a phone */
+.qr-badge {
+    position: fixed;
+    bottom: 24px;
+    left: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 9px;
+    padding: 14px;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.16);
+    cursor: pointer;
+    z-index: 80;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.qr-badge:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.22);
+}
+
+.qr-badge-img {
+    width: 279px;
+    height: 279px;
+    display: block;
+}
+
 .mobile-helper-fab {
     display: none;
 }
@@ -2837,6 +2866,10 @@ img.push-notif-icon {
     }
 
     .debug-panel {
+        display: none !important;
+    }
+
+    .qr-badge {
         display: none !important;
     }
 
