@@ -9,3 +9,6 @@ Thumbs.db
 
 # Claude local settings (Emil only)
 .claude/settings.local.json
+
+# Loyalty sub-app — retired 2026-06-27 (day-job contest over); backup at ../loyalty-archive/
+/loyalty/

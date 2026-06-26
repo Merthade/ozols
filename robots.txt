@@ -1,5 +1,3 @@
 User-agent: *
-Disallow: /loyalty/
-Disallow: /loyalty
 
 Sitemap: https://ozols.dev/sitemap.xml

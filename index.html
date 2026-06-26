@@ -488,42 +488,6 @@
             transform: rotate(-30deg);
         }
 
-        /* Loyalty - OaKs coin */
-        .px-loyalty {
-            background: #FB4F00;
-            border: 3px outset #FB7538;
-            border-radius: 2px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .px-loyalty::before {
-            content: '';
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
-            background: #FFD044;
-            border: 2px solid #CC9900;
-        }
-        .px-loyalty::after {
-            content: 'O';
-            position: absolute;
-            font-family: 'Courier New', monospace;
-            font-weight: 900;
-            font-size: 14px;
-            color: #8B3A00;
-            line-height: 1;
-        }
-
-        /* Hidden easter-egg icon — revealed by the ← → ← → ↑ ↓ key sequence */
-        .loyalty-egg { display: none !important; }
-        @keyframes loyaltyPop {
-            0%   { opacity: 0; transform: scale(0.4); }
-            60%  { opacity: 1; transform: scale(1.15); }
-            100% { opacity: 1; transform: scale(1); }
-        }
-        .loyalty-reveal { animation: loyaltyPop 0.5s ease-out; }
-
         /* Blog - Page with navy header strip and text lines */
         .px-blog {
             background: var(--wb-white);
@@ -876,10 +840,6 @@
                     <div class="win-icon" onclick="toggleWindow('win-alarmplanner')">
                         <div class="icon-gfx"><div class="px-icon px-alarmplanner"></div></div>
                         <div class="icon-name">AlarmPlanner</div>
-                    </div>
-                    <div class="win-icon loyalty-egg" onclick="location.href='/loyalty/'">
-                        <div class="icon-gfx"><div class="px-icon px-loyalty"></div></div>
-                        <div class="icon-name">Loyalty</div>
                     </div>
                     <div class="win-icon" onclick="toggleWindow('win-blog')">
                         <div class="icon-gfx"><div class="px-icon px-blog"></div></div>
@@ -1264,27 +1224,6 @@
             mem += Math.floor(Math.random() * 200 - 100);
             document.getElementById('freeMemory').textContent = mem;
         }, 2000);
-
-        // ── Easter egg: reveal the hidden Loyalty icon with ← → ← → ↑ ↓ ──
-        (function () {
-            const seq = ['ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'ArrowUp', 'ArrowDown'];
-            let pos = 0;
-            document.addEventListener('keydown', (e) => {
-                if (e.key === seq[pos]) {
-                    pos++;
-                    if (pos === seq.length) {
-                        pos = 0;
-                        document.querySelectorAll('.loyalty-egg').forEach(el => {
-                            el.classList.add('loyalty-reveal');
-                            el.classList.remove('loyalty-egg');
-                        });
-                    }
-                } else {
-                    // Wrong key — restart, but let it count if it's the first key of the sequence
-                    pos = (e.key === seq[0]) ? 1 : 0;
-                }
-            });
-        })();
     </script>
 </body>
 </html>
