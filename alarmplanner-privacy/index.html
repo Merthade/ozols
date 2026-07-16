@@ -137,10 +137,15 @@
     </a>
 
     <h1>Privacy Policy</h1>
-    <p class="updated">Last updated: May 22, 2026</p>
+    <p class="updated">Last updated: July 16, 2026</p>
 
     <h2>Data Storage</h2>
-    <p>Alarm Planner stores your alarms, tags, sounds, and settings locally on your device using SwiftData. Nothing about your alarms leaves your device. There is no account, no login, and no cloud sync. We do not have access to your alarm data.</p>
+    <p>Alarm Planner stores your alarms, tags, sounds, and settings on your device using SwiftData. There is no account and no login, and we run no server that holds your alarms. Your data stays on your device, apart from the optional iCloud Backup described next.</p>
+
+    <h2>iCloud Backup</h2>
+    <p>So your alarms survive a reinstall or a move to a new iPhone, Alarm Planner can back them up to <strong>your own private iCloud</strong>. Backup is on by default when you are signed in to iCloud, and you can turn it off at any time under Settings, iCloud Backup.</p>
+    <p>When backup is on, a copy of your alarms, tags, custom sounds, and app settings is written to your personal iCloud storage, held by Apple under your Apple Account and covered by Apple's privacy terms. It is not sent to us, and we cannot see it: we have no server and no access to your iCloud. If you turn backup off, no copy is written.</p>
+    <p>This is a restore point, not live cross-device sync. Alarm Planner does not continuously sync your alarms between devices; it saves a backup you can restore.</p>
 
     <h2>Analytics</h2>
     <p>We use <strong>PostHog</strong> (hosted in the EU) to collect anonymous usage analytics. This helps us understand how people use the app so we can make it better.</p>
@@ -160,7 +165,7 @@
     <p>Analytics can be disabled at any time in Settings → Help out → Share analytics.</p>
 
     <h2>Notifications &amp; Alarms</h2>
-    <p>Alarms are scheduled and delivered entirely on your device using Apple's AlarmKit framework. No alarm data is sent to external servers. Alarm Planner does not use push notifications and does not require a server-side component to function.</p>
+    <p>Alarms are scheduled and delivered entirely on your device using Apple's AlarmKit framework. Alarm delivery does not depend on any server, and we operate none. Alarm Planner does not use push notifications and does not require a server-side component to function. The optional iCloud Backup above is the only case where alarm data leaves the device, and it goes to your own iCloud, never to us.</p>
 
     <h2>Third-Party Sharing</h2>
     <p>We do not sell, share, or transfer your personal data to third parties. The only third-party service used is PostHog, for the anonymous analytics described above. PostHog data is stored on EU servers and never linked to you as an individual.</p>
@@ -169,7 +174,7 @@
     <p>Because all your alarm data stays on your device, you control it directly:</p>
     <ul>
         <li><strong>Access &amp; export</strong>: your alarms are visible in the app at all times. There is no separate copy held elsewhere.</li>
-        <li><strong>Deletion</strong>: uninstalling the app removes all alarm data from your device.</li>
+        <li><strong>Deletion</strong>: uninstalling the app removes all alarm data from that device. If iCloud Backup was on, remove the saved copy too by managing Alarm Planner's storage under iCloud in iOS Settings.</li>
         <li><strong>Opt out of analytics</strong>: toggle "Share analytics" off under Settings → Help out.</li>
     </ul>
     <p>If you are an EU/EEA resident, the GDPR grants you additional rights regarding any data we process. Contact us using the email below to exercise them.</p>
