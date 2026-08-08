@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy — Scooch</title>
+    <meta name="description" content="Privacy policy for Scooch, the iOS floor plan app. Scooch collects no data.">
+    <link rel="canonical" href="https://ozols.dev/scooch/privacy/">
+    <meta property="og:title" content="Privacy Policy — Scooch">
+    <meta property="og:description" content="Privacy policy for Scooch. Scooch collects no data.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ozols.dev/scooch/privacy/">
+    <meta property="og:site_name" content="Scooch">
+    <meta property="og:locale" content="en_US">
+    <meta name="theme-color" content="#6E8A2F">
+    <meta name="robots" content="noindex">
+    <script>
+        (function() {
+            var theme = localStorage.getItem('theme');
+            if (!theme) theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+            document.documentElement.setAttribute('data-theme', theme);
+        })();
+    </script>
+    <style>
+        :root {
+            --accent: #6E8A2F;
+            --accent-hover: #5C7527;
+            --text-primary: #1a1a1a;
+            --text-secondary: #555;
+            --text-tertiary: #888;
+            --bg: #F7F8F4;
+            --card-bg: #fff;
+            --card-border: rgba(0,0,0,0.06);
+        }
+
+        [data-theme="dark"] {
+            --accent: #A6C25F;
+            --accent-hover: #B8D072;
+            --text-primary: #f0f0f0;
+            --text-secondary: #a1a1a6;
+            --text-tertiary: #8e8e93;
+            --bg: #12160B;
+            --card-bg: #1D2213;
+            --card-border: rgba(255,255,255,0.08);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'Helvetica Neue', system-ui, sans-serif;
+            background: var(--bg);
+            color: var(--text-primary);
+            font-size: 15px;
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container { max-width: 640px; margin: 0 auto; padding: 60px 24px 80px; }
+
+        .back-link {
+            display: inline-flex; align-items: center; gap: 6px;
+            color: var(--accent); text-decoration: none;
+            font-size: 14px; font-weight: 500; margin-bottom: 40px;
+            transition: color 0.2s;
+        }
+        .back-link:hover { color: var(--accent-hover); }
+
+        h1 { font-size: 28px; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 8px; }
+        .updated { color: var(--text-tertiary); font-size: 13px; margin-bottom: 40px; }
+
+        h2 { font-size: 18px; font-weight: 600; margin: 32px 0 10px; }
+        p { color: var(--text-secondary); margin-bottom: 14px; }
+        strong { color: var(--text-primary); }
+
+        a.mail { color: var(--accent); text-decoration: none; font-weight: 500; }
+        a.mail:hover { color: var(--accent-hover); }
+
+        .footer {
+            margin-top: 56px; padding-top: 24px;
+            border-top: 1px solid var(--card-border);
+            color: var(--text-tertiary); font-size: 13px;
+        }
+        .footer a { color: var(--accent); text-decoration: none; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a class="back-link" href="/scooch/">← Scooch support</a>
+
+        <h1>Scooch privacy policy</h1>
+        <p class="updated">Effective 8 August 2026</p>
+
+        <p><strong>Scooch collects no data.</strong> There are no accounts, no analytics, no advertising, no tracking, and no third-party services inside the app. The app makes no network requests of its own.</p>
+
+        <h2>Your plans</h2>
+        <p>Everything you draw stays on your device. If iCloud is available on your device, Scooch also stores a backup of your plans in your personal iCloud storage so you can restore them on a new device. That backup lives in your private iCloud account, is handled by Apple's infrastructure, and is not accessible to me or to anyone else.</p>
+
+        <h2>Support email</h2>
+        <p>If you email <a class="mail" href="mailto:emils@ozols.dev">emils@ozols.dev</a>, I use your message and address only to reply. No mailing lists, no sharing.</p>
+
+        <h2>Changes</h2>
+        <p>If a future version of Scooch ever changes any of the above, this page and the App Store privacy label will be updated before that version ships.</p>
+
+        <div class="footer">
+            <a href="/scooch/">Scooch support</a> · Made in Latvia by <a href="/">Emils Ozols</a>
+        </div>
+    </div>
+</body>
+</html>
