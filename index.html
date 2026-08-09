@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ozols.Dev - Emils Ozols</title>
-    <meta name="description" content="Emils Ozols - Indie iOS developer. Creator of Remi, Rise, and Alarm Planner. Building things that matter.">
+    <meta name="description" content="Emils Ozols - Indie iOS developer. Creator of Remi, Rise, Alarm Planner, and Scooch. Building things that matter.">
     <link rel="canonical" href="https://ozols.dev/">
     <link rel="alternate" type="application/atom+xml" title="Ozols.dev blog" href="/blog/feed.xml">
 
     <meta property="og:type" content="website">
     <meta property="og:title" content="Ozols.dev — Emils Ozols">
-    <meta property="og:description" content="Emils Ozols, indie iOS developer. Creator of Remi, Rise, and Alarm Planner. Building things that matter.">
+    <meta property="og:description" content="Emils Ozols, indie iOS developer. Creator of Remi, Rise, Alarm Planner, and Scooch. Building things that matter.">
     <meta property="og:url" content="https://ozols.dev/">
     <meta property="og:site_name" content="Ozols.dev">
     <meta property="og:image" content="https://ozols.dev/Profile.jpeg">
@@ -18,7 +18,7 @@
 
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Ozols.dev — Emils Ozols">
-    <meta name="twitter:description" content="Emils Ozols, indie iOS developer. Creator of Remi, Rise, and Alarm Planner. Building things that matter.">
+    <meta name="twitter:description" content="Emils Ozols, indie iOS developer. Creator of Remi, Rise, Alarm Planner, and Scooch. Building things that matter.">
     <meta name="twitter:image" content="https://ozols.dev/Profile.jpeg">
 
     <script type="application/ld+json">
@@ -39,7 +39,7 @@
           "@id": "https://ozols.dev/#website",
           "url": "https://ozols.dev/",
           "name": "Ozols.dev",
-          "description": "Emils Ozols, indie iOS developer. Creator of Remi, Rise, and Alarm Planner.",
+          "description": "Emils Ozols, indie iOS developer. Creator of Remi, Rise, Alarm Planner, and Scooch.",
           "author": { "@id": "https://ozols.dev/#person" },
           "inLanguage": "en"
         }
@@ -458,6 +458,29 @@
                 -7px -7px 0 -4px #FFD044;
         }
 
+        /* Scooch - Floor plan */
+        .px-scooch {
+            background: #2A331A;
+            border: 3px outset #A6C25F;
+            border-radius: 2px;
+            position: relative;
+            overflow: hidden;
+        }
+        .px-scooch::before {
+            content: '';
+            position: absolute;
+            top: 5px; left: 5px; right: 5px; bottom: 5px;
+            border: 2px solid #E8F0D8;
+        }
+        .px-scooch::after {
+            content: '';
+            position: absolute;
+            top: 9px; left: 9px;
+            width: 7px; height: 14px;
+            background: #A6C25F;
+            box-shadow: 13px 5px 0 -2px #A6C25F;
+        }
+
         /* AlarmPlanner - Clock face with hand */
         .px-alarmplanner {
             background: #2d5238;
@@ -841,6 +864,10 @@
                         <div class="icon-gfx"><div class="px-icon px-alarmplanner"></div></div>
                         <div class="icon-name">AlarmPlanner</div>
                     </div>
+                    <div class="win-icon" onclick="toggleWindow('win-scooch')">
+                        <div class="icon-gfx"><div class="px-icon px-scooch"></div></div>
+                        <div class="icon-name">Scooch</div>
+                    </div>
                     <div class="win-icon" onclick="toggleWindow('win-blog')">
                         <div class="icon-gfx"><div class="px-icon px-blog"></div></div>
                         <div class="icon-name">Blog</div>
@@ -869,7 +896,7 @@
                         <p class="tagline">Developer &amp; Creator</p>
                         <p>Making life less complicated - one commit at a time.</p>
                         <br>
-                        <p>> A regular dude crafting digital experiences for life's little annoyances and trying to earn a living from it. Creator of Remi, Rise, and Alarm Planner - apps built to help people structure their days.</p>
+                        <p>> A regular dude crafting digital experiences for life's little annoyances and trying to earn a living from it. Creator of Remi, Rise, Alarm Planner, and Scooch - apps built to help people structure their days and their homes.</p>
                         <br>
                         <p>Status: <span style="color:#008000;">&#9679; System Online</span></p>
                     </div>
@@ -956,6 +983,32 @@
                 </div>
             </div>
             <div class="wb-resize" onmousedown="startResize(event, 'win-alarmplanner')"></div>
+        </div>
+
+        <!-- ═══ SCOOCH WINDOW ═══ -->
+        <div class="wb-window hidden" id="win-scooch" style="left:220px;top:100px;width:690px;height:500px;">
+            <div class="wb-titlebar" onmousedown="startDrag(event, 'win-scooch')">
+                <div class="wb-titlebar-stripes"></div>
+                <div class="wb-title">Scooch - Room & Floor Planner</div>
+                <div class="wb-close" onclick="closeWindow('win-scooch')"></div>
+            </div>
+            <div class="wb-content">
+                <div class="remi-content">
+                    <img src="Scooch.png" alt="Scooch App" class="remi-img" style="border-color:#A6C25F;">
+                    <h2 style="color:#6E8A2F;">Scooch</h2>
+                    <p class="subtitle">Will it fit? Know before you lift.</p>
+                    <p>A no-nonsense 2D floor plan app. Draw your rooms at their real measurements, drop in furniture at real sizes, and see what fits and what collides before you move anything heavy.</p>
+                    <ul>
+                        <li>Type exact dimensions and they stay exact</li>
+                        <li>Furniture that adapts: a stretched couch gains cushions, a wider wardrobe gains doors</li>
+                        <li>Red flags where things overlap or will not fit the room</li>
+                        <li>26 themes, PNG and PDF export, iCloud backup</li>
+                        <li>Native iOS 26 Liquid Glass design</li>
+                    </ul>
+                    <p><a href="/scooch/" class="wb-link">[ Investigate Scooch ]</a></p>
+                </div>
+            </div>
+            <div class="wb-resize" onmousedown="startResize(event, 'win-scooch')"></div>
         </div>
 
         <!-- ═══ SOCIAL FEED WINDOW ═══ -->
