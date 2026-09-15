@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Choru support</title>
+    <meta name="description" content="Support for Choru, the iPhone chore tracker for households: contact and frequently asked questions.">
+    <link rel="canonical" href="https://ozols.dev/choru/">
+    <meta property="og:title" content="Choru support">
+    <meta property="og:description" content="Support for Choru.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ozols.dev/choru/">
+    <meta property="og:site_name" content="Choru">
+    <meta property="og:locale" content="en_US">
+    <meta name="theme-color" content="#8757D1">
+    <meta name="robots" content="noindex">
+    <script>
+        (function() {
+            var theme = localStorage.getItem('theme');
+            if (!theme) theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+            document.documentElement.setAttribute('data-theme', theme);
+        })();
+    </script>
+    <style>
+        :root {
+            --accent: #8757D1;
+            --accent-hover: #573099;
+            --text-primary: #1F1C29;
+            --text-secondary: #56506A;
+            --text-tertiary: #8A8499;
+            --bg: #F7F2FC;
+            --card-bg: #fff;
+            --card-border: rgba(31,28,41,0.10);
+        }
+
+        [data-theme="dark"] {
+            --accent: #BD94FF;
+            --accent-hover: #D3B8FF;
+            --text-primary: #F4F0FA;
+            --text-secondary: #B6AEC6;
+            --text-tertiary: #8F879F;
+            --bg: #120D1F;
+            --card-bg: #1E1830;
+            --card-border: rgba(255,255,255,0.12);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'Helvetica Neue', system-ui, sans-serif;
+            background: var(--bg);
+            color: var(--text-primary);
+            font-size: 15px;
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container { max-width: 640px; margin: 0 auto; padding: 60px 24px 80px; }
+
+        .back-link {
+            display: inline-flex; align-items: center; gap: 6px;
+            color: var(--accent); text-decoration: none;
+            font-size: 14px; font-weight: 500; margin-bottom: 40px;
+            transition: color 0.2s;
+        }
+        .back-link:hover { color: var(--accent-hover); }
+
+        h1 { font-size: 28px; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 8px; }
+        .subtitle { color: var(--text-secondary); margin-bottom: 40px; }
+        .updated { color: var(--text-tertiary); font-size: 13px; margin-bottom: 40px; }
+
+        h2 { font-size: 18px; font-weight: 600; margin: 34px 0 12px; }
+        p { color: var(--text-secondary); margin-bottom: 14px; }
+        ul { color: var(--text-secondary); margin: 0 0 14px 20px; }
+        li { margin-bottom: 6px; }
+        strong { color: var(--text-primary); }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 14px;
+            padding: 20px 22px;
+            margin-bottom: 14px;
+        }
+        .card h3 { font-size: 15px; font-weight: 600; margin-bottom: 6px; }
+        .card p { font-size: 14px; margin-bottom: 0; }
+
+        a.mail { color: var(--accent); text-decoration: none; font-weight: 500; }
+        a.mail:hover { color: var(--accent-hover); }
+
+        .footer {
+            margin-top: 56px; padding-top: 24px;
+            border-top: 1px solid var(--card-border);
+            color: var(--text-tertiary); font-size: 13px;
+        }
+        .footer a { color: var(--accent); text-decoration: none; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a class="back-link" href="/">← ozols.dev</a>
+
+        <h1>Choru support</h1>
+        <p class="subtitle">Choru is a chore tracker for iPhone. It keeps track of the chores you do every day and the ones you do every few months, so each one comes back when it is due. Share the household with your family, keep a streak, and spend the coins your chores earn on rewards you pick.</p>
+
+        <h2>Contact</h2>
+        <div class="card">
+            <h3>Email</h3>
+            <p>Questions, problems, or ideas: <a class="mail" href="mailto:emils@ozols.dev?subject=Choru%20support">emils@ozols.dev</a>. I read everything and usually reply within a couple of days. Choru is made by one person, so a short description of what you expected and what happened instead helps a lot.</p>
+        </div>
+
+        <h2>Frequently asked</h2>
+        <div class="card">
+            <h3>Where are my chores stored?</h3>
+            <p>On your iPhone and in your own iCloud, so they appear on every device signed in to the same Apple Account. Choru has no account of its own, and no server of mine holds your chores. Choru also keeps an automatic backup copy in your iCloud Drive, under Settings, Backups.</p>
+        </div>
+        <div class="card">
+            <h3>How do I share chores with my family?</h3>
+            <p>Open Settings, Family, and start a family. Choru shows a code: the other person scans it with their iPhone and joins. Everyone then sees the family's chores on their own phone. Each person needs their own Apple Account.</p>
+        </div>
+        <div class="card">
+            <h3>What happens if I leave a family?</h3>
+            <p>Your own chores, streak and coins stay on your phone. Leave from Settings, Family. If you started the family, you can remove it instead, which ends the sharing for everyone.</p>
+        </div>
+        <div class="card">
+            <h3>How do I set up a phone for a kid?</h3>
+            <p>Set a kid-mode PIN first, in Settings, Kid mode. When the kid joins the family, they mark themselves as a kid. A kid's phone then locks itself to their own list, and any grown-up can unlock it with the PIN.</p>
+        </div>
+        <div class="card">
+            <h3>I reinstalled Choru. Where did my chores go?</h3>
+            <p>They come back from iCloud once Choru has synced, which can take a moment on a fresh install. If they do not, open Settings, Backups and restore the automatic copy.</p>
+        </div>
+        <div class="card">
+            <h3>How do I delete my data?</h3>
+            <p>If you are in a family, leave it first. Then delete the app and remove its iCloud data: in the iOS Settings app, tap your name, then iCloud, manage your storage, choose Choru and delete its data.</p>
+        </div>
+
+        <div class="footer">
+            <a href="/choru/privacy/">Privacy policy</a> · Made in Latvia by <a href="/">Emils Ozols</a>
+        </div>
+    </div>
+</body>
+</html>

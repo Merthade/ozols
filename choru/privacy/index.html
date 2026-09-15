@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Choru privacy policy</title>
+    <meta name="description" content="Privacy policy for Choru, the iPhone chore tracker. No account, no ads, no analytics: your chores stay in your own iCloud.">
+    <link rel="canonical" href="https://ozols.dev/choru/privacy/">
+    <meta property="og:title" content="Choru privacy policy">
+    <meta property="og:description" content="Privacy policy for Choru.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ozols.dev/choru/privacy/">
+    <meta property="og:site_name" content="Choru">
+    <meta property="og:locale" content="en_US">
+    <meta name="theme-color" content="#8757D1">
+    <meta name="robots" content="noindex">
+    <script>
+        (function() {
+            var theme = localStorage.getItem('theme');
+            if (!theme) theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+            document.documentElement.setAttribute('data-theme', theme);
+        })();
+    </script>
+    <style>
+        :root {
+            --accent: #8757D1;
+            --accent-hover: #573099;
+            --text-primary: #1F1C29;
+            --text-secondary: #56506A;
+            --text-tertiary: #8A8499;
+            --bg: #F7F2FC;
+            --card-bg: #fff;
+            --card-border: rgba(31,28,41,0.10);
+        }
+
+        [data-theme="dark"] {
+            --accent: #BD94FF;
+            --accent-hover: #D3B8FF;
+            --text-primary: #F4F0FA;
+            --text-secondary: #B6AEC6;
+            --text-tertiary: #8F879F;
+            --bg: #120D1F;
+            --card-bg: #1E1830;
+            --card-border: rgba(255,255,255,0.12);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'Helvetica Neue', system-ui, sans-serif;
+            background: var(--bg);
+            color: var(--text-primary);
+            font-size: 15px;
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container { max-width: 640px; margin: 0 auto; padding: 60px 24px 80px; }
+
+        .back-link {
+            display: inline-flex; align-items: center; gap: 6px;
+            color: var(--accent); text-decoration: none;
+            font-size: 14px; font-weight: 500; margin-bottom: 40px;
+            transition: color 0.2s;
+        }
+        .back-link:hover { color: var(--accent-hover); }
+
+        h1 { font-size: 28px; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 8px; }
+        .subtitle { color: var(--text-secondary); margin-bottom: 40px; }
+        .updated { color: var(--text-tertiary); font-size: 13px; margin-bottom: 40px; }
+
+        h2 { font-size: 18px; font-weight: 600; margin: 34px 0 12px; }
+        p { color: var(--text-secondary); margin-bottom: 14px; }
+        ul { color: var(--text-secondary); margin: 0 0 14px 20px; }
+        li { margin-bottom: 6px; }
+        strong { color: var(--text-primary); }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 14px;
+            padding: 20px 22px;
+            margin-bottom: 14px;
+        }
+        .card h3 { font-size: 15px; font-weight: 600; margin-bottom: 6px; }
+        .card p { font-size: 14px; margin-bottom: 0; }
+
+        a.mail { color: var(--accent); text-decoration: none; font-weight: 500; }
+        a.mail:hover { color: var(--accent-hover); }
+
+        .footer {
+            margin-top: 56px; padding-top: 24px;
+            border-top: 1px solid var(--card-border);
+            color: var(--text-tertiary); font-size: 13px;
+        }
+        .footer a { color: var(--accent); text-decoration: none; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a class="back-link" href="/choru/">← Choru support</a>
+
+        <h1>Choru privacy policy</h1>
+        <p class="updated">Last updated: 15 September 2026</p>
+
+        <h2>Data storage</h2>
+        <p>Choru stores your chores, the days you ticked them, your streaks, coins, rewards and settings on your device and in <strong>your own private iCloud</strong>, so they appear on every device signed in to your Apple Account. There is no Choru account, and I run no server that holds your data. I cannot see it.</p>
+
+        <h2>Family sharing</h2>
+        <p>If you start or join a family, the family's chores are kept in iCloud by Apple and shared with the people in that family. They can see the family's chores, who ticked what, the coins and rewards, and the names in the family.</p>
+        <p>To tell people apart, Choru stores each person's iCloud user identifier for this app: a random string, not your email address or phone number. A kid-mode PIN is stored as a hash, not as the PIN itself.</p>
+        <p>A family invite is an iCloud share, shown as a code to scan. Anyone who has the code can join, so share it only with your family. You can leave a family at any time in Settings.</p>
+
+        <h2>Camera</h2>
+        <p>Choru asks for the camera only to scan a family's invite code. The camera image is read on your device and is not saved or sent anywhere.</p>
+
+        <h2>Notifications</h2>
+        <p>Reminders, and the notice that someone put a chore on your list, are created on your iPhone. They do not pass through any server of mine.</p>
+
+        <h2>Backups</h2>
+        <p>Choru saves automatic backup copies of your chores to your own iCloud Drive, and you can save a backup file yourself from Settings, Backups. Backups are held by Apple under your Apple Account, or wherever you save the file. They are not sent to me.</p>
+
+        <h2>No analytics, no ads</h2>
+        <p>Choru contains no analytics, no advertising and no tracking, and it uses no third-party code that collects data.</p>
+
+        <h2>Purchases</h2>
+        <p>If Choru offers purchases, Apple processes the payment. I never see your payment details.</p>
+
+        <h2>Third-party sharing</h2>
+        <p>I do not sell, share, or transfer your data. Apple provides iCloud, notifications and payments under Apple's own privacy policy.</p>
+
+        <h2>Your rights</h2>
+        <ul>
+            <li><strong>Access &amp; export</strong>: everything Choru stores is visible in the app, and you can save a backup file of it from Settings, Backups.</li>
+            <li><strong>Deletion</strong>: leave any family first, then delete the app and remove Choru's data from iCloud: in the iOS Settings app, tap your name, then iCloud, manage your storage, choose Choru and delete its data.</li>
+        </ul>
+        <p>If you are an EU/EEA resident, the GDPR grants you additional rights regarding any data processed. Choru does not send your data to me, so the only thing I could hold is an email you send. Contact me using the email below to exercise your rights.</p>
+
+        <h2>Children's privacy</h2>
+        <p>Choru is made for households, children included. It does not collect personal information from anyone, children included: a kid's list lives in the family's iCloud, and a kid joins with their own Apple Account.</p>
+
+        <h2>Support email</h2>
+        <p>If you email <a class="mail" href="mailto:emils@ozols.dev">emils@ozols.dev</a>, I use your message and address only to reply. No mailing lists, no sharing.</p>
+
+        <h2>Changes</h2>
+        <p>If a future version of Choru changes any of the above, this page and the App Store privacy label will be updated before that version ships.</p>
+
+        <div class="footer">
+            <a href="/choru/">Choru support</a> · Made in Latvia by <a href="/">Emils Ozols</a>
+        </div>
+    </div>
+</body>
+</html>
