@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Choru privacy policy</title>
-    <meta name="description" content="Privacy policy for Choru, the iPhone chore tracker. No account, no ads, no analytics: your chores stay in your own iCloud.">
+    <meta name="description" content="Privacy policy for Choru, the iPhone chore tracker. No account, no ads, anonymous opt-out usage analytics: your chores stay in your own iCloud.">
     <link rel="canonical" href="https://ozols.dev/choru/privacy/">
     <meta property="og:title" content="Choru privacy policy">
     <meta property="og:description" content="Privacy policy for Choru.">
@@ -101,10 +101,10 @@
         <a class="back-link" href="/choru/">← Choru support</a>
 
         <h1>Choru privacy policy</h1>
-        <p class="updated">Last updated: 15 September 2026</p>
+        <p class="updated">Last updated: 16 September 2026</p>
 
         <h2>Data storage</h2>
-        <p>Choru stores your chores, the days you ticked them, your streaks, coins, rewards and settings on your device and in <strong>your own private iCloud</strong>, so they appear on every device signed in to your Apple Account. There is no Choru account, and I run no server that holds your data. I cannot see it.</p>
+        <p>Choru stores your chores, the days you ticked them, your streaks, coins, rewards and settings on your device and in <strong>your own private iCloud</strong>, so they appear on every device signed in to your Apple Account. There is no Choru account, and I run no server that holds your data. I cannot see it. The one thing that does leave your phone is the anonymous usage statistics described below, which you can turn off.</p>
 
         <h2>Family sharing</h2>
         <p>If you start or join a family, the family's chores are kept in iCloud by Apple and shared with the people in that family. They can see the family's chores, who ticked what, the coins and rewards, and the names in the family.</p>
@@ -120,24 +120,41 @@
         <h2>Backups</h2>
         <p>Choru saves automatic backup copies of your chores to your own iCloud Drive, and you can save a backup file yourself from Settings, Backups. Backups are held by Apple under your Apple Account, or wherever you save the file. They are not sent to me.</p>
 
-        <h2>No analytics, no ads</h2>
-        <p>Choru contains no analytics, no advertising and no tracking, and it uses no third-party code that collects data.</p>
+        <h2>Anonymous usage analytics</h2>
+        <p>Choru uses <strong>PostHog</strong> (hosted in the EU) to collect anonymous usage statistics, so I can see which features get used and where people get stuck. Choru carries no advertising and no advertising trackers.</p>
+        <p>What is collected:</p>
+        <ul>
+            <li>Counts of what happens: chores made, ticked and unticked, rewards redeemed, timers run, backups made</li>
+            <li>Which onboarding steps were viewed, and which settings were switched on or off</li>
+            <li>App-level context: how many chores, rewards and tags exist, whether this phone is in a family and how many people are in it</li>
+            <li>Generic device context: debug or release build, app version</li>
+        </ul>
+        <p>What is <strong>not</strong> collected:</p>
+        <ul>
+            <li>Your name, email, or any personal identifiers</li>
+            <li>What your chores say: titles, notes, the names in your family and who did what stay on your device and in your iCloud</li>
+            <li>Your location, contacts, or advertising identifiers</li>
+            <li>Anything linked back to you as an individual</li>
+        </ul>
+        <p><strong>A kid's phone sends nothing.</strong> Once a phone belongs to somebody marked as a kid in a family, Choru collects no usage statistics on it at all.</p>
+        <p>Analytics can be turned off at any time in Settings, Help out, "Share anonymous usage". The app respects it immediately.</p>
 
         <h2>Purchases</h2>
         <p>If Choru offers purchases, Apple processes the payment. I never see your payment details.</p>
 
         <h2>Third-party sharing</h2>
-        <p>I do not sell, share, or transfer your data. Apple provides iCloud, notifications and payments under Apple's own privacy policy.</p>
+        <p>I do not sell, share, or transfer your data. Apple provides iCloud, notifications and payments under Apple's own privacy policy. The only other third-party service is PostHog, for the anonymous usage statistics described above, stored on EU servers and never linked to you as an individual.</p>
 
         <h2>Your rights</h2>
         <ul>
             <li><strong>Access &amp; export</strong>: everything Choru stores is visible in the app, and you can save a backup file of it from Settings, Backups.</li>
             <li><strong>Deletion</strong>: leave any family first, then delete the app and remove Choru's data from iCloud: in the iOS Settings app, tap your name, then iCloud, manage your storage, choose Choru and delete its data.</li>
+            <li><strong>Opt out of analytics</strong>: the Settings toggle above.</li>
         </ul>
-        <p>If you are an EU/EEA resident, the GDPR grants you additional rights regarding any data processed. Choru does not send your data to me, so the only thing I could hold is an email you send. Contact me using the email below to exercise your rights.</p>
+        <p>If you are an EU/EEA resident, the GDPR grants you additional rights regarding any data processed. Choru sends me nothing that identifies you, so the only things I could hold are anonymous usage statistics and an email you send. Contact me using the email below to exercise your rights.</p>
 
         <h2>Children's privacy</h2>
-        <p>Choru is made for households, children included. It does not collect personal information from anyone, children included: a kid's list lives in the family's iCloud, and a kid joins with their own Apple Account.</p>
+        <p>Choru is made for households, children included. It does not collect personal information from anyone, children included: a kid's list lives in the family's iCloud, and a kid joins with their own Apple Account. A phone belonging to somebody marked as a kid sends no usage statistics at all.</p>
 
         <h2>Support email</h2>
         <p>If you email <a class="mail" href="mailto:emils@ozols.dev">emils@ozols.dev</a>, I use your message and address only to reply. No mailing lists, no sharing.</p>
