@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy — Scooch</title>
-    <meta name="description" content="Privacy policy for Scooch, the iOS floor plan app. No accounts, no ads, anonymous opt-out usage analytics.">
+    <title>Scooch privacy policy</title>
+    <meta name="description" content="Privacy policy for Scooch, the iOS floor plan app. No accounts, no ads, anonymous opt-out usage analytics, purchases handled by Apple.">
     <link rel="canonical" href="https://ozols.dev/scooch/privacy/">
-    <meta property="og:title" content="Privacy Policy — Scooch">
+    <meta property="og:title" content="Scooch privacy policy">
     <meta property="og:description" content="Privacy policy for Scooch.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://ozols.dev/scooch/privacy/">
@@ -88,10 +88,10 @@
         <a class="back-link" href="/scooch/">← Scooch support</a>
 
         <h1>Scooch privacy policy</h1>
-        <p class="updated">Last updated: 9 August 2026</p>
+        <p class="updated">Last updated: 28 September 2026</p>
 
         <h2>Data storage</h2>
-        <p>Scooch stores your plans, custom furniture and settings on your device. There is no account and no login, and I run no server that holds your plans. Your data stays on your device, apart from the optional iCloud backup and the anonymous analytics described below.</p>
+        <p>Scooch stores your plans, custom furniture and settings on your device. There is no account and no login, and I run no server that holds your plans. Your data stays on your device, apart from the optional iCloud backup and the anonymous analytics described below. Buying the unlock goes through Apple, as described under Purchases.</p>
 
         <h2>iCloud backup</h2>
         <p>So your plans survive a reinstall or a move to a new iPhone, Scooch can back them up to <strong>your own private iCloud</strong>. Backup is on by default when you are signed in to iCloud, and you can turn it off at any time in Settings. The backup is held by Apple under your Apple Account and covered by Apple's privacy terms. It is not sent to me and I cannot see it. This is a restore point, not live cross-device sync.</p>
@@ -103,20 +103,28 @@
             <li>Counts of interactions: rooms added, furniture placed, plans exported, backups made</li>
             <li>Which onboarding steps were viewed, and the fit check's final gap number</li>
             <li>App-level context: how many plans, rooms and pieces exist, the active theme, metric or imperial</li>
-            <li>Generic device context (debug vs release build, app version)</li>
+            <li>Taps on the drawing: whether a tap landed on a piece, a room or empty floor, never your drawing itself</li>
+            <li>The unlock screen: whether it was shown, and whether you bought, restored or cancelled, with the price and currency shown to you</li>
+            <li>When the app was first installed (the date only)</li>
+            <li>If you came from an Apple Search Ads ad: the campaign, ad group and keyword numbers and the country Apple reports for that ad, through Apple's AdServices framework, which uses no advertising identifier</li>
+            <li>An approximate location, country and city, that PostHog estimates from your connection when data arrives. Your IP address itself is discarded and not stored.</li>
+            <li>Generic device context (device model, iOS version, language, app version, debug vs release build) and a random ID for this install, so events from one install can be counted together</li>
             <li>If you submit the improvement survey, the text you typed</li>
         </ul>
         <p>What is <strong>not</strong> collected:</p>
         <ul>
             <li>Your name, email, or any personal identifiers</li>
             <li>The contents of your plans: your rooms, labels and layouts stay on your device</li>
-            <li>Your location, contacts, or advertising identifiers</li>
+            <li>Your precise location, contacts, or advertising identifier (IDFA)</li>
             <li>Anything linked back to you as an individual</li>
         </ul>
-        <p>Analytics can be turned off at any time in Settings, Help out, "Share anonymous usage" — the app respects it immediately.</p>
+        <p>Analytics can be turned off at any time in Settings, Help out, "Share anonymous usage". The app respects it immediately.</p>
+
+        <h2>Purchases</h2>
+        <p>Scooch is free to download, and keeping going after your first room takes a one-time unlock. Apple processes that payment through the App Store. I never see your card, your Apple Account or your name; Scooch only learns from Apple whether the unlock is owned, and records the purchase in the anonymous analytics above. Refunds and billing are Apple's, see the <a class="mail" href="/scooch/terms/">terms of use</a>.</p>
 
         <h2>Third-party sharing</h2>
-        <p>I do not sell, share, or transfer your personal data to third parties. The only third-party service used is PostHog, for the anonymous analytics described above, stored on EU servers and never linked to you as an individual.</p>
+        <p>I do not sell, share, or transfer your personal data to third parties. The services involved are PostHog, for the anonymous analytics described above, stored on EU servers and never linked to you as an individual, and Apple, which handles purchases, iCloud backup and the Apple Search Ads attribution under its own privacy terms.</p>
 
         <h2>Your rights</h2>
         <ul>
@@ -136,7 +144,7 @@
         <p>If a future version of Scooch changes any of the above, this page and the App Store privacy label will be updated before that version ships.</p>
 
         <div class="footer">
-            <a href="/scooch/">Scooch support</a> · Made in Latvia by <a href="/">Emils Ozols</a>
+            <a href="/scooch/">Scooch support</a> · <a href="/scooch/terms/">Terms of use</a> · Made in Latvia by <a href="/">Emils Ozols</a>
         </div>
     </div>
 </body>
