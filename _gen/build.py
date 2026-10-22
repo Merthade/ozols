@@ -18,6 +18,8 @@ GEN = Path(__file__).resolve().parent
 ROOT = GEN.parent
 RATINGS = Path.home() / "Documents/Holocron/tools/app-metrics/data/ratings.json"
 MIN_RATINGS = 10  # below this a chip reads weaker than no chip
+GET_GLYPH = ('<svg class="get-glyph" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v10.5m0 0-4.25-4.25M12 14l4.25-4.25'
+             'M4.75 15.5v2.25a2.75 2.75 0 0 0 2.75 2.75h9a2.75 2.75 0 0 0 2.75-2.75V15.5"/></svg>')
 STORE = "https://apps.apple.com/app/apple-store/id{id}?pt=2187944&amp;ct=OzolsDev_Home&amp;mt=8"
 
 esc = html.escape
@@ -79,18 +81,18 @@ def featured(a, r):
 def card(a, r, today):
     tag = ""
     if a.get("coming_soon"):
-        tag = '<span class="tag">SOON</span>'
+        tag = '<span class="ribbon ribbon-soon">SOON</span>'
     elif a.get("new_until") and today <= datetime.date.fromisoformat(a["new_until"]):
-        tag = '<span class="tag">NEW</span>'
+        tag = '<span class="ribbon ribbon-new">NEW</span>'
     if a.get("coming_soon"):
         action = '<span class="soon">Not on the App Store yet</span>'
     else:
         action = (f'<a class="get" href="{STORE.format(id=a["id"])}" data-ph="app_card_click" '
                   f'data-app="{a["slug"]}" data-target="store" '
-                  f'aria-label="Download {esc(a["name"])} on the App Store">Download</a>')
+                  f'aria-label="Download {esc(a["name"])} on the App Store">{GET_GLYPH}Download</a>')
     rating = f"\n                        {chip(r)}" if chip(r) else ""
-    return f'''                    <article class="card">
-                        <div class="app-head">{icon(a, 52)}<h3 class="app-name">{esc(a["name"])}</h3>{tag}</div>
+    return f'''                    <article class="card{" has-ribbon" if tag else ""}">{tag}
+                        <div class="app-head">{icon(a, 52)}<h3 class="app-name">{esc(a["name"])}</h3></div>
                         <p class="tagline">{esc(a["tagline"])}</p>{rating}
                         <div class="shot">{shot(a, 0)}</div>
                         <div class="card-actions">{action}{read_more(a)}</div>
