@@ -91,7 +91,6 @@ def featured(a, r):
                         <div class="app-head">{icon(a, 64, lazy=False)}<h3 class="app-name">{esc(a["name"])}</h3></div>
                         <p class="tagline">{esc(a["tagline"])}</p>
                         <p class="blurb">{esc(a["blurb"])}</p>
-                        {chip(r)}
                         <div class="featured-actions">
                             <a class="badge-link" href="{STORE.format(id=a["id"])}" data-ph="app_card_click" data-app="{a["slug"]}" data-target="store" aria-label="Download {esc(a["name"])} on the App Store"><img src="/assets/appstore-badge.svg" alt="Download on the App Store" width="144" height="48"></a>
                             {read_more(a)}
