@@ -115,10 +115,12 @@ def card(a, r, today):
                   f'data-app="{a["slug"]}" data-target="store" '
                   f'aria-label="Download {esc(a["name"])} on the App Store">{GET_GLYPH}Download</a>')
     rating = f"\n                        {chip(r)}" if chip(r) else ""
+    why = (f'\n                        <p class="why"><span>Why I made it</span>{esc(a["why"])}</p>'
+           if a.get("why") else "")
     return f'''                    <article class="card{" has-ribbon" if tag else ""}">{tag}
                         <div class="app-head">{icon(a, 52)}<h3 class="app-name">{esc(a["name"])}</h3></div>
                         <p class="tagline">{esc(a["tagline"])}</p>
-                        <p class="blurb">{esc(a["blurb"])}</p>{rating}
+                        <p class="blurb">{esc(a["blurb"])}</p>{rating}{why}
                         <div class="shot">{"".join(shot(a, i) for i in range(len(a["shots"])))}</div>
                         <div class="card-actions">{action}{read_more(a)}</div>
                     </article>'''
