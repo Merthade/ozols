@@ -123,7 +123,8 @@ def blog():
 
 def support(a):
     return (f'                    <li><span class="who"><img src="/assets/apps/{a["slug"]}-icon.png" alt="" width="28" height="28" loading="lazy">{esc(a["name"])}</span>'
-            f'<span class="links"><a href="{a["support"]}">Support</a><a href="{a["privacy"]}">Privacy</a><a href="{a["terms"]}">Terms</a></span></li>')
+            f'<span class="links"><a class="site" href="{a["site"]}">{a["site"].split("//")[1]}</a>'
+            f'<a href="{a["support"]}">Support</a><a href="{a["privacy"]}">Privacy</a><a href="{a["terms"]}">Terms</a></span></li>')
 
 
 def jsonld(apps):

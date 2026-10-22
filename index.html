@@ -234,7 +234,7 @@
         .card .shot { background: var(--tint); border-radius: 14px; padding: 18px 0 0; overflow: hidden; height: 300px; margin-top: auto; }
         .card .shot img { width: 62%; max-width: 200px; margin: 0 auto; }
         @media (max-width: 639px) { .card .shot { height: 230px; } .card .shot img { width: 52%; } }
-        .card-actions { display: flex; flex-direction: column; align-items: flex-start; gap: 12px; margin-top: 18px; font-size: 15px; }
+        .card-actions { display: flex; flex-direction: column; align-items: center; gap: 12px; margin-top: 18px; font-size: 15px; }
         .get { display: inline-flex; align-items: center; gap: 7px; font-weight: 700; font-size: 15px; letter-spacing: .01em; text-decoration: none; color: var(--get); background: var(--get-bg); border-radius: 999px; padding: 7px 20px; transition: background-color .15s; }
         .get:hover, .get:focus-visible { background: var(--get-bg-on); }
         .get-glyph { width: 17px; height: 17px; fill: none; stroke: currentColor; stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; }
@@ -263,12 +263,20 @@
         .more { display: inline-block; margin-top: 14px; font-weight: 600; }
 
         /* Support */
+        #support .section-title, .support-intro { text-align: center; }
         .support-intro { color: var(--muted); margin: -8px 0 20px; }
-        .support { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--rule); }
-        .support li { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 20px; padding: 14px 0; border-bottom: 1px solid var(--rule); }
-        .support .who { display: flex; align-items: center; gap: 10px; font-weight: 600; min-width: 220px; }
+        .support { list-style: none; margin: 0 auto; padding: 0; border-top: 1px solid var(--rule); width: fit-content; max-width: 100%; }
+        .support li { display: flex; flex-direction: column; align-items: center; gap: 8px; padding: 14px 0; border-bottom: 1px solid var(--rule); }
+        .support .who { display: flex; align-items: center; gap: 10px; font-weight: 600; }
         .support .who img { width: 28px; height: 28px; border-radius: 22.5%; }
-        .support .links { display: flex; gap: 18px; font-size: 15px; }
+        .support .links { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px 18px; font-size: 15px; }
+        .support .site { flex-basis: 100%; text-align: center; }
+        @media (min-width: 720px) {
+            .support { width: 100%; max-width: 860px; }
+            .support li { display: grid; grid-template-columns: 210px 1fr; gap: 24px; padding: 14px 8px; }
+            .support .links { display: grid; grid-template-columns: 200px repeat(3, 64px); justify-content: end; justify-items: center; gap: 18px; }
+            .support .site { justify-self: start; }
+        }
 
         /* Footer */
         footer { padding: 40px 0 56px; color: var(--muted); font-size: 14px; }
@@ -400,12 +408,12 @@
                 <h2 class="section-title" id="support-title">Support and legal</h2>
                 <p class="support-intro">Need help with an app? Each one has its own support page, or email <a href="mailto:emils@ozols.dev">emils@ozols.dev</a>.</p>
                 <ul class="support">
-                    <li><span class="who"><img src="/assets/apps/alarm-icon.png" alt="" width="28" height="28" loading="lazy">Alarm Clock Planner</span><span class="links"><a href="https://alarmclockplanner.com/support/">Support</a><a href="https://alarmclockplanner.com/privacy/">Privacy</a><a href="https://alarmclockplanner.com/terms/">Terms</a></span></li>
-                    <li><span class="who"><img src="/assets/apps/choru-icon.png" alt="" width="28" height="28" loading="lazy">Choru</span><span class="links"><a href="https://getchoru.com/support/">Support</a><a href="https://getchoru.com/privacy/">Privacy</a><a href="https://getchoru.com/terms/">Terms</a></span></li>
-                    <li><span class="who"><img src="/assets/apps/charactersheet-icon.png" alt="" width="28" height="28" loading="lazy">CharacterSheet</span><span class="links"><a href="https://getcharactersheet.com/support/">Support</a><a href="https://getcharactersheet.com/privacy/">Privacy</a><a href="https://getcharactersheet.com/terms/">Terms</a></span></li>
-                    <li><span class="who"><img src="/assets/apps/scooch-icon.png" alt="" width="28" height="28" loading="lazy">Scooch</span><span class="links"><a href="https://getscooch.com/support/">Support</a><a href="https://getscooch.com/privacy/">Privacy</a><a href="https://getscooch.com/terms/">Terms</a></span></li>
-                    <li><span class="who"><img src="/assets/apps/rise-icon.png" alt="" width="28" height="28" loading="lazy">Rise</span><span class="links"><a href="https://risemorning.app/support/">Support</a><a href="https://risemorning.app/privacy.html">Privacy</a><a href="https://risemorning.app/terms.html">Terms</a></span></li>
-                    <li><span class="who"><img src="/assets/apps/remi-icon.png" alt="" width="28" height="28" loading="lazy">Remi</span><span class="links"><a href="https://remireminder.app/support/">Support</a><a href="https://remireminder.app/privacy.html">Privacy</a><a href="https://remireminder.app/terms.html">Terms</a></span></li>
+                    <li><span class="who"><img src="/assets/apps/alarm-icon.png" alt="" width="28" height="28" loading="lazy">Alarm Clock Planner</span><span class="links"><a class="site" href="https://alarmclockplanner.com">alarmclockplanner.com</a><a href="https://alarmclockplanner.com/support/">Support</a><a href="https://alarmclockplanner.com/privacy/">Privacy</a><a href="https://alarmclockplanner.com/terms/">Terms</a></span></li>
+                    <li><span class="who"><img src="/assets/apps/choru-icon.png" alt="" width="28" height="28" loading="lazy">Choru</span><span class="links"><a class="site" href="https://getchoru.com">getchoru.com</a><a href="https://getchoru.com/support/">Support</a><a href="https://getchoru.com/privacy/">Privacy</a><a href="https://getchoru.com/terms/">Terms</a></span></li>
+                    <li><span class="who"><img src="/assets/apps/charactersheet-icon.png" alt="" width="28" height="28" loading="lazy">CharacterSheet</span><span class="links"><a class="site" href="https://getcharactersheet.com">getcharactersheet.com</a><a href="https://getcharactersheet.com/support/">Support</a><a href="https://getcharactersheet.com/privacy/">Privacy</a><a href="https://getcharactersheet.com/terms/">Terms</a></span></li>
+                    <li><span class="who"><img src="/assets/apps/scooch-icon.png" alt="" width="28" height="28" loading="lazy">Scooch</span><span class="links"><a class="site" href="https://getscooch.com">getscooch.com</a><a href="https://getscooch.com/support/">Support</a><a href="https://getscooch.com/privacy/">Privacy</a><a href="https://getscooch.com/terms/">Terms</a></span></li>
+                    <li><span class="who"><img src="/assets/apps/rise-icon.png" alt="" width="28" height="28" loading="lazy">Rise</span><span class="links"><a class="site" href="https://risemorning.app">risemorning.app</a><a href="https://risemorning.app/support/">Support</a><a href="https://risemorning.app/privacy.html">Privacy</a><a href="https://risemorning.app/terms.html">Terms</a></span></li>
+                    <li><span class="who"><img src="/assets/apps/remi-icon.png" alt="" width="28" height="28" loading="lazy">Remi</span><span class="links"><a class="site" href="https://remireminder.app">remireminder.app</a><a href="https://remireminder.app/support/">Support</a><a href="https://remireminder.app/privacy.html">Privacy</a><a href="https://remireminder.app/terms.html">Terms</a></span></li>
                 </ul>
             </section>
         </main>
