@@ -17,6 +17,7 @@ from pathlib import Path
 GEN = Path(__file__).resolve().parent
 ROOT = GEN.parent
 RATINGS = Path.home() / "Documents/Holocron/tools/app-metrics/data/ratings.json"
+DOWNLOADS = Path.home() / "Documents/Holocron/tools/app-metrics/data/asc.json"  # ASC first-time downloads per day
 MIN_RATINGS = 10  # below this a chip reads weaker than no chip
 GET_GLYPH = ('<svg class="get-glyph" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v10.5m0 0-4.25-4.25M12 14l4.25-4.25'
              'M4.75 15.5v2.25a2.75 2.75 0 0 0 2.75 2.75h9a2.75 2.75 0 0 0 2.75-2.75V15.5"/></svg>')
@@ -34,6 +35,30 @@ def ratings():
     latest = max(data)
     print(f"ratings: snapshot {latest}")
     return data[latest]
+
+
+def downloads_total():
+    days = json.loads(DOWNLOADS.read_text())["days"]
+    total = sum(v.get("dl", 0) for apps in days.values() for v in apps.values())
+    print(f"downloads: {total} first-time, through {max(days)}")
+    return total, max(days)
+
+
+def stats(rated):
+    total, through = downloads_total()
+    count = sum(r["count"] for r in rated.values() if r.get("count"))
+    avg = sum(r["avg"] * r["count"] for r in rated.values() if r.get("count")) / count
+    print(f"ratings: {count} at {avg:.2f}")
+    floor = total // 100 * 100
+    month = datetime.date.fromisoformat(through).strftime("%B %Y")
+    return f'''            <section class="stats-wrap" aria-label="App totals">
+                <div class="stats">
+                    <div><strong>{floor:,}+</strong><span>downloads</span></div>
+                    <div><strong>{count}</strong><span>App Store ratings</span></div>
+                    <div><strong>{avg:.1f}<span class="star" aria-hidden="true">★</span></strong><span>average rating</span></div>
+                </div>
+                <p class="stats-note">Across all my apps, as of {month}.</p>
+            </section>'''
 
 
 def chip(r):
@@ -182,6 +207,7 @@ def main():
     for key, val in {
         "DESCRIPTION": esc(description),
         "JSONLD": jsonld(apps),
+        "STATS": stats(rated),
         "FEATURED": featured(feat, rated.get(feat["slug"])),
         "GRID": "\n".join(card(a, rated.get(a["slug"]), today) for a in rest),
         "SOCIAL": "\n".join(social(s) for s in CONFIG["social"]),
