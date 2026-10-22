@@ -5,6 +5,10 @@ puts the site header and footer around the body, and applies the PostHog opt-out
 """
 import re
 
+ICON_TAGS = """<link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+<link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon-96.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">"""
+
 HEADER = '''<header class="top">
     <a class="wordmark" href="/">Ozols<span>.</span>Dev</a>
     <nav class="nav" aria-label="Sections">
