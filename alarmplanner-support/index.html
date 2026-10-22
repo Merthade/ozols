@@ -1,103 +1,15 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Support - Alarm Planner</title>
-    <meta name="description" content="Support for Alarm Planner, the iOS alarm app for shift workers, travelers, and anyone planning alarms weeks or months ahead. Contact, FAQ, and troubleshooting.">
-    <link rel="canonical" href="https://ozols.dev/alarmplanner-support/">
-    <meta property="og:title" content="Support - Alarm Planner">
-    <meta property="og:description" content="Support for Alarm Planner.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://ozols.dev/alarmplanner-support/">
-    <meta property="og:site_name" content="Alarm Planner">
-    <meta property="og:locale" content="en_US">
-    <meta name="theme-color" content="#FAFAF7">
+    <title>Moved to alarmclockplanner.com</title>
+    <link rel="canonical" href="https://alarmclockplanner.com/support/">
     <meta name="robots" content="noindex">
-    <script>
-        (function() {
-            var theme = localStorage.getItem('theme');
-            if (!theme) theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-            document.documentElement.setAttribute('data-theme', theme);
-        })();
-    </script>
-    <link rel="stylesheet" href="/assets/site.css">
-    <link rel="stylesheet" href="/assets/doc.css">
+    <meta http-equiv="refresh" content="0; url=https://alarmclockplanner.com/support/">
+    <script>location.replace("https://alarmclockplanner.com/support/");</script>
 </head>
 <body>
-<div class="wrap">
-    <header class="top">
-        <a class="wordmark" href="/">Ozols<span>.</span>Dev</a>
-        <nav class="nav" aria-label="Sections">
-            <a href="/#apps">Apps</a>
-            <a href="/blog/">Blog</a>
-            <a href="/#support">Support</a>
-        </nav>
-    </header>
-
-<div class="container">
-    <a href="/" class="back-link">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
-        Back to ozols.dev
-    </a>
-
-    <h1>Support</h1>
-    <p class="lead">Hit a snag with Alarm Planner? Get in touch — every email lands in a real inbox checked by a human.</p>
-
-    <div class="contact-card">
-        <div class="label">Email</div>
-        <a href="mailto:emils@ozols.dev">emils@ozols.dev</a>
-    </div>
-
-    <h2>Frequently asked</h2>
-
-    <h3>My alarm fired late or didn't fire — what happened?</h3>
-    <p>The most common cause is iOS Low Power Mode, which can delay background activity, including alarms. If you keep Low Power Mode enabled overnight, iOS may not deliver the alarm at the exact second you set. For the most reliable timing, switch Low Power Mode off before going to sleep, or set it to turn off automatically when the device is charging.</p>
-    <p>If the alarm still doesn't ring under normal power conditions, write in with the date, time, and a brief description — every report helps narrow down whether it's a device-specific quirk or something we can fix in the app.</p>
-
-    <h3>Alarms aren't ringing at all</h3>
-    <p>Alarm Planner needs permission to schedule alarms. On first launch the app asks for that permission directly — if you tapped "Don't Allow" or revoked it later, the app can't fire anything.</p>
-    <ul>
-        <li>Open the iOS Settings app</li>
-        <li>Scroll to <strong>Alarm Planner</strong> in the Apps section</li>
-        <li>Tap <strong>Alarms</strong> and turn the toggle on</li>
-    </ul>
-    <p>Then reopen Alarm Planner — the in-app banner clears once the permission flips.</p>
-
-    <h3>Can I use my own audio file as an alarm sound?</h3>
-    <p>Yes. Open <strong>Settings → Default alarm sound → Add custom sound</strong> and pick any audio file via the system file picker. Tracks longer than 30 seconds are automatically trimmed to fit iOS's alarm-tone limit. DRM-protected files (e.g. Apple Music downloads) can't be used as alarms — that's a platform restriction, not ours.</p>
-
-    <h3>Does the app sync across iPhone and iPad?</h3>
-    <p>Not as live, automatic two-way sync yet. That is on the roadmap. In the meantime Alarm Planner backs your alarms up to your own iCloud, so you can restore them on another device or after reinstalling. See the next question for how.</p>
-
-    <h3>How do I move my alarms to a new iPhone, or get them back after reinstalling?</h3>
-    <p>As long as iCloud Backup is on (it's on by default when you're signed in to iCloud), Alarm Planner keeps a copy of your alarms, groups, custom sounds, and settings in your private iCloud. On the new device, or after reinstalling, open the app and it offers to restore that backup on first launch. You can also restore any time from <strong>Settings, iCloud Backup, Restore from iCloud</strong>, and back up on demand from the same place.</p>
-
-    <h3>How do I delete all my alarms?</h3>
-    <p>Either swipe-delete alarms one by one from the home tab, or uninstall the app. Uninstalling removes every alarm, tag, and setting from that device. If you had iCloud Backup on, a copy stays in your iCloud until you remove it under <strong>Settings, your name, iCloud, Manage Account Storage</strong> in iOS.</p>
-
-    <h3>I'd love feature X — can you add it?</h3>
-    <p>Probably! The app is built by one developer and shaped heavily by what people ask for. Email <a href="mailto:emils@ozols.dev">emils@ozols.dev</a> with the request — even short ones help prioritize the roadmap.</p>
-
-    <h2>Privacy &amp; data</h2>
-    <p>Alarm Planner keeps your data on your device, with an optional backup to your own iCloud. We have no server and no copy of your alarms. For the full data policy, including how iCloud Backup works, see the <a href="/alarmplanner-privacy/">privacy policy</a>.</p>
-
-    <div class="footer-links">
-        <a href="/alarmplanner-privacy/">Privacy policy</a> · <a href="mailto:emils@ozols.dev">emils@ozols.dev</a>
-    </div>
-</div>
-
-    <footer class="site-footer">
-        <div class="row">
-            <span>© 2026 Emils Ozols</span>
-            <a href="mailto:emils@ozols.dev">emils@ozols.dev</a>
-            <a href="/blog/feed.xml">RSS</a>
-            <a class="wb" href="/workbench/" aria-label="Workbench" title="Workbench">
-                <svg viewBox="0 0 16 16" width="22" height="22" shape-rendering="crispEdges" aria-hidden="true"><rect x="1" y="2" width="14" height="11" fill="currentColor"/><rect x="2" y="4" width="12" height="8" fill="var(--bg)"/><rect x="2" y="3" width="12" height="1" fill="var(--bg)"/><rect x="3" y="5" width="2" height="1" fill="currentColor"/><rect x="6" y="5" width="5" height="1" fill="currentColor"/><rect x="3" y="7" width="1" height="2" fill="currentColor"/><rect x="5" y="14" width="6" height="1" fill="currentColor"/></svg>
-            </a>
-        </div>
-        <p>Apple, iPhone and App Store are trademarks of Apple Inc., registered in the U.S. and other countries and regions.</p>
-    </footer>
-</div>
+    <p>The Alarm Clock Planner support page has moved to <a href="https://alarmclockplanner.com/support/">https://alarmclockplanner.com/support/</a>.</p>
 </body>
 </html>
