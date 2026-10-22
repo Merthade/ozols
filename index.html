@@ -99,7 +99,7 @@
             "name": "Rise",
             "operatingSystem": "iOS",
             "applicationCategory": "LifestyleApplication",
-            "description": "An alarm that leads straight into your morning focus session.",
+            "description": "Stop the alarm and your morning starts with a focus timer, not your phone.",
             "url": "https://apps.apple.com/app/id6760960639",
             "author": {
               "@id": "https://ozols.dev/#person"
@@ -240,10 +240,10 @@
         .ribbon { position: absolute; top: 20px; right: -36px; width: 136px; transform: rotate(45deg); text-align: center; font-size: 11px; font-weight: 800; letter-spacing: .14em; line-height: 1; padding: 6px 0; color: #FFFFFF; box-shadow: 0 2px 6px rgba(0,0,0,.18); pointer-events: none; }
         .ribbon-new { background: var(--accent-solid); }
         .ribbon-soon { background: #C2410C; }
-        .card .tagline { color: var(--muted); margin: 14px 0 18px; font-size: 16px; }
-        .card .shot { background: var(--tint); border-radius: 14px; padding: 18px 0 0; overflow: hidden; height: 300px; margin-top: auto; }
-        .card .shot img { width: 62%; max-width: 200px; margin: 0 auto; }
-        @media (max-width: 639px) { .card .shot { height: 230px; } .card .shot img { width: 52%; } }
+        .card .tagline { color: var(--ink); font-weight: 600; margin: 14px 0 8px; font-size: 16px; line-height: 1.4; }
+        .card .blurb { color: var(--muted); margin: 0 0 18px; font-size: 15px; }
+        .card .shot { display: flex; justify-content: center; gap: 10px; background: var(--tint); border-radius: 14px; padding: 18px 12px; margin-top: auto; }
+        .card .shot img { width: 46%; max-width: 170px; }
         .card-actions { display: flex; flex-direction: column; align-items: center; gap: 12px; margin-top: 18px; font-size: 15px; }
         .get { display: inline-flex; align-items: center; gap: 7px; font-weight: 700; font-size: 15px; letter-spacing: .01em; text-decoration: none; color: var(--get); background: var(--get-bg); border-radius: 999px; padding: 7px 20px; transition: background-color .15s; }
         .get:hover, .get:focus-visible { background: var(--get-bg-on); }
@@ -368,31 +368,36 @@
                     <article class="card has-ribbon"><span class="ribbon ribbon-soon">SOON</span>
                         <div class="app-head"><img class="app-icon" src="/assets/apps/choru-icon.png" alt="" width="52" height="52" loading="lazy"><h3 class="app-name">Choru</h3></div>
                         <p class="tagline">A shared chore chart for the family, where every chore comes back when it&#x27;s due.</p>
-                        <div class="shot"><img src="/assets/apps/choru-shot.webp" alt="Choru chore list" width="640" height="1284" loading="lazy"></div>
+                        <p class="blurb">The daily dishes and the oven every three months live on one list. A missed chore carries over as one row instead of piling up, and kids earn coins for rewards you pick.</p>
+                        <div class="shot"><img src="/assets/apps/choru-shot.webp" alt="Choru chore list" width="640" height="1284" loading="lazy"><img src="/assets/apps/choru-shot-2.webp" alt="Choru rewards bought with coins" width="640" height="1284" loading="lazy"></div>
                         <div class="card-actions"><span class="soon">Not on the App Store yet</span><a class="read-more" href="https://getchoru.com" data-ph="app_card_click" data-app="choru" data-target="site" aria-label="Read more about Choru">Read more</a></div>
                     </article>
                     <article class="card has-ribbon"><span class="ribbon ribbon-new">NEW</span>
                         <div class="app-head"><img class="app-icon" src="/assets/apps/charactersheet-icon.png" alt="" width="52" height="52" loading="lazy"><h3 class="app-name">CharacterSheet</h3></div>
                         <p class="tagline">Turn workouts, reading and meditation into XP, and level up in real life.</p>
-                        <div class="shot"><img src="/assets/apps/charactersheet-shot.webp" alt="CharacterSheet character stats" width="640" height="1284" loading="lazy"></div>
+                        <p class="blurb">Six stats, each from level 1 to 60. Take on quests, some of which you have to discover, and stack buffs for sleep, water and a daily streak. Neglect a stat and it starts losing XP, just like in real life.</p>
+                        <div class="shot"><img src="/assets/apps/charactersheet-shot.webp" alt="CharacterSheet character stats" width="640" height="1284" loading="lazy"><img src="/assets/apps/charactersheet-shot-2.webp" alt="CharacterSheet quest board" width="640" height="1284" loading="lazy"></div>
                         <div class="card-actions"><a class="get" href="https://apps.apple.com/app/apple-store/id6821288178?pt=2187944&amp;ct=OzolsDev_Home&amp;mt=8" data-ph="app_card_click" data-app="charactersheet" data-target="store" aria-label="Download CharacterSheet on the App Store"><svg class="get-glyph" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v10.5m0 0-4.25-4.25M12 14l4.25-4.25M4.75 15.5v2.25a2.75 2.75 0 0 0 2.75 2.75h9a2.75 2.75 0 0 0 2.75-2.75V15.5"/></svg>Download</a><a class="read-more" href="https://getcharactersheet.com" data-ph="app_card_click" data-app="charactersheet" data-target="site" aria-label="Read more about CharacterSheet">Read more</a></div>
                     </article>
                     <article class="card">
                         <div class="app-head"><img class="app-icon" src="/assets/apps/scooch-icon.png" alt="" width="52" height="52" loading="lazy"><h3 class="app-name">Scooch</h3></div>
                         <p class="tagline">Will it fit? Draw your rooms at real size and find out before you carry anything.</p>
-                        <div class="shot"><img src="/assets/apps/scooch-shot.webp" alt="Scooch floor plan with furniture" width="640" height="1284" loading="lazy"></div>
+                        <p class="blurb">Type a wall&#x27;s length and it stays exact. 37 pieces of furniture at real sizes turn red when they collide or stick out of the room, and doors and drawers show the space they need to open.</p>
+                        <div class="shot"><img src="/assets/apps/scooch-shot.webp" alt="Scooch floor plan with furniture" width="640" height="1284" loading="lazy"><img src="/assets/apps/scooch-shot-2.webp" alt="Scooch showing a sofa that does not fit in red" width="640" height="1284" loading="lazy"></div>
                         <div class="card-actions"><a class="get" href="https://apps.apple.com/app/apple-store/id6799503727?pt=2187944&amp;ct=OzolsDev_Home&amp;mt=8" data-ph="app_card_click" data-app="scooch" data-target="store" aria-label="Download Scooch on the App Store"><svg class="get-glyph" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v10.5m0 0-4.25-4.25M12 14l4.25-4.25M4.75 15.5v2.25a2.75 2.75 0 0 0 2.75 2.75h9a2.75 2.75 0 0 0 2.75-2.75V15.5"/></svg>Download</a><a class="read-more" href="https://getscooch.com" data-ph="app_card_click" data-app="scooch" data-target="site" aria-label="Read more about Scooch">Read more</a></div>
                     </article>
                     <article class="card">
                         <div class="app-head"><img class="app-icon" src="/assets/apps/rise-icon.png" alt="" width="52" height="52" loading="lazy"><h3 class="app-name">Rise</h3></div>
-                        <p class="tagline">An alarm that leads straight into your morning focus session.</p>
-                        <div class="shot"><img src="/assets/apps/rise-shot.webp" alt="Rise morning routine home screen" width="640" height="1284" loading="lazy"></div>
+                        <p class="tagline">Stop the alarm and your morning starts with a focus timer, not your phone.</p>
+                        <p class="blurb">The alarm rings even on Silent. Stopping it opens a short focus session for reading, stretching or a quiet coffee, counting down on your Lock Screen. Every finished morning grows your streak, and a wind-down session eases you out of the day at night.</p>
+                        <div class="shot"><img src="/assets/apps/rise-shot.webp" alt="Rise alarm ringing" width="640" height="1284" loading="lazy"><img src="/assets/apps/rise-shot-2.webp" alt="Rise focus timer counting down" width="640" height="1284" loading="lazy"></div>
                         <div class="card-actions"><a class="get" href="https://apps.apple.com/app/apple-store/id6760960639?pt=2187944&amp;ct=OzolsDev_Home&amp;mt=8" data-ph="app_card_click" data-app="rise" data-target="store" aria-label="Download Rise on the App Store"><svg class="get-glyph" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v10.5m0 0-4.25-4.25M12 14l4.25-4.25M4.75 15.5v2.25a2.75 2.75 0 0 0 2.75 2.75h9a2.75 2.75 0 0 0 2.75-2.75V15.5"/></svg>Download</a><a class="read-more" href="https://risemorning.app" data-ph="app_card_click" data-app="rise" data-target="site" aria-label="Read more about Rise">Read more</a></div>
                     </article>
                     <article class="card">
                         <div class="app-head"><img class="app-icon" src="/assets/apps/remi-icon.png" alt="" width="52" height="52" loading="lazy"><h3 class="app-name">Remi</h3></div>
                         <p class="tagline">Reminders for things without a deadline: an exact date, early March, or someday.</p>
-                        <div class="shot"><img src="/assets/apps/remi-shot.webp" alt="Remi reminder list" width="640" height="1284" loading="lazy"></div>
+                        <p class="blurb">Pick early March, or just someday, when that is all you know. Your whole year at a glance, eight Home Screen widgets, and a one-time unlock instead of a subscription.</p>
+                        <div class="shot"><img src="/assets/apps/remi-shot.webp" alt="Remi reminder list" width="640" height="1284" loading="lazy"><img src="/assets/apps/remi-shot-2.webp" alt="Remi year view" width="640" height="1284" loading="lazy"></div>
                         <div class="card-actions"><a class="get" href="https://apps.apple.com/app/apple-store/id6759194352?pt=2187944&amp;ct=OzolsDev_Home&amp;mt=8" data-ph="app_card_click" data-app="remi" data-target="store" aria-label="Download Remi on the App Store"><svg class="get-glyph" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v10.5m0 0-4.25-4.25M12 14l4.25-4.25M4.75 15.5v2.25a2.75 2.75 0 0 0 2.75 2.75h9a2.75 2.75 0 0 0 2.75-2.75V15.5"/></svg>Download</a><a class="read-more" href="https://remireminder.app" data-ph="app_card_click" data-app="remi" data-target="site" aria-label="Read more about Remi">Read more</a></div>
                     </article>
                 </div>

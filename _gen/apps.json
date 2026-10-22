@@ -29,15 +29,18 @@
       "tagline": "A shared chore chart for the family, where every chore comes back when it's due.",
       "site": "https://getchoru.com",
       "shots": [
-        "choru-shot.webp"
+        "choru-shot.webp",
+        "choru-shot-2.webp"
       ],
       "shot_alt": [
-        "Choru chore list"
+        "Choru chore list",
+        "Choru rewards bought with coins"
       ],
       "coming_soon": true,
       "support": "https://getchoru.com/support/",
       "privacy": "https://getchoru.com/privacy/",
-      "terms": "https://getchoru.com/terms/"
+      "terms": "https://getchoru.com/terms/",
+      "blurb": "The daily dishes and the oven every three months live on one list. A missed chore carries over as one row instead of piling up, and kids earn coins for rewards you pick."
     },
     {
       "slug": "charactersheet",
@@ -47,15 +50,18 @@
       "tagline": "Turn workouts, reading and meditation into XP, and level up in real life.",
       "site": "https://getcharactersheet.com",
       "shots": [
-        "charactersheet-shot.webp"
+        "charactersheet-shot.webp",
+        "charactersheet-shot-2.webp"
       ],
       "shot_alt": [
-        "CharacterSheet character stats"
+        "CharacterSheet character stats",
+        "CharacterSheet quest board"
       ],
       "new_until": "2026-11-19",
       "support": "https://getcharactersheet.com/support/",
       "privacy": "https://getcharactersheet.com/privacy/",
-      "terms": "https://getcharactersheet.com/terms/"
+      "terms": "https://getcharactersheet.com/terms/",
+      "blurb": "Six stats, each from level 1 to 60. Take on quests, some of which you have to discover, and stack buffs for sleep, water and a daily streak. Neglect a stat and it starts losing XP, just like in real life."
     },
     {
       "slug": "scooch",
@@ -65,31 +71,37 @@
       "tagline": "Will it fit? Draw your rooms at real size and find out before you carry anything.",
       "site": "https://getscooch.com",
       "shots": [
-        "scooch-shot.webp"
+        "scooch-shot.webp",
+        "scooch-shot-2.webp"
       ],
       "shot_alt": [
-        "Scooch floor plan with furniture"
+        "Scooch floor plan with furniture",
+        "Scooch showing a sofa that does not fit in red"
       ],
       "support": "https://getscooch.com/support/",
       "privacy": "https://getscooch.com/privacy/",
-      "terms": "https://getscooch.com/terms/"
+      "terms": "https://getscooch.com/terms/",
+      "blurb": "Type a wall's length and it stays exact. 37 pieces of furniture at real sizes turn red when they collide or stick out of the room, and doors and drawers show the space they need to open."
     },
     {
       "slug": "rise",
       "name": "Rise",
       "id": "6760960639",
       "category": "LifestyleApplication",
-      "tagline": "An alarm that leads straight into your morning focus session.",
+      "tagline": "Stop the alarm and your morning starts with a focus timer, not your phone.",
       "site": "https://risemorning.app",
       "shots": [
-        "rise-shot.webp"
+        "rise-shot.webp",
+        "rise-shot-2.webp"
       ],
       "shot_alt": [
-        "Rise morning routine home screen"
+        "Rise alarm ringing",
+        "Rise focus timer counting down"
       ],
       "support": "https://risemorning.app/support/",
       "privacy": "https://risemorning.app/privacy.html",
-      "terms": "https://risemorning.app/terms.html"
+      "terms": "https://risemorning.app/terms.html",
+      "blurb": "The alarm rings even on Silent. Stopping it opens a short focus session for reading, stretching or a quiet coffee, counting down on your Lock Screen. Every finished morning grows your streak, and a wind-down session eases you out of the day at night."
     },
     {
       "slug": "remi",
@@ -99,14 +111,17 @@
       "tagline": "Reminders for things without a deadline: an exact date, early March, or someday.",
       "site": "https://remireminder.app",
       "shots": [
-        "remi-shot.webp"
+        "remi-shot.webp",
+        "remi-shot-2.webp"
       ],
       "shot_alt": [
-        "Remi reminder list"
+        "Remi reminder list",
+        "Remi year view"
       ],
       "support": "https://remireminder.app/support/",
       "privacy": "https://remireminder.app/privacy.html",
-      "terms": "https://remireminder.app/terms.html"
+      "terms": "https://remireminder.app/terms.html",
+      "blurb": "Pick early March, or just someday, when that is all you know. Your whole year at a glance, eight Home Screen widgets, and a one-time unlock instead of a subscription."
     }
   ],
   "social": [
