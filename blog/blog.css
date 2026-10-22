@@ -82,6 +82,7 @@ article img { border-radius: 14px; margin: 8px 0 18px; }
 [data-embedded="1"] .post-footer,
 [data-embedded="1"] .blog-aside,
 [data-embedded="1"] .workbench-link { display: none; }
+[data-embedded="1"] body::before { display: none; }
 [data-embedded="1"] .blog-page { grid-template-columns: 1fr; padding: 16px 0 28px; gap: 0; }
 [data-embedded="1"] article { font-size: 16px; line-height: 1.6; }
 [data-embedded="1"] article h1 { font-size: 24px; margin-bottom: 8px; }

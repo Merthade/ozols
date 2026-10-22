@@ -17,6 +17,9 @@
     --get-bg: rgba(0, 122, 255, .12);
     --get-bg-on: rgba(0, 122, 255, .22);
     --shadow: 0 1px 2px rgba(0,0,0,.04), 0 8px 24px rgba(0,0,0,.06);
+    --glow-1: rgba(31, 63, 191, .14);
+    --glow-2: rgba(167, 139, 250, .22);
+    --glow-3: rgba(251, 176, 59, .16);
     color-scheme: light dark;
 }
 @media (prefers-color-scheme: dark) {
@@ -36,6 +39,9 @@
         --get-bg: rgba(10, 132, 255, .20);
         --get-bg-on: rgba(10, 132, 255, .32);
         --shadow: 0 1px 2px rgba(0,0,0,.3), 0 8px 24px rgba(0,0,0,.35);
+        --glow-1: rgba(79, 109, 255, .24);
+        --glow-2: rgba(167, 139, 250, .18);
+        --glow-3: rgba(245, 158, 11, .10);
     }
 }
 
@@ -55,6 +61,30 @@ img { display: block; max-width: 100%; height: auto; }
 h1, h2, h3 { line-height: 1.2; margin: 0; letter-spacing: -0.01em; }
 .wrap { max-width: 1080px; margin: 0 auto; padding: 0 16px; }
 @media (min-width: 720px) { .wrap { padding: 0 32px; } }
+
+/* Background: soft glows drifting slowly behind everything, like the apps' theme gradients */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background:
+        radial-gradient(26% 22% at 22% 24%, var(--glow-1), transparent 70%),
+        radial-gradient(24% 26% at 76% 20%, var(--glow-2), transparent 70%),
+        radial-gradient(28% 24% at 62% 74%, var(--glow-3), transparent 70%),
+        radial-gradient(22% 22% at 20% 80%, var(--glow-2), transparent 70%);
+    background-size: 150% 150%;
+    animation: bg-drift 60s ease-in-out infinite alternate;
+}
+@keyframes bg-drift {
+    0%   { background-position: 0% 0%; }
+    50%  { background-position: 100% 40%; }
+    100% { background-position: 30% 100%; }
+}
+@media (prefers-reduced-motion: reduce) {
+    body::before { animation: none; }
+}
 
 /* Header */
 .top { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 20px 0; }
@@ -81,6 +111,9 @@ h1, h2, h3 { line-height: 1.2; margin: 0; letter-spacing: -0.01em; }
         --get-bg: rgba(10, 132, 255, .20);
         --get-bg-on: rgba(10, 132, 255, .32);
         --shadow: 0 1px 2px rgba(0,0,0,.3), 0 8px 24px rgba(0,0,0,.35);
+        --glow-1: rgba(79, 109, 255, .24);
+        --glow-2: rgba(167, 139, 250, .18);
+        --glow-3: rgba(245, 158, 11, .10);
 }
 
 /* Footer */
