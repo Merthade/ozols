@@ -120,5 +120,3 @@ body::before {
 .site-footer { padding: 40px 0 56px; color: var(--muted); font-size: 14px; }
 .site-footer .row { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 20px; }
 .site-footer p { margin: 14px 0 0; font-size: 12px; }
-.wb { display: inline-flex; width: 22px; height: 22px; margin-left: auto; opacity: .55; }
-.wb:hover { opacity: 1; }

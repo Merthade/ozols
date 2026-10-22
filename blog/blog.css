@@ -1,6 +1,5 @@
 /* ozols.dev/blog: blog-only styles on top of /assets/site.css
-   (tokens, base, header and footer live there). Also covers the
-   embedded mode the Workbench window uses (?embedded=1). */
+   (tokens, base, header and footer live there). */
 
 .sr-only {
   position: absolute;
@@ -72,20 +71,3 @@ article img { border-radius: 14px; margin: 8px 0 18px; }
 .post-footer-link.next { text-align: right; }
 .post-footer-link .label { display: block; font-size: 13px; color: var(--muted); margin-bottom: 2px; }
 .post-footer-link .title { font-weight: 600; }
-
-.workbench-link { display: inline-block; margin-top: 8px; font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: 14px; color: var(--muted); text-decoration: none; }
-.workbench-link:hover { color: var(--accent); }
-
-/* ── Embedded mode (Workbench window iframe) ───────────────── */
-[data-embedded="1"] .top,
-[data-embedded="1"] .site-footer,
-[data-embedded="1"] .post-footer,
-[data-embedded="1"] .blog-aside,
-[data-embedded="1"] .workbench-link { display: none; }
-[data-embedded="1"] body::before { display: none; }
-[data-embedded="1"] .blog-page { grid-template-columns: 1fr; padding: 16px 0 28px; gap: 0; }
-[data-embedded="1"] article { font-size: 16px; line-height: 1.6; }
-[data-embedded="1"] article h1 { font-size: 24px; margin-bottom: 8px; }
-[data-embedded="1"] article h2 { font-size: 18px; margin: 24px 0 8px; }
-[data-embedded="1"] article h3 { font-size: 16px; }
-[data-embedded="1"] .post-meta { margin-bottom: 18px; font-size: 13px; }
