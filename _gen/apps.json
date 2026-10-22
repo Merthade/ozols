@@ -26,7 +26,7 @@
       "name": "Choru",
       "id": null,
       "category": "LifestyleApplication",
-      "tagline": "A shared chore chart for the family, where every chore comes back when it's due.",
+      "tagline": "A family chore chart where every chore comes back when it's due.",
       "site": "https://getchoru.com",
       "shots": [
         "choru-shot.webp",
@@ -40,15 +40,15 @@
       "support": "https://getchoru.com/support/",
       "privacy": "https://getchoru.com/privacy/",
       "terms": "https://getchoru.com/terms/",
-      "blurb": "The daily dishes and the oven every three months live on one list. A missed chore carries over as one row instead of piling up, and kids earn coins for rewards you pick.",
-      "why": "I wanted an easier way to run our family chores and to motivate my daughter with rewards, so she earns her screen time and toys."
+      "blurb": "Daily dishes and the oven every three months share one list. A missed chore carries over as one row, and kids earn coins for rewards you pick.",
+      "why": "I wanted an easier way to run our family chores, and to motivate my daughter with rewards so she earns her screen time and toys."
     },
     {
       "slug": "charactersheet",
       "name": "CharacterSheet",
       "id": "6821288178",
       "category": "HealthApplication",
-      "tagline": "Turn workouts, reading and meditation into XP, and level up in real life.",
+      "tagline": "Workouts, reading and meditation become XP. Level up in real life.",
       "site": "https://getcharactersheet.com",
       "shots": [
         "charactersheet-shot.webp",
@@ -62,15 +62,15 @@
       "support": "https://getcharactersheet.com/support/",
       "privacy": "https://getcharactersheet.com/privacy/",
       "terms": "https://getcharactersheet.com/terms/",
-      "blurb": "Six stats, each from level 1 to 60. Take on quests, some of which you have to discover, and stack buffs for sleep, water and a daily streak. Neglect a stat and it starts losing XP, just like in real life.",
-      "why": "I wanted to work out more and turn life into an RPG: XP for walking, reading and meditating, and stats that fade when I stop, just like real muscles. I'm a looooong way from level 60, and that's the point. Level 60 is someone who runs marathons, trains several times a week, and meditates and journals almost every day."
+      "blurb": "Six stats, each from level 1 to 60. Finish quests, some of them hidden, and stack buffs for sleep, water and streaks. Skip a stat and it loses XP.",
+      "why": "I wanted to work out more and turn life into an RPG. I'm a looooong way from level 60, and that's the point: level 60 runs marathons."
     },
     {
       "slug": "scooch",
       "name": "Scooch",
       "id": "6799503727",
       "category": "ProductivityApplication",
-      "tagline": "Will it fit? Draw your rooms at real size and find out before you carry anything.",
+      "tagline": "Will it fit? Draw your rooms to scale and know before you carry anything.",
       "site": "https://getscooch.com",
       "shots": [
         "scooch-shot.webp",
@@ -83,15 +83,15 @@
       "support": "https://getscooch.com/support/",
       "privacy": "https://getscooch.com/privacy/",
       "terms": "https://getscooch.com/terms/",
-      "blurb": "Type a wall's length and it stays exact. 37 pieces of furniture at real sizes turn red when they collide or stick out of the room, and doors and drawers show the space they need to open.",
-      "why": "Every so often we rearrange our apartment or think about upgrading something, and I needed to know if that IKEA wardrobe would actually fit."
+      "blurb": "Type a wall's length and it stays exact. 37 furniture pieces at real sizes turn red when they collide, and doors show the space they need to open.",
+      "why": "We rearrange our apartment every so often or think about an upgrade, and I needed to know if that IKEA wardrobe would actually fit."
     },
     {
       "slug": "rise",
       "name": "Rise",
       "id": "6760960639",
       "category": "LifestyleApplication",
-      "tagline": "Stop the alarm and your morning starts with a focus timer, not your phone.",
+      "tagline": "Stop the alarm and your morning starts with a focus timer.",
       "site": "https://risemorning.app",
       "shots": [
         "rise-shot.webp",
@@ -104,7 +104,7 @@
       "support": "https://risemorning.app/support/",
       "privacy": "https://risemorning.app/privacy.html",
       "terms": "https://risemorning.app/terms.html",
-      "blurb": "The alarm rings even on Silent. Stopping it opens a short focus session for reading, stretching or a quiet coffee, counting down on your Lock Screen. Every finished morning grows your streak, and a wind-down session eases you out of the day at night.",
+      "blurb": "The alarm rings even on Silent. Stopping it opens a short focus session on your Lock Screen, and every finished morning grows your streak.",
       "why": "I wanted to get up early and build apps before work and family life start. Rise is the alarm that gets me out of bed to do it."
     },
     {
@@ -112,7 +112,7 @@
       "name": "Remi",
       "id": "6759194352",
       "category": "ProductivityApplication",
-      "tagline": "Reminders for things without a deadline: an exact date, early March, or someday.",
+      "tagline": "Reminders for an exact date, early March, or just someday.",
       "site": "https://remireminder.app",
       "shots": [
         "remi-shot.webp",
@@ -125,8 +125,8 @@
       "support": "https://remireminder.app/support/",
       "privacy": "https://remireminder.app/privacy.html",
       "terms": "https://remireminder.app/terms.html",
-      "blurb": "Pick early March, or just someday, when that is all you know. Your whole year at a glance, eight Home Screen widgets, and a one-time unlock instead of a subscription.",
-      "why": "My first app. I wanted an easier way to keep track of vaccines due years from now, and things like calling the dentist in two months."
+      "blurb": "Pick early March, or just someday, when that is all you know. See your whole year at a glance, with eight widgets and a one-time unlock.",
+      "why": "My first app. I needed an easy way to track vaccines due years from now, and things like calling the dentist in two months."
     }
   ],
   "social": [
