@@ -22,6 +22,42 @@
       "terms": "https://alarmclockplanner.com/terms/"
     },
     {
+      "slug": "choru",
+      "name": "Choru",
+      "id": null,
+      "category": "LifestyleApplication",
+      "tagline": "A shared chore chart for the family, where every chore comes back when it's due.",
+      "site": "https://getchoru.com",
+      "shots": [
+        "choru-shot.webp"
+      ],
+      "shot_alt": [
+        "Choru chore list"
+      ],
+      "coming_soon": true,
+      "support": "https://getchoru.com/support/",
+      "privacy": "https://getchoru.com/privacy/",
+      "terms": "https://getchoru.com/terms/"
+    },
+    {
+      "slug": "charactersheet",
+      "name": "CharacterSheet",
+      "id": "6821288178",
+      "category": "HealthApplication",
+      "tagline": "Turn workouts, reading and meditation into XP, and level up in real life.",
+      "site": "https://getcharactersheet.com",
+      "shots": [
+        "charactersheet-shot.webp"
+      ],
+      "shot_alt": [
+        "CharacterSheet character stats"
+      ],
+      "new_until": "2026-11-19",
+      "support": "https://getcharactersheet.com/support/",
+      "privacy": "https://getcharactersheet.com/privacy/",
+      "terms": "https://getcharactersheet.com/terms/"
+    },
+    {
       "slug": "scooch",
       "name": "Scooch",
       "id": "6799503727",
@@ -71,42 +107,6 @@
       "support": "https://remireminder.app/support/",
       "privacy": "https://remireminder.app/privacy.html",
       "terms": "https://remireminder.app/terms.html"
-    },
-    {
-      "slug": "charactersheet",
-      "name": "CharacterSheet",
-      "id": "6821288178",
-      "category": "HealthApplication",
-      "tagline": "Turn workouts, reading and meditation into XP, and level up in real life.",
-      "site": "https://getcharactersheet.com",
-      "shots": [
-        "charactersheet-shot.webp"
-      ],
-      "shot_alt": [
-        "CharacterSheet character stats"
-      ],
-      "new_until": "2026-11-19",
-      "support": "https://getcharactersheet.com/support/",
-      "privacy": "https://getcharactersheet.com/privacy/",
-      "terms": "https://getcharactersheet.com/terms/"
-    },
-    {
-      "slug": "choru",
-      "name": "Choru",
-      "id": null,
-      "category": "LifestyleApplication",
-      "tagline": "A shared chore chart for the family, where every chore comes back when it's due.",
-      "site": "https://getchoru.com",
-      "shots": [
-        "choru-shot.webp"
-      ],
-      "shot_alt": [
-        "Choru chore list"
-      ],
-      "coming_soon": true,
-      "support": "https://getchoru.com/support/",
-      "privacy": "https://getchoru.com/privacy/",
-      "terms": "https://getchoru.com/terms/"
     }
   ],
   "social": [

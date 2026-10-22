@@ -51,10 +51,9 @@ def shot(a, i, lazy=True):
             f'width="640" height="1284"' + (' loading="lazy">' if lazy else '>'))
 
 
-def site_link(a):
-    host = a["site"].split("//")[1]
-    return (f'<a href="{a["site"]}" data-ph="app_card_click" data-app="{a["slug"]}" '
-            f'data-target="site">{host}</a>')
+def read_more(a):
+    return (f'<a class="read-more" href="{a["site"]}" data-ph="app_card_click" data-app="{a["slug"]}" '
+            f'data-target="site" aria-label="Read more about {esc(a["name"])}">Read more</a>')
 
 
 def featured(a, r):
@@ -68,7 +67,7 @@ def featured(a, r):
                         {chip(r)}
                         <div class="featured-actions">
                             <a class="badge-link" href="{STORE.format(id=a["id"])}" data-ph="app_card_click" data-app="{a["slug"]}" data-target="store" aria-label="Download {esc(a["name"])} on the App Store"><img src="/assets/appstore-badge.svg" alt="Download on the App Store" width="144" height="48"></a>
-                            {site_link(a)}
+                            {read_more(a)}
                         </div>
                     </div>
                     <div class="shots">
@@ -80,20 +79,21 @@ def featured(a, r):
 def card(a, r, today):
     tag = ""
     if a.get("coming_soon"):
-        tag = '<span class="tag">Coming soon</span>'
+        tag = '<span class="tag">SOON</span>'
     elif a.get("new_until") and today <= datetime.date.fromisoformat(a["new_until"]):
-        tag = '<span class="tag">New</span>'
+        tag = '<span class="tag">NEW</span>'
     if a.get("coming_soon"):
         action = '<span class="soon">Not on the App Store yet</span>'
     else:
-        action = (f'<a class="btn" href="{STORE.format(id=a["id"])}" data-ph="app_card_click" '
-                  f'data-app="{a["slug"]}" data-target="store">View on the App Store</a>')
+        action = (f'<a class="get" href="{STORE.format(id=a["id"])}" data-ph="app_card_click" '
+                  f'data-app="{a["slug"]}" data-target="store" '
+                  f'aria-label="Download {esc(a["name"])} on the App Store">Download</a>')
     rating = f"\n                        {chip(r)}" if chip(r) else ""
     return f'''                    <article class="card">
                         <div class="app-head">{icon(a, 52)}<h3 class="app-name">{esc(a["name"])}</h3>{tag}</div>
                         <p class="tagline">{esc(a["tagline"])}</p>{rating}
                         <div class="shot">{shot(a, 0)}</div>
-                        <div class="card-actions">{action}{site_link(a)}</div>
+                        <div class="card-actions">{action}{read_more(a)}</div>
                     </article>'''
 
 

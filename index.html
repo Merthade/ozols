@@ -5,21 +5,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ozols.Dev - iOS apps by Emils Ozols</title>
-    <meta name="description" content="Small iOS apps by Emils Ozols, an indie developer: Alarm Clock Planner, Scooch, Rise, Remi and CharacterSheet.">
+    <meta name="description" content="Small iOS apps by Emils Ozols, an indie developer: Alarm Clock Planner, CharacterSheet, Scooch, Rise and Remi.">
     <link rel="canonical" href="https://ozols.dev/">
     <link rel="alternate" type="application/atom+xml" title="Ozols.dev blog" href="/blog/feed.xml">
     <link rel="apple-touch-icon" href="/assets/avatar.jpg">
 
     <meta property="og:type" content="website">
     <meta property="og:title" content="Ozols.Dev - iOS apps by Emils Ozols">
-    <meta property="og:description" content="Small iOS apps by Emils Ozols, an indie developer: Alarm Clock Planner, Scooch, Rise, Remi and CharacterSheet.">
+    <meta property="og:description" content="Small iOS apps by Emils Ozols, an indie developer: Alarm Clock Planner, CharacterSheet, Scooch, Rise and Remi.">
     <meta property="og:url" content="https://ozols.dev/">
     <meta property="og:site_name" content="Ozols.dev">
     <meta property="og:image" content="https://ozols.dev/assets/avatar.jpg">
     <meta property="og:locale" content="en_US">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Ozols.Dev - iOS apps by Emils Ozols">
-    <meta name="twitter:description" content="Small iOS apps by Emils Ozols, an indie developer: Alarm Clock Planner, Scooch, Rise, Remi and CharacterSheet.">
+    <meta name="twitter:description" content="Small iOS apps by Emils Ozols, an indie developer: Alarm Clock Planner, CharacterSheet, Scooch, Rise and Remi.">
     <meta name="twitter:image" content="https://ozols.dev/assets/avatar.jpg">
 
     <script type="application/ld+json">
@@ -66,6 +66,21 @@
           "position": 2,
           "item": {
             "@type": "SoftwareApplication",
+            "name": "CharacterSheet",
+            "operatingSystem": "iOS",
+            "applicationCategory": "HealthApplication",
+            "description": "Turn workouts, reading and meditation into XP, and level up in real life.",
+            "url": "https://apps.apple.com/app/id6821288178",
+            "author": {
+              "@id": "https://ozols.dev/#person"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "item": {
+            "@type": "SoftwareApplication",
             "name": "Scooch",
             "operatingSystem": "iOS",
             "applicationCategory": "ProductivityApplication",
@@ -78,7 +93,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 3,
+          "position": 4,
           "item": {
             "@type": "SoftwareApplication",
             "name": "Rise",
@@ -93,7 +108,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 4,
+          "position": 5,
           "item": {
             "@type": "SoftwareApplication",
             "name": "Remi",
@@ -101,21 +116,6 @@
             "applicationCategory": "ProductivityApplication",
             "description": "Reminders for things without a deadline: an exact date, early March, or someday.",
             "url": "https://apps.apple.com/app/id6759194352",
-            "author": {
-              "@id": "https://ozols.dev/#person"
-            }
-          }
-        },
-        {
-          "@type": "ListItem",
-          "position": 5,
-          "item": {
-            "@type": "SoftwareApplication",
-            "name": "CharacterSheet",
-            "operatingSystem": "iOS",
-            "applicationCategory": "HealthApplication",
-            "description": "Turn workouts, reading and meditation into XP, and level up in real life.",
-            "url": "https://apps.apple.com/app/id6821288178",
             "author": {
               "@id": "https://ozols.dev/#person"
             }
@@ -139,6 +139,9 @@
             --accent-ink: #FFFFFF;
             --tag: #E6EAFB;
             --tag-ink: #1F3FBF;
+            --get: #007AFF;
+            --get-bg: rgba(0, 122, 255, .12);
+            --get-bg-on: rgba(0, 122, 255, .22);
             --shadow: 0 1px 2px rgba(0,0,0,.04), 0 8px 24px rgba(0,0,0,.06);
             color-scheme: light dark;
         }
@@ -154,6 +157,9 @@
                 --accent-ink: #0F0F12;
                 --tag: #232A4D;
                 --tag-ink: #B9C5FF;
+                --get: #0A84FF;
+                --get-bg: rgba(10, 132, 255, .20);
+                --get-bg-on: rgba(10, 132, 255, .32);
                 --shadow: 0 1px 2px rgba(0,0,0,.3), 0 8px 24px rgba(0,0,0,.35);
             }
         }
@@ -223,16 +229,19 @@
         .card .shot img { width: 62%; max-width: 200px; margin: 0 auto; }
         @media (max-width: 639px) { .card .shot { height: 230px; } .card .shot img { width: 52%; } }
         .card-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 18px; margin-top: 18px; font-size: 15px; }
-        .btn { display: inline-block; font-weight: 600; text-decoration: none; color: var(--accent-ink); background: var(--accent); border-radius: 999px; padding: 9px 16px; }
-        .btn:hover { filter: brightness(1.08); }
+        .get { display: inline-block; font-weight: 700; font-size: 15px; letter-spacing: .01em; text-decoration: none; color: var(--get); background: var(--get-bg); border-radius: 999px; padding: 7px 20px; transition: background-color .15s; }
+        .get:hover, .get:focus-visible { background: var(--get-bg-on); }
+        .read-more { margin-left: auto; font-weight: 600; text-decoration: none; transition: color .15s; }
+        .read-more:hover, .read-more:focus-visible { color: var(--ink); }
+        .featured .read-more { margin-left: 0; }
         .soon { font-weight: 600; color: var(--muted); }
 
         /* Follow along */
         .follow-intro { color: var(--muted); margin: -8px 0 20px; }
         .social { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
         @media (min-width: 720px) { .social { grid-template-columns: repeat(3, 1fr); gap: 16px; } }
-        .social a { display: flex; align-items: center; gap: 14px; padding: 18px; min-height: 72px; border-radius: 16px; background: var(--surface); border: 1px solid var(--rule); color: var(--ink); text-decoration: none; box-shadow: var(--shadow); transition: transform .12s ease; }
-        .social a:hover { transform: translateY(-2px); border-color: var(--accent); }
+        .social a { display: flex; align-items: center; gap: 14px; padding: 18px; min-height: 72px; border-radius: 16px; background: var(--surface); border: 1px solid var(--rule); color: var(--ink); text-decoration: none; box-shadow: var(--shadow); transition: background-color .15s, border-color .15s, color .15s; }
+        .social a:hover, .social a:focus-visible { background: var(--tag); border-color: var(--accent); color: var(--accent); }
         .social svg { width: 26px; height: 26px; flex: none; fill: currentColor; }
         .social strong { display: block; font-size: 16px; line-height: 1.25; }
         .social small { display: block; color: var(--muted); font-size: 14px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
@@ -311,7 +320,7 @@
                         <span class="rating"><span class="stars" aria-hidden="true">★</span>4.5 · 58 ratings</span>
                         <div class="featured-actions">
                             <a class="badge-link" href="https://apps.apple.com/app/apple-store/id6772136401?pt=2187944&amp;ct=OzolsDev_Home&amp;mt=8" data-ph="app_card_click" data-app="alarm" data-target="store" aria-label="Download Alarm Clock Planner on the App Store"><img src="/assets/appstore-badge.svg" alt="Download on the App Store" width="144" height="48"></a>
-                            <a href="https://alarmclockplanner.com" data-ph="app_card_click" data-app="alarm" data-target="site">alarmclockplanner.com</a>
+                            <a class="read-more" href="https://alarmclockplanner.com" data-ph="app_card_click" data-app="alarm" data-target="site" aria-label="Read more about Alarm Clock Planner">Read more</a>
                         </div>
                     </div>
                     <div class="shots">
@@ -325,34 +334,34 @@
                 <h2 class="section-title" id="more-title">More apps</h2>
                 <div class="grid">
                     <article class="card">
+                        <div class="app-head"><img class="app-icon" src="/assets/apps/choru-icon.png" alt="" width="52" height="52" loading="lazy"><h3 class="app-name">Choru</h3><span class="tag">SOON</span></div>
+                        <p class="tagline">A shared chore chart for the family, where every chore comes back when it&#x27;s due.</p>
+                        <div class="shot"><img src="/assets/apps/choru-shot.webp" alt="Choru chore list" width="640" height="1284" loading="lazy"></div>
+                        <div class="card-actions"><span class="soon">Not on the App Store yet</span><a class="read-more" href="https://getchoru.com" data-ph="app_card_click" data-app="choru" data-target="site" aria-label="Read more about Choru">Read more</a></div>
+                    </article>
+                    <article class="card">
+                        <div class="app-head"><img class="app-icon" src="/assets/apps/charactersheet-icon.png" alt="" width="52" height="52" loading="lazy"><h3 class="app-name">CharacterSheet</h3><span class="tag">NEW</span></div>
+                        <p class="tagline">Turn workouts, reading and meditation into XP, and level up in real life.</p>
+                        <div class="shot"><img src="/assets/apps/charactersheet-shot.webp" alt="CharacterSheet character stats" width="640" height="1284" loading="lazy"></div>
+                        <div class="card-actions"><a class="get" href="https://apps.apple.com/app/apple-store/id6821288178?pt=2187944&amp;ct=OzolsDev_Home&amp;mt=8" data-ph="app_card_click" data-app="charactersheet" data-target="store" aria-label="Download CharacterSheet on the App Store">Download</a><a class="read-more" href="https://getcharactersheet.com" data-ph="app_card_click" data-app="charactersheet" data-target="site" aria-label="Read more about CharacterSheet">Read more</a></div>
+                    </article>
+                    <article class="card">
                         <div class="app-head"><img class="app-icon" src="/assets/apps/scooch-icon.png" alt="" width="52" height="52" loading="lazy"><h3 class="app-name">Scooch</h3></div>
                         <p class="tagline">Will it fit? Draw your rooms at real size and find out before you carry anything.</p>
                         <div class="shot"><img src="/assets/apps/scooch-shot.webp" alt="Scooch floor plan with furniture" width="640" height="1284" loading="lazy"></div>
-                        <div class="card-actions"><a class="btn" href="https://apps.apple.com/app/apple-store/id6799503727?pt=2187944&amp;ct=OzolsDev_Home&amp;mt=8" data-ph="app_card_click" data-app="scooch" data-target="store">View on the App Store</a><a href="https://getscooch.com" data-ph="app_card_click" data-app="scooch" data-target="site">getscooch.com</a></div>
+                        <div class="card-actions"><a class="get" href="https://apps.apple.com/app/apple-store/id6799503727?pt=2187944&amp;ct=OzolsDev_Home&amp;mt=8" data-ph="app_card_click" data-app="scooch" data-target="store" aria-label="Download Scooch on the App Store">Download</a><a class="read-more" href="https://getscooch.com" data-ph="app_card_click" data-app="scooch" data-target="site" aria-label="Read more about Scooch">Read more</a></div>
                     </article>
                     <article class="card">
                         <div class="app-head"><img class="app-icon" src="/assets/apps/rise-icon.png" alt="" width="52" height="52" loading="lazy"><h3 class="app-name">Rise</h3></div>
                         <p class="tagline">An alarm that leads straight into your morning focus session.</p>
                         <div class="shot"><img src="/assets/apps/rise-shot.webp" alt="Rise morning routine home screen" width="640" height="1284" loading="lazy"></div>
-                        <div class="card-actions"><a class="btn" href="https://apps.apple.com/app/apple-store/id6760960639?pt=2187944&amp;ct=OzolsDev_Home&amp;mt=8" data-ph="app_card_click" data-app="rise" data-target="store">View on the App Store</a><a href="https://risemorning.app" data-ph="app_card_click" data-app="rise" data-target="site">risemorning.app</a></div>
+                        <div class="card-actions"><a class="get" href="https://apps.apple.com/app/apple-store/id6760960639?pt=2187944&amp;ct=OzolsDev_Home&amp;mt=8" data-ph="app_card_click" data-app="rise" data-target="store" aria-label="Download Rise on the App Store">Download</a><a class="read-more" href="https://risemorning.app" data-ph="app_card_click" data-app="rise" data-target="site" aria-label="Read more about Rise">Read more</a></div>
                     </article>
                     <article class="card">
                         <div class="app-head"><img class="app-icon" src="/assets/apps/remi-icon.png" alt="" width="52" height="52" loading="lazy"><h3 class="app-name">Remi</h3></div>
                         <p class="tagline">Reminders for things without a deadline: an exact date, early March, or someday.</p>
                         <div class="shot"><img src="/assets/apps/remi-shot.webp" alt="Remi reminder list" width="640" height="1284" loading="lazy"></div>
-                        <div class="card-actions"><a class="btn" href="https://apps.apple.com/app/apple-store/id6759194352?pt=2187944&amp;ct=OzolsDev_Home&amp;mt=8" data-ph="app_card_click" data-app="remi" data-target="store">View on the App Store</a><a href="https://remireminder.app" data-ph="app_card_click" data-app="remi" data-target="site">remireminder.app</a></div>
-                    </article>
-                    <article class="card">
-                        <div class="app-head"><img class="app-icon" src="/assets/apps/charactersheet-icon.png" alt="" width="52" height="52" loading="lazy"><h3 class="app-name">CharacterSheet</h3><span class="tag">New</span></div>
-                        <p class="tagline">Turn workouts, reading and meditation into XP, and level up in real life.</p>
-                        <div class="shot"><img src="/assets/apps/charactersheet-shot.webp" alt="CharacterSheet character stats" width="640" height="1284" loading="lazy"></div>
-                        <div class="card-actions"><a class="btn" href="https://apps.apple.com/app/apple-store/id6821288178?pt=2187944&amp;ct=OzolsDev_Home&amp;mt=8" data-ph="app_card_click" data-app="charactersheet" data-target="store">View on the App Store</a><a href="https://getcharactersheet.com" data-ph="app_card_click" data-app="charactersheet" data-target="site">getcharactersheet.com</a></div>
-                    </article>
-                    <article class="card">
-                        <div class="app-head"><img class="app-icon" src="/assets/apps/choru-icon.png" alt="" width="52" height="52" loading="lazy"><h3 class="app-name">Choru</h3><span class="tag">Coming soon</span></div>
-                        <p class="tagline">A shared chore chart for the family, where every chore comes back when it&#x27;s due.</p>
-                        <div class="shot"><img src="/assets/apps/choru-shot.webp" alt="Choru chore list" width="640" height="1284" loading="lazy"></div>
-                        <div class="card-actions"><span class="soon">Not on the App Store yet</span><a href="https://getchoru.com" data-ph="app_card_click" data-app="choru" data-target="site">getchoru.com</a></div>
+                        <div class="card-actions"><a class="get" href="https://apps.apple.com/app/apple-store/id6759194352?pt=2187944&amp;ct=OzolsDev_Home&amp;mt=8" data-ph="app_card_click" data-app="remi" data-target="store" aria-label="Download Remi on the App Store">Download</a><a class="read-more" href="https://remireminder.app" data-ph="app_card_click" data-app="remi" data-target="site" aria-label="Read more about Remi">Read more</a></div>
                     </article>
                 </div>
             </section>
@@ -386,11 +395,11 @@
                 <p class="support-intro">Need help with an app? Each one has its own support page, or email <a href="mailto:emils@ozols.dev">emils@ozols.dev</a>.</p>
                 <ul class="support">
                     <li><span class="who"><img src="/assets/apps/alarm-icon.png" alt="" width="28" height="28" loading="lazy">Alarm Clock Planner</span><span class="links"><a href="https://alarmclockplanner.com/support/">Support</a><a href="https://alarmclockplanner.com/privacy/">Privacy</a><a href="https://alarmclockplanner.com/terms/">Terms</a></span></li>
+                    <li><span class="who"><img src="/assets/apps/choru-icon.png" alt="" width="28" height="28" loading="lazy">Choru</span><span class="links"><a href="https://getchoru.com/support/">Support</a><a href="https://getchoru.com/privacy/">Privacy</a><a href="https://getchoru.com/terms/">Terms</a></span></li>
+                    <li><span class="who"><img src="/assets/apps/charactersheet-icon.png" alt="" width="28" height="28" loading="lazy">CharacterSheet</span><span class="links"><a href="https://getcharactersheet.com/support/">Support</a><a href="https://getcharactersheet.com/privacy/">Privacy</a><a href="https://getcharactersheet.com/terms/">Terms</a></span></li>
                     <li><span class="who"><img src="/assets/apps/scooch-icon.png" alt="" width="28" height="28" loading="lazy">Scooch</span><span class="links"><a href="https://getscooch.com/support/">Support</a><a href="https://getscooch.com/privacy/">Privacy</a><a href="https://getscooch.com/terms/">Terms</a></span></li>
                     <li><span class="who"><img src="/assets/apps/rise-icon.png" alt="" width="28" height="28" loading="lazy">Rise</span><span class="links"><a href="https://risemorning.app/support/">Support</a><a href="https://risemorning.app/privacy.html">Privacy</a><a href="https://risemorning.app/terms.html">Terms</a></span></li>
                     <li><span class="who"><img src="/assets/apps/remi-icon.png" alt="" width="28" height="28" loading="lazy">Remi</span><span class="links"><a href="https://remireminder.app/support/">Support</a><a href="https://remireminder.app/privacy.html">Privacy</a><a href="https://remireminder.app/terms.html">Terms</a></span></li>
-                    <li><span class="who"><img src="/assets/apps/charactersheet-icon.png" alt="" width="28" height="28" loading="lazy">CharacterSheet</span><span class="links"><a href="https://getcharactersheet.com/support/">Support</a><a href="https://getcharactersheet.com/privacy/">Privacy</a><a href="https://getcharactersheet.com/terms/">Terms</a></span></li>
-                    <li><span class="who"><img src="/assets/apps/choru-icon.png" alt="" width="28" height="28" loading="lazy">Choru</span><span class="links"><a href="https://getchoru.com/support/">Support</a><a href="https://getchoru.com/privacy/">Privacy</a><a href="https://getchoru.com/terms/">Terms</a></span></li>
                 </ul>
             </section>
         </main>
