@@ -12,7 +12,7 @@
     <meta property="og:url" content="https://ozols.dev/scooch/terms/">
     <meta property="og:site_name" content="Scooch">
     <meta property="og:locale" content="en_US">
-    <meta name="theme-color" content="#6E8A2F">
+    <meta name="theme-color" content="#FAFAF7">
     <meta name="robots" content="noindex">
     <script>
         (function() {
@@ -21,69 +21,19 @@
             document.documentElement.setAttribute('data-theme', theme);
         })();
     </script>
-    <style>
-        :root {
-            --accent: #6E8A2F;
-            --accent-hover: #5C7527;
-            --text-primary: #1a1a1a;
-            --text-secondary: #555;
-            --text-tertiary: #888;
-            --bg: #F7F8F4;
-            --card-bg: #fff;
-            --card-border: rgba(0,0,0,0.06);
-        }
-
-        [data-theme="dark"] {
-            --accent: #A6C25F;
-            --accent-hover: #B8D072;
-            --text-primary: #f0f0f0;
-            --text-secondary: #a1a1a6;
-            --text-tertiary: #8e8e93;
-            --bg: #12160B;
-            --card-bg: #1D2213;
-            --card-border: rgba(255,255,255,0.08);
-        }
-
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'Helvetica Neue', system-ui, sans-serif;
-            background: var(--bg);
-            color: var(--text-primary);
-            font-size: 15px;
-            line-height: 1.7;
-            -webkit-font-smoothing: antialiased;
-        }
-
-        .container { max-width: 640px; margin: 0 auto; padding: 60px 24px 80px; }
-
-        .back-link {
-            display: inline-flex; align-items: center; gap: 6px;
-            color: var(--accent); text-decoration: none;
-            font-size: 14px; font-weight: 500; margin-bottom: 40px;
-            transition: color 0.2s;
-        }
-        .back-link:hover { color: var(--accent-hover); }
-
-        h1 { font-size: 28px; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 8px; }
-        .updated { color: var(--text-tertiary); font-size: 13px; margin-bottom: 40px; }
-
-        h2 { font-size: 18px; font-weight: 600; margin: 32px 0 10px; }
-        p { color: var(--text-secondary); margin-bottom: 14px; }
-        strong { color: var(--text-primary); }
-
-        a.mail { color: var(--accent); text-decoration: none; font-weight: 500; }
-        a.mail:hover { color: var(--accent-hover); }
-
-        .footer {
-            margin-top: 56px; padding-top: 24px;
-            border-top: 1px solid var(--card-border);
-            color: var(--text-tertiary); font-size: 13px;
-        }
-        .footer a { color: var(--accent); text-decoration: none; }
-    </style>
+    <link rel="stylesheet" href="/assets/site.css">
+    <link rel="stylesheet" href="/assets/doc.css">
 </head>
 <body>
+<div class="wrap">
+    <header class="top">
+        <a class="wordmark" href="/">Ozols<span>.</span>Dev</a>
+        <nav class="nav" aria-label="Sections">
+            <a href="/#apps">Apps</a>
+            <a href="/blog/">Blog</a>
+            <a href="/#support">Support</a>
+        </nav>
+    </header>
     <div class="container">
         <a class="back-link" href="/scooch/">← Scooch support</a>
 
@@ -131,5 +81,17 @@
             <a href="/scooch/">Scooch support</a> · <a href="/scooch/privacy/">Privacy policy</a> · Made in Latvia by <a href="/">Emils Ozols</a>
         </div>
     </div>
+    <footer class="site-footer">
+        <div class="row">
+            <span>© 2026 Emils Ozols</span>
+            <a href="mailto:emils@ozols.dev">emils@ozols.dev</a>
+            <a href="/blog/feed.xml">RSS</a>
+            <a class="wb" href="/workbench/" aria-label="Workbench" title="Workbench">
+                <svg viewBox="0 0 16 16" width="22" height="22" shape-rendering="crispEdges" aria-hidden="true"><rect x="1" y="2" width="14" height="11" fill="currentColor"/><rect x="2" y="4" width="12" height="8" fill="var(--bg)"/><rect x="2" y="3" width="12" height="1" fill="var(--bg)"/><rect x="3" y="5" width="2" height="1" fill="currentColor"/><rect x="6" y="5" width="5" height="1" fill="currentColor"/><rect x="3" y="7" width="1" height="2" fill="currentColor"/><rect x="5" y="14" width="6" height="1" fill="currentColor"/></svg>
+            </a>
+        </div>
+        <p>Apple, iPhone and App Store are trademarks of Apple Inc., registered in the U.S. and other countries and regions.</p>
+    </footer>
+</div>
 </body>
 </html>

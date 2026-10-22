@@ -3,20 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Blog — Ozols.dev</title>
+  <title>Blog - Ozols.dev</title>
   <meta name="description" content="Writing from Emils Ozols. Indie iOS development (Remi, Rise), tech, and the slow business of building things on the side.">
   <link rel="canonical" href="https://ozols.dev/blog/">
   <link rel="alternate" type="application/atom+xml" title="Ozols.dev blog" href="/blog/feed.xml">
 
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Blog — Ozols.dev">
+  <meta property="og:title" content="Blog - Ozols.dev">
   <meta property="og:description" content="Writing from Emils Ozols. Indie iOS development (Remi, Rise), tech, and the slow business of building things on the side.">
   <meta property="og:url" content="https://ozols.dev/blog/">
   <meta property="og:site_name" content="Ozols.dev">
   <meta property="og:image" content="https://ozols.dev/Profile.jpeg">
 
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Blog — Ozols.dev">
+  <meta name="twitter:title" content="Blog - Ozols.dev">
   <meta name="twitter:description" content="Writing from Emils Ozols. Indie iOS development (Remi, Rise), tech, and the slow business of building things on the side.">
 
   <script type="application/ld+json">
@@ -35,36 +35,40 @@
   }
   </script>
 
+  <link rel="stylesheet" href="/assets/site.css">
   <link rel="stylesheet" href="/blog/blog.css">
 
   <link rel="preconnect" href="https://eu.i.posthog.com">
   <script>
     !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.async=!0,p.src=s.api_host+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init capture register register_once register_for_session unregister opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing startSessionRecording stopSessionRecording isSessionRecordingStarted".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
-    posthog.init('phc_ztIjBWZp495eGWUZSUprsXSLzyElBWMcf2xc65kKfE5', {
-      api_host: 'https://eu.i.posthog.com',
-      person_profiles: 'anonymous',
-      persistence: 'memory'
-    });
-    posthog.register({ app_name: 'ozols_web' });
+    if (!/^(localhost|127\.0\.0\.1)$/.test(location.hostname)) {
+      posthog.init('phc_ztIjBWZp495eGWUZSUprsXSLzyElBWMcf2xc65kKfE5', {
+        api_host: 'https://eu.i.posthog.com',
+        person_profiles: 'anonymous',
+        persistence: 'memory',
+        capture_dead_clicks: false,
+        capture_performance: false,
+        enable_heatmaps: false,
+        disable_surveys: true
+      });
+      posthog.register({ app_name: 'ozols_web' });
+    }
   </script>
 </head>
 <body>
-  <header class="blog-header">
-    <div class="blog-header-inner">
-      <a href="/" class="blog-brand">
-        <span class="blog-brand-icon" aria-hidden="true"></span>
-        <span class="blog-brand-text">ozols.dev<span class="slash">/</span>blog</span>
-      </a>
-      <nav class="blog-nav">
-        <a href="/">Home</a>
-        <a href="/blog/feed.xml">RSS</a>
+  <div class="wrap">
+  <header class="top">
+      <a class="wordmark" href="/">Ozols<span>.</span>Dev</a>
+      <nav class="nav" aria-label="Sections">
+          <a href="/#apps">Apps</a>
+          <a href="/blog/">Blog</a>
+          <a href="/#support">Support</a>
       </nav>
-    </div>
   </header>
 
   <div class="blog-page">
     <main class="blog-main">
-      <h1 class="sr-only">Blog</h1>
+      <h1 class="page-title">Blog</h1>
 
       <ul class="post-list">
         <li class="post-list-item">
@@ -82,23 +86,26 @@
     <aside class="blog-aside">
       <div class="read-next">
         <h3>About</h3>
-        <p class="read-next-empty">
-          Emils Ozols. Indie iOS developer. Building <a href="https://remireminder.app" target="_blank" rel="noopener">Remi</a> and <a href="https://risemorning.app" target="_blank" rel="noopener">Rise</a> on nights and weekends.
-        </p>
-        <h3 style="margin-top: 28px;">Elsewhere</h3>
-        <p class="read-next-empty">
-          <a href="https://x.com/ozolsdev">X</a> · <a href="https://threads.net/@ozolsdev">Threads</a> · <a href="https://www.linkedin.com/in/emils-ozols/">LinkedIn</a><br>
-          <a href="/blog/feed.xml">RSS</a>
-        </p>
+        <p>I'm Emils. I make small iOS apps for life's little annoyances and write here about building them: the numbers, the mistakes and what I learn.</p>
+        <h3>The apps</h3>
+        <p><a href="/#apps">See all six apps</a></p>
+        <h3>Elsewhere</h3>
+        <p><a href="https://www.youtube.com/@OzolsDev">YouTube</a> · <a href="https://www.tiktok.com/@ozolsdev">TikTok</a> · <a href="https://www.instagram.com/ozols.dev/">Instagram</a> · <a href="https://x.com/ozolsdev">X</a> · <a href="https://www.threads.com/@ozolsdev">Threads</a> · <a href="https://www.linkedin.com/in/emils-ozols/">LinkedIn</a> · <a href="/blog/feed.xml">RSS</a></p>
       </div>
     </aside>
   </div>
 
-  <footer class="blog-footer">
-    <span>&copy; 2026 Emils Ozols</span>
-    <span>
-      <a href="/">Home</a> &middot; <a href="/blog/">Blog</a> &middot; <a href="/blog/feed.xml">RSS</a>
-    </span>
+  <footer class="site-footer">
+      <div class="row">
+          <span>© 2026 Emils Ozols</span>
+          <a href="mailto:emils@ozols.dev">emils@ozols.dev</a>
+          <a href="/blog/feed.xml">RSS</a>
+          <a class="wb" href="/workbench/" aria-label="Workbench" title="Workbench">
+              <svg viewBox="0 0 16 16" width="22" height="22" shape-rendering="crispEdges" aria-hidden="true"><rect x="1" y="2" width="14" height="11" fill="currentColor"/><rect x="2" y="4" width="12" height="8" fill="var(--bg)"/><rect x="2" y="3" width="12" height="1" fill="var(--bg)"/><rect x="3" y="5" width="2" height="1" fill="currentColor"/><rect x="6" y="5" width="5" height="1" fill="currentColor"/><rect x="3" y="7" width="1" height="2" fill="currentColor"/><rect x="5" y="14" width="6" height="1" fill="currentColor"/></svg>
+          </a>
+      </div>
+      <p>Apple, iPhone and App Store are trademarks of Apple Inc., registered in the U.S. and other countries and regions.</p>
   </footer>
+  </div>
 </body>
 </html>
