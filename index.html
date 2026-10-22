@@ -195,7 +195,7 @@
         .hero { display: flex; align-items: center; gap: 20px; padding: 40px 0 48px; }
         .hero img { width: 88px; height: 88px; border-radius: 50%; flex: none; }
         .hero h1 { font-size: clamp(28px, 5vw, 44px); font-weight: 750; }
-        .hero p { margin: 10px 0 0; color: var(--muted); font-size: clamp(16px, 2.2vw, 19px); }
+        .hero p { margin: 10px 0 0; color: var(--muted); font-size: clamp(16px, 2.2vw, 19px); max-width: 640px; }
         @media (max-width: 559px) { .hero { flex-direction: column; align-items: flex-start; padding-top: 24px; } .hero img { width: 72px; height: 72px; } }
 
         section { padding: 40px 0; }
@@ -327,9 +327,9 @@
         <div class="hero">
             <img src="/assets/avatar.jpg" alt="Emils Ozols" width="88" height="88">
             <div>
-                <!-- HERO: placeholder from the spec. Emil writes the final line and sub-line. -->
+                <!-- HERO: sub-line from Emil's brief (2026-10-22: he uses every app, nitpicks every screen); H1 is still the spec placeholder. -->
                 <h1>I make small iOS apps for life's little annoyances.</h1>
-                <p>Every app here is designed, built and supported by one person.</p>
+                <p>Every app here is designed, built and supported by one person. I use all of them myself, which makes me their pickiest user: every screen gets nitpicked until it stops bugging me.</p>
             </div>
         </div>
 
