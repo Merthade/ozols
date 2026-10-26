@@ -25,11 +25,12 @@ APPS = [  # (slug, display name, screenshot relative to the repo root, colour)
     ("choru", "Choru", "assets/apps/choru-shot.webp", (135, 87, 209)),
 ]
 FONT = "/System/Library/Fonts/HelveticaNeue.ttc"  # index 1 = Bold
+TITLE = ["I make apps", "that I use", "myself"]  # Emil's words, 2026-10-26
 
 PHONE_H = 392
 STEP = 182               # x distance between phone centres (phones overlap a little)
 FIRST_CX = 478
-TOPS = [92, 70, 50, 50, 70, 92]  # gentle arc, centre phones highest
+PHONE_TOP = 64  # one straight row
 
 
 def lerp(a, b, t):
@@ -71,10 +72,18 @@ def shadow_for(ph):
 def badge(img, slug, name, cx, bottom):
     """Frosted card, app icon above the app name, sitting over the phone's tab bar."""
     font = ImageFont.truetype(FONT, 13 * SS, index=1)
-    tw = font.getbbox(name)[2]
     icon_px = 30 * SS
-    w = max(tw + 24 * SS, 84 * SS)
-    h = icon_px + 34 * SS
+    w = 124 * SS  # same card for every app; a long name wraps onto a second line
+    lines, line = [], ""
+    for word in name.split():
+        trial = (line + " " + word).strip()
+        if font.getbbox(trial)[2] > w - 20 * SS and line:
+            lines.append(line); line = word
+        else:
+            line = trial
+    lines.append(line)
+    line_h = 16 * SS
+    h = icon_px + 18 * SS + 2 * line_h
     x0, y0 = int(cx - w / 2), int(bottom - h)
     box = (x0, y0, x0 + w, y0 + h)
     r = 15 * SS
@@ -100,7 +109,9 @@ def badge(img, slug, name, cx, bottom):
     from PIL import ImageChops
     icon.putalpha(ImageChops.multiply(icon.split()[3], im))
     img.paste(icon, (int(cx - icon_px / 2), y0 + 8 * SS), icon)
-    d.text((cx, y0 + 8 * SS + icon_px + 5 * SS), name, font=font, fill=(22, 22, 26, 255), anchor="mt")
+    text_top = y0 + 8 * SS + icon_px + 5 * SS + (2 - len(lines)) * line_h / 2
+    for k, ln in enumerate(lines):
+        d.text((cx, text_top + k * line_h), ln, font=font, fill=(22, 22, 26, 255), anchor="mt")
 
 
 def main():
@@ -111,7 +122,7 @@ def main():
     for i in order:
         ph = phones[i]
         x = (FIRST_CX + i * STEP) * SS - ph.width // 2
-        y = TOPS[i] * SS
+        y = PHONE_TOP * SS
         sh, pad = shadow_for(ph)
         img.paste(sh, (x - pad, y - pad + 14 * SS), sh)
         img.paste(ph, (x, y), ph)
@@ -119,12 +130,17 @@ def main():
     for i, (slug, name, _, _) in enumerate(APPS):
         ph = phones[i]
         cx = (FIRST_CX + i * STEP) * SS
-        badge(img, slug, name, cx, TOPS[i] * SS + ph.height - 12 * SS)
-    # site icon, top-left, above where X puts the profile photo
-    logo = Image.open(ROOT / "_gen/logo/ozols-icon-1024.png").convert("RGBA").resize((150 * SS, 150 * SS), Image.LANCZOS)
+        badge(img, slug, name, cx, PHONE_TOP * SS + ph.height - 12 * SS)
+    # site icon and title on the left, above where X puts the profile photo
+    lx, ly, lsz = 56, 58, 64
+    logo = Image.open(ROOT / "_gen/logo/ozols-icon-1024.png").convert("RGBA").resize((lsz * SS, lsz * SS), Image.LANCZOS)
     lsh, lpad = shadow_for(logo)
-    img.paste(lsh, (70 * SS - lpad, 60 * SS - lpad + 10 * SS), lsh)
-    img.paste(logo, (70 * SS, 60 * SS), logo)
+    img.paste(lsh, (lx * SS - lpad, ly * SS - lpad + 6 * SS), lsh)
+    img.paste(logo, (lx * SS, ly * SS), logo)
+    title = ImageFont.truetype(FONT, 40 * SS, index=1)
+    d = ImageDraw.Draw(img)
+    for k, ln in enumerate(TITLE):
+        d.text((lx * SS, (ly + lsz + 22 + k * 46) * SS), ln, font=title, fill=(22, 22, 26, 255))
     out = img.resize((W, H), Image.LANCZOS).convert("RGB")
     out.save(HERE / "ozols-x-banner.png", optimize=True)
     print("wrote", HERE / "ozols-x-banner.png")
