@@ -182,7 +182,7 @@ def jsonld(apps):
                             "operatingSystem": "iOS",
                             "applicationCategory": a["category"],
                             "description": a["tagline"],
-                            "url": f'https://apps.apple.com/app/id{a["id"]}',
+                            "url": a.get("store") or f'https://apps.apple.com/app/id{a["id"]}',
                             "author": {"@id": "https://ozols.dev/#person"},
                         },
                     }

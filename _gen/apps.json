@@ -25,7 +25,8 @@
     {
       "slug": "choru",
       "name": "Choru",
-      "id": null,
+      "id": "6812494775",
+      "store": "https://apps.apple.com/us/app/choru-chore-chart-rewards/id6812494775",
       "category": "LifestyleApplication",
       "tagline": "A family chore chart where every chore comes back when it's due.",
       "site": "https://getchoru.com",
@@ -37,7 +38,7 @@
         "Choru chore list",
         "Choru rewards bought with coins"
       ],
-      "coming_soon": true,
+      "new_until": "2026-11-29",
       "support": "https://getchoru.com/support/",
       "privacy": "https://getchoru.com/privacy/",
       "terms": "https://getchoru.com/terms/",
