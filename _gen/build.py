@@ -182,7 +182,7 @@ def jsonld(apps):
                             "operatingSystem": "iOS",
                             "applicationCategory": a["category"],
                             "description": a["tagline"],
-                            "url": f'https://apps.apple.com/app/id{a["id"]}',
+                            "url": a.get("store") or f'https://apps.apple.com/app/id{a["id"]}',
                             "author": {"@id": "https://ozols.dev/#person"},
                         },
                     }
@@ -226,6 +226,10 @@ def main():
         raise SystemExit("em or en dash in the output; brand bans them")
     (ROOT / "index.html").write_text(out)
     print(f"wrote index.html ({len(out):,} bytes)")
+    # Some company networks refuse image/webp (2026-10-30): every WebP gets a PNG twin and every
+    # <img> an onerror that swaps it in, over this page and the hand-written ones (webp_fallback.py).
+    import webp_fallback
+    webp_fallback.run()
 
 
 if __name__ == "__main__":
