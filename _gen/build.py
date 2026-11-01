@@ -75,7 +75,7 @@ def icon(a, size, lazy=True):
 
 def shot(a, i, lazy=True):
     return (f'<img src="/assets/apps/{a["shots"][i]}" alt="{esc(a["shot_alt"][i])}" '
-            f'width="640" height="1284"' + (' loading="lazy">' if lazy else '>'))
+            f'width="640" height="1306"' + (' loading="lazy">' if lazy else '>'))
 
 
 def read_more(a):
